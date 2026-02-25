@@ -11,8 +11,12 @@ public class Variablebasics {
         x = 12; // Updation
         System.out.println(x);
 
-        
+        // int/int = int
+        // double/int = double
+        // double/double = double
+        // int/double = double
 
+        
         // Variable name starts with Alphabets or _ or $
         // Numbers are allowed but not in starting
         // No special characters are allowed except _ or $
