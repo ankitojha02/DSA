@@ -1,3 +1,4 @@
+package Basics;
 public class Variablebasics {
     public static void main(String[] args) {
         int x = 10;
@@ -9,6 +10,8 @@ public class Variablebasics {
         //System.out.println(x*y);
         x = 12; // Updation
         System.out.println(x);
+
+        
 
         // Variable name starts with Alphabets or _ or $
         // Numbers are allowed but not in starting
