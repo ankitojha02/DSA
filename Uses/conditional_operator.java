@@ -61,19 +61,29 @@ public class conditional_operator {
         //     System.out.println("You made a profit of : " + result);
         // }
 
-        System.out.println("Enter the number");
+        System.out.println("Enter first number");
         Scanner sc = new Scanner(System.in);
-        double num = sc.nextDouble();
+        double a = sc.nextDouble();
+        System.out.println("Enter second number");
+        double b = sc.nextDouble();
+        System.out.println("Enter third number");
+        double c = sc.nextDouble();
 
-        if (num > 0 && num > 999 && num < 10000) {
-            System.out.println("The number you entered is four digit number");
-        }
-        else if(num<0){
-            System.out.println("Give only positive integer");
+        if (a+b>c && a+c>b && b+c>a ) {
+            System.out.println("This can be the sides of triangle");
         }
         else{
-            System.out.println("It is not the four digit number");
+            System.out.println("These numbers not form sides of the triangle");
         }
+        // if (num > 0 && num > 999 && num < 10000) {
+        //     System.out.println("The number you entered is four digit number");
+        // }
+        // else if(num<0){
+        //     System.out.println("Give only positive integer");
+        // }
+        // else{
+        //     System.out.println("It is not the four digit number");
+        // }
 
     }
 }
