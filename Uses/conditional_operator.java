@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class conditional_operator {
     public static void main(String[] args) {
-        System.out.println("Enter cost price");
-        Scanner sc = new Scanner(System.in);
-        double cp = sc.nextDouble();
-        System.out.println("Enter selling price");
-        double sp = sc.nextDouble();
-        double result;
+        // System.out.println("Enter cost price");
+        // Scanner sc = new Scanner(System.in);
+        // double cp = sc.nextDouble();
+        // System.out.println("Enter selling price");
+        // double sp = sc.nextDouble();
+        // double result;
 
         // if (n%2==0) {
         //     System.out.println("The number you entered is even number");
@@ -48,13 +48,31 @@ public class conditional_operator {
         //the seller has made profit or incurred loss or no profit
         //no loss. Also determine how much profit he made or loss
         //he incurred.
-        if(cp>sp){
-            result = cp - sp;
-            System.out.println("You made a loss of : " + result);
+
+        // if (cp==sp) {
+        //     System.out.println("No profit , no loss");
+        // }
+        // if(cp>sp){
+        //     result = cp - sp;
+        //     System.out.println("You made a loss of : " + result);
+        // }
+        // else{
+        //     result = sp-cp;
+        //     System.out.println("You made a profit of : " + result);
+        // }
+
+        System.out.println("Enter the number");
+        Scanner sc = new Scanner(System.in);
+        double num = sc.nextDouble();
+
+        if (num > 0 && num > 999 && num < 10000) {
+            System.out.println("The number you entered is four digit number");
+        }
+        else if(num<0){
+            System.out.println("Give only positive integer");
         }
         else{
-            result = sp-cp;
-            System.out.println("You made a profit of : " + result);
+            System.out.println("It is not the four digit number");
         }
 
     }
