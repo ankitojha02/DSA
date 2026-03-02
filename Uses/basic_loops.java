@@ -33,12 +33,22 @@ public class basic_loops {
         // }
 
         //Print all odd numbers divisible by 3 from 1 to 100
-        for(int i = 1; i<=100; i++){
-            if (i%2!=0) {
-                if (i%3==0) {
-                    System.out.println(i);
-                }
-            }
+        // for(int i = 1; i<=100; i++){
+        //     if (i%2!=0) {
+        //         if (i%3==0) {
+        //             System.out.println(i);
+        //         }
+        //     }
+        // }
+
+        //Display this AP : 2,5,8,11,.....upto n terms
+
+        int n=2;
+       
+
+        for(int i = 1; i<=10; i++){
+          System.out.println(n);
+          n=n+3;
         }
     }
 }
