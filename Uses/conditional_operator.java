@@ -103,7 +103,14 @@ public class conditional_operator {
         else if (x<0 && y<0) {
             System.out.println("Lies on third quadrant");
         }
-        else{
+        else if (x==0 && y>0 ) {
+            System.out.println("On y-axis");
+        }
+        else if (x>0  && y==0) {
+            System.out.println("On x-axis");
+        }
+
+        else if (x==0 && y==0){
             System.out.println("At origin");
         }
 
