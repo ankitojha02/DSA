@@ -52,11 +52,19 @@ public class basic_loops {
         // }
         
         //Print this series - 99, 95, 91, 87, ...upto all terms which are positive
-        int a = 99;
-        int d = -4;
-        for(int i = a; i>=0; ){
-            System.out.println(i);
-            i = i + d;
+        // int a = 99;
+        // int d = -4;
+        // for(int i = a; i>=0; ){
+        //     System.out.println(i);
+        //     i = i + d;
+        // }
+        // Display this GP - 1,2,4,8,....upto 'n' terms
+        int a = 1;
+        int r = 2;
+
+        for(int i = 1; i<=10; i++ ){
+            System.out.print(a + " ");
+            a = a * 2;
         }
     }
 }
