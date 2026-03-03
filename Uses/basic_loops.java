@@ -41,14 +41,22 @@ public class basic_loops {
         //     }
         // }
 
-        //Display this AP : 2,5,8,11,.....upto n terms
+        //Display this AP : 2,5,8,11,.....upto i terms
 
-        int n=2;
+        // int n=2;
        
 
-        for(int i = 1; i<=10; i++){
-          System.out.println(n);
-          n=n+3;
+        // for(int i = 1; i<=10; i++){
+        //   System.out.println(n);
+        //   n=n+3;
+        // }
+        
+        //Print this series - 99, 95, 91, 87, ...upto all terms which are positive
+        int a = 99;
+        int d = -4;
+        for(int i = a; i>=0; ){
+            System.out.println(i);
+            i = i + d;
         }
     }
 }
