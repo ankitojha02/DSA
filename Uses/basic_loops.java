@@ -118,8 +118,14 @@ public class basic_loops {
          System.out.println("Enter your number");
          Scanner sc = new Scanner(System.in);
          int n = sc.nextInt();
-
-       
-
+         if (n<0) {
+            n= n * -1;
+         }
+         int count = 0;
+        for(int i = 10; n>0;){
+             n = n/i;
+             count = count +1;
+        }
+        System.out.println("The number of digits in the given number is : "+ " "+ count);
     }
 }
