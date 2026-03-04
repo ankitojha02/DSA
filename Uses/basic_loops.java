@@ -54,17 +54,51 @@ public class basic_loops {
         //Print this series - 99, 95, 91, 87, ...upto all terms which are positive
         // int a = 99;
         // int d = -4;
+        
         // for(int i = a; i>=0; ){
         //     System.out.println(i);
         //     i = i + d;
         // }
         // Display this GP - 1,2,4,8,....upto 'n' terms
-        int a = 1;
-        int r = 2;
+        // int a = 1;
+        // int r = 2;
 
-        for(int i = 1; i<=10; i++ ){
-            System.out.print(a + " ");
-            a = a * 2;
+        // for(int i = 1; i<=10; i++ ){
+        //     System.out.print(a + " ");
+        //     a = a * r;
+        // }
+
+        // System.out.println("Enter your number");
+        // Scanner sc = new Scanner(System.in);
+        // int n = sc.nextInt();
+
+        // for(int i = 1; i<=50; i++){
+        //     System.out.println(i);
+        //     System.out.println(n);
+        //     n = n -1;
+        // }
+        
+        System.out.println("Enter your number");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int factors = 0;
+        
+        for(int i = 1; i<=n; i++){
+            if (n%i==0) {
+                factors=factors +1;
+            }
         }
+
+        if (n <= 1) {
+    System.out.println("Neither prime nor composite");
+}
+        else if (factors==2) {
+            System.out.println("Prime number");
+        }
+        else{
+            System.out.println("Composite number");
+        }
+
+
     }
 }
