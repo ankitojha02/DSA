@@ -83,30 +83,28 @@ public class basic_loops {
         // int factors = 0;
 
         // for (int i = 1; i <= n; i++) {
-        //     if (n % i == 0) {
-        //         factors = factors + 1; // We get the factor of the given number
-        //     }
-        //     if (factors>3) {
-        //         break;
-        //     }
+        // if (n % i == 0) {
+        // factors = factors + 1; // We get the factor of the given number
+        // }
+        // if (factors>3) {
+        // break;
+        // }
         // }
 
         // if (n <= 1) {
-        //     System.out.println("Neither prime nor composite");
+        // System.out.println("Neither prime nor composite");
         // } else if (factors == 2) {
-        //     System.out.println("Prime number"); // Prime number have exactly two factors
+        // System.out.println("Prime number"); // Prime number have exactly two factors
         // } else {
-        //     System.out.println("Composite number");
+        // System.out.println("Composite number");
         // }
-        
 
-        //Count the number of digits in the given number
+        // Count the number of digits in the given number
 
-        //First way ====================
+        // First way ====================
         // System.out.println("Enter your number");
         // Scanner sc = new Scanner(System.in);
         // int n = sc.nextInt();
-       
 
         // String str = String.valueOf(n);
 
@@ -114,18 +112,41 @@ public class basic_loops {
         // System.out.println(totalDigits);
         // ============================ END
 
+        // Second way ===================
+        // System.out.println("Enter your number");
+        // Scanner sc = new Scanner(System.in);
+        // int n = sc.nextInt();
+        // if (n<0) {
+        // n= n * -1;
+        // }
+        // if(n==0){
+        //   System.out.println("One digit number");
+        // }
+        // int count = 0;
+        // for(int i = 10; n>0;){
+        // n = n/i;
+        // count = count +1;
+        // }
+        // System.out.println("The number of digits in the given number is : "+ " "+
+        // count);
+        // ======================== END
 
-         System.out.println("Enter your number");
-         Scanner sc = new Scanner(System.in);
-         int n = sc.nextInt();
-         if (n<0) {
-            n= n * -1;
-         }
-         int count = 0;
-        for(int i = 10; n>0;){
-             n = n/i;
-             count = count +1;
-        }
-        System.out.println("The number of digits in the given number is : "+ " "+ count);
+        // Print sum of digits of a number
+        System.out.println("Enter your number");
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int x;
+        int sum = 0;
+        
+        for (; n>=10 ;  ){
+            x = n%10;
+            sum = sum + x;
+            n = (n-x)/10;
+       }
+        int result = n + sum;
+
+        System.out.println("Sum of digits of the given number is : " + " "+ result );
+
+
     }
 }
