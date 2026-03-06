@@ -132,21 +132,38 @@ public class basic_loops {
         // ======================== END
 
         // Print sum of digits of a number
-        System.out.println("Enter your number");
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int x;
-        int sum = 0;
+    //     System.out.println("Enter your number");
+    //     Scanner sc = new Scanner(System.in);
+    //     int n = sc.nextInt();
+    //     if (n<0) {
+    //         n = n * -1;
+    //     }
+    //     int x;
+    //     int sum = 0;
         
-        for (; n>=10 ;  ){
-            x = n%10;
-            sum = sum + x;
-            n = (n-x)/10;
-       }
-        int result = n + sum;
+        
+    //     for (; n>=10 ;  ){
+    //         x = n%10;
+    //         sum = sum + x;
+    //         n = (n-x)/10;
+    //    }
+    //     int result = n + sum;
 
-        System.out.println("Sum of digits of the given number is : " + " "+ result );
+    //     System.out.println("Sum of digits of the given number is : " + " "+ result );
 
+     
+    //Reverse of a number 
+    System.out.println("Enter a number");
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int reverse = 0;
+    int x;
+
+    for(; n>0; n=n/10){
+        x = n%10; //get last digit
+        reverse = reverse * 10 + x; //build reversed number
+    }
+    System.out.println("Reverse of the number is : " + reverse);
 
     }
 }
