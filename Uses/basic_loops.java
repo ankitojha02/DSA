@@ -166,13 +166,24 @@ public class basic_loops {
     // System.out.println("Reverse of the number is : " + reverse);
 
     // Factorial of a number 
+    // System.out.println("Enter a number");
+    // Scanner sc = new Scanner(System.in);
+    // int n = sc.nextInt();
+    // int factorial = 1;
+    // for(int i = 1; i<=n; i++){
+    //     factorial= factorial*i;
+    // }
+    // System.out.println("Factorial of the given number is: " + factorial);
+
     System.out.println("Enter a number");
     Scanner sc = new Scanner(System.in);
-    int n = sc.nextInt();
-    int factorial = 1;
-    for(int i = 1; i<=n; i++){
-        factorial= factorial*i;
+    int a= sc.nextInt();
+    int b= sc.nextInt();
+    int number = 1;
+    for(int i = 1; i<=b; i++){
+       number = number * a;
     }
-    System.out.println("Factorial of the given number is: " + factorial);
+    System.out.println(number);
+
     }
 }
