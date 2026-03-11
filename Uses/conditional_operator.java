@@ -82,7 +82,7 @@ public class conditional_operator {
         //     System.out.println("Give only positive integer");
         // }
         // else{
-        //     System.out.println("It is not the four digit number");
+        //     System.out.println("It is not the four digit numbers");
         // }
 
         System.out.println("Enter first number");
