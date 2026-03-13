@@ -67,12 +67,51 @@ public class pattern {
         //  
         
         // Printing left perpendicular right angle triangle of stars
-        for(int i = 1; i<=rows; i++){
-            for(int j = 1; j <= i; j++){
-                System.out.print("*" + " ");
-            }
-            System.out.println();
-        }
+        // for(int i = 1; i<=rows; i++){
+        //     for(int j = 1; j <= i; j++){
+        //         System.out.print(j + " ");
+        //     }
+        //     System.out.println();
+        // }
 
+        //Printing A/n AB/n ABC/n ABCD/n
+
+        // for(int i = 1; i<=rows; i++){
+        //     for(int j= 1; j<=i; j++){
+        //         System.out.print((char)(j+64) + " ");
+        //     }
+        //     System.out.println();
+        // }
+
+        //Printing A/n BB/n CCC/n DDDD/n
+        // int k = 65;
+        // for(int i = 1; i<=rows; i++){
+        //     for(int j = 1; j<=i; j++){
+        //         System.out.print((char)k + " ");
+        //     }
+        //     System.out.println();
+        //     k++;
+        // }
+        
+        
+        //Printing : 1/n AB/n 2/n ABC/n 1234
+        for(int i = 1; i <= rows; i++){
+           
+            
+            if(i%2!=0){
+                 for(int j =1 ; j<= i; j++){
+                    System.out.print(j + " ");
+                 }
+            }
+
+            else{
+                for(int j =1; j<=i ; j++){
+                    System.out.print((char)(j+64) + " ");
+                }
+            }
+           
+            System.out.println();
+           
+        }
     }
 }
