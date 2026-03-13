@@ -2,7 +2,6 @@ package Pattern_printing;
 
 import java.util.Scanner;
 
-import Uses.chardata;
 
 public class pattern {
     public static void main(String[] args) {
@@ -65,23 +64,15 @@ public class pattern {
         // Printing : aaaa/n BBBB/n cccc/n DDDD/n
        
 
-         char ch = 'a';
-
-         for(int i = 1; i<=rows; i++){
-            char printChar;
-
-            if (i % 2 ==0) {
-                printChar = (char)(ch - 32);// convert to uppercase
-            } else{
-                printChar = ch;
-            }
-
-            for(int j = 1; j<=4; j++){
-                System.out.print(printChar + " ");
+        //  
+        
+        // Printing left perpendicular right angle triangle of stars
+        for(int i = 1; i<=rows; i++){
+            for(int j = 1; j <= i; j++){
+                System.out.print("*" + " ");
             }
             System.out.println();
-            ch++;
-         }
+        }
 
     }
 }
