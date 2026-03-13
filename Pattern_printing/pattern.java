@@ -95,23 +95,30 @@ public class pattern {
         
         
         //Printing : 1/n AB/n 2/n ABC/n 1234
-        for(int i = 1; i <= rows; i++){
+        // for(int i = 1; i <= rows; i++){
            
             
-            if(i%2!=0){
-                 for(int j =1 ; j<= i; j++){
-                    System.out.print(j + " ");
-                 }
-            }
+        //     if(i%2!=0){
+        //          for(int j =1 ; j<= i; j++){
+        //             System.out.print(j + " ");
+        //          }
+        //     }
 
-            else{
-                for(int j =1; j<=i ; j++){
-                    System.out.print((char)(j+64) + " ");
-                }
+        //     else{
+        //         for(int j =1; j<=i ; j++){
+        //             System.out.print((char)(j+64) + " ");
+        //         }
+        //     }
+           
+        //     System.out.println();
+           
+        // }
+
+        for(int i = rows; i>=1; i--){
+            for(int j = 1; j<=i; j++){
+                System.out.print("*"+ " ");
             }
-           
             System.out.println();
-           
         }
     }
 }
