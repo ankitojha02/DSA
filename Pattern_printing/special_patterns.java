@@ -48,16 +48,31 @@ public class special_patterns {
 
         // Printing plus with stars
 
-        for (int i = 1; i <= rows; i++) {
-          for(int j = 1; j<=rows; j++){
-            if( i == (rows/2 + 1) || j == (rows/2 +1)){
-                System.out.print("* ");
-            }
-            else{
+        // for (int i = 1; i <= rows; i++) {
+        //   for(int j = 1; j<=rows; j++){
+        //     if( i == (rows/2 + 1) || j == (rows/2 +1)){
+        //         System.out.print("* ");
+        //     }
+        //     else{
+        //         System.out.print("  ");
+        //     }
+        //   }
+        //   System.out.println();
+        // }
+
+        // Printing stars cross
+
+        for(int i = 1; i<=rows; i++){
+            for(int j = 1; j<=rows; j++){
+                if( i==j || i+j==rows+1){
+                    System.out.print("* ");
+                }
+               else{
                 System.out.print("  ");
+               }
             }
-          }
-          System.out.println();
+            
+            System.out.println();
         }
     }
 }
