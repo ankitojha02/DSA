@@ -86,15 +86,53 @@ public class special_patterns {
         // }
 
         //Printing Binary Triangle : 1/n 01/n 101/n 0101/n
-        for(int i=1; i<=rows; i++){
+        // for(int i=1; i<=rows; i++){
            
-            for(int j = 1; j<=i; j++){
-                if(i % 2==0 && j%2!=0 || j%2==0 && i%2!=0){
-                System.out.print("0 ");
-            }
-            else{
-                System.out.print("1 ");
-            }
+        //     for(int j = 1; j<=i; j++){
+        //         if(i % 2==0 && j%2!=0 || j%2==0 && i%2!=0){ // Print 0 if i + j == odd
+        //         System.out.print("0 ");
+        //     }
+        //     else{
+        //         System.out.print("1 ");
+        //     }
+        //     }
+        //     System.out.println();
+        // }
+
+        //Printing Odd number triangle : 1/n 13/n 135/n 1357/n
+        
+        // for(int i = 1; i<=rows; i++){
+        //     int k = 1;
+        //     for(int j = 1; j<=i ; j++){
+        //        System.out.print(k + " ");
+        //         k = k+2;
+        //     }
+           
+        //     System.out.println();
+        // }
+
+        //Printing star triangle vertically flipped
+
+        // for(int i = 1; i<=rows; i++){
+        //     for(int j = 1; j<=i; j++){
+        //         if((i + j)>rows){
+        //     System.out.print("* ");
+        //         }
+        //         else{
+        //             System.out.print("  ");
+        //         }
+        //     }
+        //     System.out.println();
+        // }
+
+        for(int i = 1; i<=rows; i++){
+            for(int j = 1; j<=rows; j++){
+                 if((i + j)>rows){
+            System.out.print("* ");
+                }
+                else{
+                    System.out.print("  ");
+                }
             }
             System.out.println();
         }
