@@ -150,14 +150,41 @@ public class special_patterns {
         // }
 
         //Printing vertically flipped 1/n 12/n 123/n 1234/n
-         for(int i =1; i<=rows; i++){
-            for(int j = 1; j<=rows-i; j++){
+        //  for(int i =1; i<=rows; i++){
+        //     for(int j = 1; j<=rows-i; j++){
+        //         System.out.print("  ");
+        //     }
+        //     for(int j = 1; j<=i;j++){
+        //         System.out.print(j + " ");
+        //     }
+        //     System.out.println();
+        //  }
+
+        //Printing vertically flipped A/n BB/n CCC/n DDDD/n
+        //  int k = 65;
+        //  for(int i =1; i<=rows; i++){
+        //     for(int j = 1; j<=rows-i; j++){
+        //         System.out.print("  ");
+        //     }
+        //     for(int j = 1; j<=i;j++){
+        //         System.out.print((char)(k) + " ");
+               
+        //     }
+        //     k++;
+        //     System.out.println();
+        //  }
+
+        //Printing Rhombus or Parallelogram
+        for(int i = 1; i<=rows; i++){
+            for(int j = 1; j< rows+1-i; j++){
                 System.out.print("  ");
             }
-            for(int j = 1; j<=i;j++){
-                System.out.print(j + " ");
+
+            for(int j = 1; j<=rows; j++){
+                System.out.print("* ");
             }
             System.out.println();
-         }
+        }
+
     }
 }
