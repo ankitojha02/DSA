@@ -124,15 +124,27 @@ public class special_patterns {
         //     }
         //     System.out.println();
         // }
+        
 
-        for(int i = 1; i<=rows; i++){
-            for(int j = 1; j<=rows; j++){
-                 if((i + j)>rows){
-            System.out.print("* ");
-                }
-                else{
-                    System.out.print("  ");
-                }
+        // for(int i = 1; i<=rows; i++){
+        //     for(int j = 1; j<=rows; j++){
+        //          if((i + j)>rows){
+        //     System.out.print("* ");
+        //         }
+        //         else{
+        //             System.out.print("  ");
+        //         }
+        //     }
+        //     System.out.println();
+        // }
+
+        //Alternative method : Best method or template
+        for(int i = 1; i<=rows ; i++){
+            for(int j= 1; j<=rows-i; j++ ){
+                System.out.print("  ");
+            }
+            for(int j= 1; j<=i; j++){
+                System.out.print("* ");
             }
             System.out.println();
         }
