@@ -76,11 +76,25 @@ public class special_patterns {
         // }
 
         //Printing Floyd's triangle pattern : 1/n 23/n 456/n 78910/n
-        int k = 1;
-        for(int i = 1; i<=rows ; i++){
-            for(int j =1 ; j<=i; j++){
-                System.out.print(k + " ");
-                k++;
+        // int k = 1;
+        // for(int i = 1; i<=rows ; i++){
+        //     for(int j =1 ; j<=i; j++){
+        //         System.out.print(k + " ");
+        //         k++;
+        //     }
+        //     System.out.println();
+        // }
+
+        //Printing Binary Triangle : 1/n 01/n 101/n 0101/n
+        for(int i=1; i<=rows; i++){
+           
+            for(int j = 1; j<=i; j++){
+                if(i % 2==0 && j%2!=0 || j%2==0 && i%2!=0){
+                System.out.print("0 ");
+            }
+            else{
+                System.out.print("1 ");
+            }
             }
             System.out.println();
         }
