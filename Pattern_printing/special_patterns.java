@@ -62,16 +62,26 @@ public class special_patterns {
 
         // Printing stars cross
 
-        for(int i = 1; i<=rows; i++){
-            for(int j = 1; j<=rows; j++){
-                if( i==j || i+j==rows+1){
-                    System.out.print("* ");
-                }
-               else{
-                System.out.print("  ");
-               }
-            }
+        // for(int i = 1; i<=rows; i++){
+        //     for(int j = 1; j<=rows; j++){
+        //         if( i==j || i+j==rows+1){
+        //             System.out.print("* ");
+        //         }
+        //        else{
+        //         System.out.print("  ");
+        //        }
+        //     }
             
+        //     System.out.println();
+        // }
+
+        //Printing Floyd's triangle pattern : 1/n 23/n 456/n 78910/n
+        int k = 1;
+        for(int i = 1; i<=rows ; i++){
+            for(int j =1 ; j<=i; j++){
+                System.out.print(k + " ");
+                k++;
+            }
             System.out.println();
         }
     }
