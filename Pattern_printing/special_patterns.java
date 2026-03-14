@@ -139,14 +139,25 @@ public class special_patterns {
         // }
 
         //Alternative method : Best method or template
-        for(int i = 1; i<=rows ; i++){
-            for(int j= 1; j<=rows-i; j++ ){
+        // for(int i = 1; i<=rows ; i++){
+        //     for(int j= 1; j<=rows-i; j++ ){
+        //         System.out.print("  ");
+        //     }
+        //     for(int j= 1; j<=i; j++){
+        //         System.out.print("* ");
+        //     }
+        //     System.out.println();
+        // }
+
+        //Printing vertically flipped 1/n 12/n 123/n 1234/n
+         for(int i =1; i<=rows; i++){
+            for(int j = 1; j<=rows-i; j++){
                 System.out.print("  ");
             }
-            for(int j= 1; j<=i; j++){
-                System.out.print("* ");
+            for(int j = 1; j<=i;j++){
+                System.out.print(j + " ");
             }
             System.out.println();
-        }
+         }
     }
 }
