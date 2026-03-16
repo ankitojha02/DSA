@@ -17,7 +17,6 @@ public class BuiltIn {
         int a = 15; 
         int b = 9;
         int c = 8;
-        System.out.println(Math.max(Math.max(a, b),Math.max(c, b)));
-
+        System.out.println(Math.max(Math.max(a, b),Math.max(c, b))); //You can also use this for four numbers as well
     }
 }
