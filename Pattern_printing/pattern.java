@@ -32,11 +32,11 @@ public class pattern {
         // }
         // Alphabets rectangle
         // for(int i =1 ; i<=rows ; i++){
-        // int k = 65;
+       
         // for(int j = 1; j<=rows; j++){
 
-        // System.out.print((char)k + " ");
-        // k= k + 1;
+        // System.out.print((char)(j+64) + " ");
+        
         // }
         // System.out.println();
         // }
@@ -53,14 +53,24 @@ public class pattern {
         // int a = 65;
         // for(int i = 1; i<=rows; i++){
         // for(int j = 1; j<=rows; j++){
-        // System.out.print((char)a + " ");
+        // System.out.print((char)(i+64) + " ");
         // }
         // System.out.println();
         // a = a+1;
         // }
 
         // Printing : aaaa/n BBBB/n cccc/n DDDD/n
-
+            // for(int i = 1; i<=rows; i++){
+            //     for(int j=1; j<=rows; j++){
+            //         if(i%2==0){
+            //             System.out.print((char)(i+64)+ " ");
+            //         }
+            //         else{
+            //             System.out.print((char)(i+96)+ " ");
+            //         }
+            //     }
+            //     System.out.println();
+            // }
         
 
         // Printing left perpendicular right angle triangle of stars
@@ -90,7 +100,7 @@ public class pattern {
         // k++;
         // }
 
-        // Printing : 1/n AB/n 2/n ABC/n 1234
+        // Printing : 1/n AB/n 123/n ABCB/n 12345
         // for(int i = 1; i <= rows; i++){
 
         // if(i%2!=0){
@@ -104,7 +114,18 @@ public class pattern {
         // System.out.print((char)(j+64) + " ");
         // }
         // }
-
+        
+        // for(int i =1; i<=rows; i++){
+        //     for(int j =1; j<=i; j++){
+        //         if(i%2!=0){
+        //             System.out.print(j + " ");
+        //         }
+        //         else{
+        //             System.out.print((char)(j+64)+ " ");
+        //         }
+        //     }
+        //     System.out.println();
+        // }
         // System.out.println();
 
         // }

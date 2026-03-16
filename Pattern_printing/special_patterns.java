@@ -241,27 +241,29 @@ public class special_patterns {
         // }
        
         //Printing Bridge Stars
-       for(int i = 1; i<=2*rows-1; i++){
-        System.out.print("* ");
-       }
-       System.out.println();
+    //    for(int i = 1; i<=2*rows-1; i++){
+    //     System.out.print("* ");
+    //    }
+    //    System.out.println();
        
-       int k = rows-1;
-        for(int i = 1; i<=k; i++){
+    //    int k = rows-1;
+    //     for(int i = 1; i<=k; i++){
             
           
-            for(int j = 1; j <=k+1-i; j++){
-                System.out.print("* ");
-            }
-            for(int j = 1; j<=2*i-1; j++){
-                System.out.print("  ");
-            }
-            for(int j = 1; j <=k+1-i; j++){
-                System.out.print("* ");
-            }
+    //         for(int j = 1; j <=k+1-i; j++){
+    //             System.out.print("* ");
+    //         }
+    //         for(int j = 1; j<=2*i-1; j++){
+    //             System.out.print("  ");
+    //         }
+    //         for(int j = 1; j <=k+1-i; j++){
+    //             System.out.print("* ");
+    //         }
             
-            System.out.println();
-        }
+    //         System.out.println();
+    //     }
+
+    
 
     }
 }
