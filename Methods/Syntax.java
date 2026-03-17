@@ -20,6 +20,6 @@ public class Syntax {
         //     ankit();
         // }
 
-        sum(5,9);
+        sum(5,9); // here 5 and 9 are arguments
     }
 }
