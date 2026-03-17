@@ -140,7 +140,7 @@ public class special_patterns {
 
         //Alternative method : Best method or template
         // for(int i = 1; i<=rows ; i++){
-        //     for(int j= 1; j<=rows-i; j++ ){
+        //     for(int j= 1; j<=rows+1-i; j++ ){
         //         System.out.print("  ");
         //     }
         //     for(int j= 1; j<=i; j++){
@@ -175,16 +175,16 @@ public class special_patterns {
         //  }
 
         //Printing Rhombus or Parallelogram
-        // for(int i = 1; i<=rows; i++){
-        //     for(int j = 1; j< rows+1-i; j++){
-        //         System.out.print("  ");
-        //     }
+        for(int i = 1; i<=rows; i++){
+            for(int j = 1; j< rows+1-i; j++){
+                System.out.print("  ");
+            }
 
-        //     for(int j = 1; j<=rows; j++){
-        //         System.out.print("* ");
-        //     }
-        //     System.out.println();
-        // }
+            for(int j = 1; j<=rows; j++){
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
 
         //Printing horizontally flipped vertical flipped triangle
         // for(int i = 1; i<=rows; i++){
