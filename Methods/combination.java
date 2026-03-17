@@ -1,5 +1,7 @@
 package Methods;
 
+import java.util.Scanner;
+
 public class combination {
 
     public static int combination(int n , int r){
@@ -24,7 +26,13 @@ public class combination {
      return result;
     }
     public static void main(String[] args) {
-        System.out.println(combination(5, 3));
-        System.out.println(combination(7, 3));
+
+     Scanner sc = new Scanner(System.in);
+     System.out.println("Enter the value of n");
+     int n = sc.nextInt();
+     System.out.println("Enter the value of r");
+     int r = sc.nextInt();
+
+     System.out.println(combination(n, r));
     }
 }
