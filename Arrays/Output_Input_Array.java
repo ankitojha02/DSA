@@ -10,7 +10,7 @@ public class Output_Input_Array {
         //     System.out.println(arr[i]);
         // }
 
-        //Input array
+        //Input array from user
         int[] arr = new int[7]; //default value of empty array is 0
 
         Scanner sc = new Scanner(System.in);
@@ -19,10 +19,12 @@ public class Output_Input_Array {
             arr[i] = sc.nextInt();
         }
 
-        System.out.println(arr[4]);
+        // System.out.println(arr[4]);
 
         for(int i = 0; i<arr.length; i++){
-            System.out.print(arr[i]+ " ");
+            // System.out.print(arr[i]+ " ");
+            // System.out.println();
+            System.out.print(arr[i] * 2); // For doubling the value of elements in an array
         }
 
 
