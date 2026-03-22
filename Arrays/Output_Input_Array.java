@@ -46,7 +46,7 @@ public class Output_Input_Array {
 
 
         //Print sum of elements of the array
-        int sum = 0;
+        // int sum = 0;
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter array size");
         int n = sc.nextInt();
@@ -57,11 +57,18 @@ public class Output_Input_Array {
             arr[i] = sc.nextInt();
         }
 
+        // for(int i = 0; i<arr.length; i++){
+        //     sum = sum + arr[i];
+        // }
+        // System.out.println("Sum of the given array is: " + sum);
+
+        //Print the maximum element of an array
+        int max = arr[0];
         for(int i = 0; i<arr.length; i++){
-            sum = sum + arr[i];
+          max= Math.max(max, arr[i]);
+         
         }
-        System.out.println("Sum of the given array is: " + sum);
-
-
+        
+       System.out.println(max);
     }
 }
