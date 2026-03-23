@@ -5,7 +5,7 @@ public class SortArrayBuiltIn {
     public static void main(String[] args) {
         int[] arr = {12, 78, 28, 93};
         print(arr);
-        Arrays.sort(arr);
+        Arrays.sort(arr); //Built-in method to sort array in ascending order
         print(arr);
     }
 
