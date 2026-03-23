@@ -9,7 +9,7 @@ public class ShallowCopyDeepCopy {
         //     System.out.println(x[i]);
         // }
 
-        int[] deep = Arrays.copyOf(arr, arr.length); //deep copy
+        int[] deep = Arrays.copyOf(arr, arr.length); //deep copy of array means it does not change in original array i.e., arr
         deep[0] = 100;
         System.out.println(arr[0]);
         System.out.println(deep[0]);
