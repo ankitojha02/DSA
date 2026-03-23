@@ -22,4 +22,7 @@ public class ArrayOtherDataTypes {
      public static void change(int[] x){ //For arrays, the reference(address) is passed as value
             x[2] = 99;
         }
+
+
+
 }
