@@ -18,15 +18,29 @@ public class ArraysQuestions {
         print(arr);
     }
 
+    // public static void print(int[] arr){
+    //     for(int i =0; i<arr.length; i++){
+    //         if(i%2==0){
+    //             System.out.print(arr[i] + 10 + " ");
+    //         }
+    //         else{
+    //             System.out.print(arr[i] * 2 + " ");
+    //         }
+    //     }
+    // }
+
     public static void print(int[] arr){
-        for(int i =0; i<arr.length; i++){
-            if(i%2==0){
-                System.out.print(arr[i] + 10 + " ");
+        System.out.println("Enter the number you want to search");
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+
+        for(int i=0; i<arr.length; i++){
+            if(arr[i] == number){
+                System.out.print("Yes this number is present in the array" + "  " + arr[i]);
             }
-            else{
-                System.out.print(arr[i] * 2 + " ");
-            }
+           
         }
     }
+
 
 }
