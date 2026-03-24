@@ -39,18 +39,42 @@ public class ArraysQuestions {
     //     for (int i = 0; i < arr.length; i++) {
     //         if (arr[i] == number) {
     //             System.out.print("Yes this number is present in the array" + "  " + arr[i]);
-    //         }
+    //         break;
+    //}
 
     //     }
     // }
 
     //Product of Array
 
+    // public static void print(int[] arr){
+    //     int product = 1;
+    //     for(int i=0; i<arr.length; i++){
+    //       product = product * arr[i];
+    //     }
+    //     System.out.println(product);
+    // }
+
+    //Two sum
     public static void print(int[] arr){
-        int product = 1;
-        for(int i=0; i<arr.length; i++){
-          product = product * arr[i];
+       int target = 2;
+       boolean achieved = false;
+       for(int i = 0; i<arr.length; i++){
+        for(int j=0; j<arr.length; j++){
+            if(arr[i] + arr[j] == target && i != j){
+                System.out.println("The target is achieved by two numbers: " + arr[i] + " and " + arr[j] + " at index: " + i + " and " + j);
+                achieved = true;
+              
+            }
+            if(achieved == true){
+                break;
+            }
+            
         }
-        System.out.println(product);
+       }
+
+       if(achieved == false){
+        System.out.println("Target not achieved");
+       }
     }
 }
