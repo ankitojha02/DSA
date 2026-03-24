@@ -14,7 +14,7 @@ public class ArraysQuestions {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = sc.nextInt();
         }
-        print(arr);
+        // print(arr);
     }
 
     // Multiply odd indexed elements by 2 and add 10 to even indexed elements
@@ -80,23 +80,24 @@ public class ArraysQuestions {
 
     // Print the second maximum element in the array
 
-    public static void print(int[] arr){
-        int max = Integer.MIN_VALUE;
-        for(int i = 0; i<arr.length; i++){
-            if(arr[i] > max){
-                max = arr[i];
-            }
-        }
-        int secondMax = Integer.MIN_VALUE;
-        for(int i = 0; i<arr.length; i++){
-            if(arr[i] != max ){
-               if(arr[i]>secondMax){
-                secondMax = arr[i];
-               }
-            }
-        }
+    // public static void print(int[] arr){
+    //     int max = Integer.MIN_VALUE;
+    //      int secondMax = Integer.MIN_VALUE;
+    //     for(int i = 0; i<arr.length; i++){
+    //         if(arr[i] > max){
+    //             max = arr[i];
+    //         }
+    //     }
+       
+    //     for(int i = 0; i<arr.length; i++){
+    //         if(arr[i] != max ){
+    //            if(arr[i]>secondMax){
+    //             secondMax = arr[i];
+    //            }
+    //         }
+    //     }
 
-        System.out.println("The second largest element in an array is: "+ secondMax);
-    }
+    //     System.out.println("The second largest element in an array is: "+ secondMax);
+    // }
 
 }
