@@ -101,16 +101,36 @@ public class ArraysQuestions {
     // }
 
     //reverse of an array
+    // public static void print(int[] arr){
+    //     int[] arr2 = new int[arr.length];
+    //     int limit = 0;
+    //     for(int i = arr.length - 1; i>=0; i--){
+    //         arr2[limit] = arr[i];
+    //         limit++;
+    //     }
+
+    //     for(int j = 0; j<arr2.length; j++){
+    //         System.out.print(arr2[j] + " ");
+    //     }
+    // }
+
+    // Alternative way : Best approach , no need to create new array
     public static void print(int[] arr){
-        int[] arr2 = new int[arr.length];
-        int limit = 0;
-        for(int i = arr.length - 1; i>=0; i--){
-            arr2[limit] = arr[i];
-            limit++;
+        int start = 0;
+        int end = arr.length-1;
+
+        while(start<end){
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+
+            start++;
+            end--;
         }
 
-        for(int j = 0; j<arr2.length; j++){
-            System.out.print(arr2[j] + " ");
+        //Print array
+        for(int i =0; i<arr.length; i++){
+            System.out.print(arr[i]+ " ");
         }
     }
 
