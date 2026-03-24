@@ -9,5 +9,7 @@ public class ForEach {
             System.out.println(ele);
         } 
         // We can't update element in an array using for each loop as it makes the copy of that array
+   
+        
     }
 }
