@@ -115,22 +115,32 @@ public class ArraysQuestions {
     // }
 
     // Alternative way : Best approach , no need to create new array
+    // public static void print(int[] arr){
+    //     int start = 0;
+    //     int end = arr.length-1;
+
+    //     while(start<end){
+    //         int temp = arr[start];
+    //         arr[start] = arr[end];
+    //         arr[end] = temp;
+
+    //         start++;
+    //         end--;
+    //     }
+
+    //     //Print array
+    //     for(int i =0; i<arr.length; i++){
+    //         System.out.print(arr[i]+ " ");
+    //     }
+    // }
+
+    //Rotating array question
     public static void print(int[] arr){
-        int start = 0;
-        int end = arr.length-1;
+        Scanner sc = new Scanner(System.in);
+        int d = sc.nextInt();
 
-        while(start<end){
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-
-            start++;
-            end--;
-        }
-
-        //Print array
-        for(int i =0; i<arr.length; i++){
-            System.out.print(arr[i]+ " ");
+        for(int i = 0; i<arr.length; i++){
+            
         }
     }
 
