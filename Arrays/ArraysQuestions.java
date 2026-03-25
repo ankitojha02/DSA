@@ -11,18 +11,20 @@ public class ArraysQuestions {
         int[] arr = new int[n];
 
         // Enter direction rotation
-        int d = sc.nextInt();
+        // int d = sc.nextInt();
 
         System.out.println("Enter elements of an array");
         for (int i = 0; i < arr.length; i++) {
             arr[i] = sc.nextInt();
         }
-        print(arr, d);
+        // print(arr, d);
+
+      print(arr);
 
         //Print result 
-        for(int num : arr){
-            System.out.print(num + " ");
-        }
+        // for(int num : arr){
+        //     System.out.print(num + " ");
+        // }
     }
 
     // Multiply odd indexed elements by 2 and add 10 to even indexed elements
@@ -143,27 +145,43 @@ public class ArraysQuestions {
     // }
 
     //Rotating array question
-    public static void print(int[] arr,int d){
+    // public static void print(int[] arr,int d){
         
       
-        int n = arr.length;
-          d = d%n;
-        rotating(arr,0, d-1);
+    //     int n = arr.length;
+    //       d = d%n;
+    //     rotating(arr,0, d-1);
 
-        rotating(arr, d, n-1);
+    //     rotating(arr, d, n-1);
 
-        rotating(arr, 0, n-1);
+    //     rotating(arr, 0, n-1);
+    // }
+
+    // public static void rotating(int[] arr, int i, int j){
+    //   while (i < j) {
+    //     int temp = arr[i];
+    //     arr[i] = arr[j];
+    //     arr[j] = temp;
+
+    //     i++;
+    //     j--;
+    //   }
+    // }
+
+    // Missing in Array
+    public static void print(int[] arr){
+        int missing;
+
+        int n = arr.length + 1;
+
+        int sum = n * (n+1) / 2;
+
+        int arraySum = 0;
+        for(int i = 0; i<arr.length; i++){
+            arraySum = arraySum + arr[i];
+        }
+
+        missing = sum - arraySum;
+        System.out.println("Missing number is : " + missing);
     }
-
-    public static void rotating(int[] arr, int i, int j){
-      while (i < j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-
-        i++;
-        j--;
-      }
-    }
-
 }
