@@ -10,11 +10,19 @@ public class ArraysQuestions {
         int n = sc.nextInt();
         int[] arr = new int[n];
 
+        // Enter direction rotation
+        int d = sc.nextInt();
+
         System.out.println("Enter elements of an array");
         for (int i = 0; i < arr.length; i++) {
             arr[i] = sc.nextInt();
         }
-        print(arr);
+        print(arr, d);
+
+        //Print result 
+        for(int num : arr){
+            System.out.print(num + " ");
+        }
     }
 
     // Multiply odd indexed elements by 2 and add 10 to even indexed elements
@@ -135,13 +143,27 @@ public class ArraysQuestions {
     // }
 
     //Rotating array question
-    public static void print(int[] arr){
-        Scanner sc = new Scanner(System.in);
-        int d = sc.nextInt();
+    public static void print(int[] arr,int d){
+        
+      
+        int n = arr.length;
+          d = d%n;
+        rotating(arr,0, d-1);
 
-        for(int i = 0; i<arr.length; i++){
-            
-        }
+        rotating(arr, d, n-1);
+
+        rotating(arr, 0, n-1);
+    }
+
+    public static void rotating(int[] arr, int i, int j){
+      while (i < j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+
+        i++;
+        j--;
+      }
     }
 
 }
