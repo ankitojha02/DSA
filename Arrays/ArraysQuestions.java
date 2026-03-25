@@ -168,7 +168,7 @@ public class ArraysQuestions {
     //   }
     // }
 
-    // Missing in Array
+    // Missing in Array if array contains 1 to n elements
     public static void print(int[] arr){
         int missing;
 
