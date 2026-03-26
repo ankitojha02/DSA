@@ -169,19 +169,44 @@ public class ArraysQuestions {
     // }
 
     // Missing in Array if array contains 1 to n elements
+    // public static void print(int[] arr){
+    //     int missing;
+
+    //     long n = arr.length + 1;
+
+    //     long sum = n * (n+1) / 2;
+
+    //     long arraySum = 0;
+    //     for(int i = 0; i<arr.length; i++){
+    //         arraySum = arraySum + arr[i];
+    //     }
+
+    //     missing = sum - arraySum;
+    //     System.out.println("Missing number is : " + missing);
+    // }
+
+
+    //Segregate 0s and 1s
     public static void print(int[] arr){
-        int missing;
+        int numberOfZeros = 0;
+        int numberOfOnes = 0;
 
-        int n = arr.length + 1;
-
-        int sum = n * (n+1) / 2;
-
-        int arraySum = 0;
-        for(int i = 0; i<arr.length; i++){
-            arraySum = arraySum + arr[i];
+        for(int ele : arr){
+            if(ele == 0) numberOfZeros++;
+            else numberOfOnes++;
         }
 
-        missing = sum - arraySum;
-        System.out.println("Missing number is : " + missing);
+        for(int i = 0; i<numberOfZeros; i++){
+           arr[i] = 0;
+        }
+        for(int i=numberOfZeros; i<arr.length; i++){
+            arr[i] = 1;
+        }
+
+        for(int ele : arr){
+            System.out.print(ele + " ");
+        }
     }
+
+
 }
