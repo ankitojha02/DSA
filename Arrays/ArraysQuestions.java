@@ -208,37 +208,54 @@ public class ArraysQuestions {
     //     }
     // }
 
-    public static void print(int[] arr){
-        int n= arr.length;
-        int start = 0; 
-        int end = n-1;
+    //Best Approach
+    // public static void print(int[] arr){
+    //     int n= arr.length;
+    //     int start = 0; 
+    //     int end = n-1;
 
-        while(start<end){
-           // move start if already 0
-        if (arr[start] == 0) {
-            start++;
-        }
+    //     while(start<end){
+    //        // move start if already 0
+    //     if (arr[start] == 0) {
+    //         start++;
+    //     }
 
-        // move end if already 1
-        else if (arr[end] == 1) {
-            end--;
-        }
+    //     // move end if already 1
+    //     else if (arr[end] == 1) {
+    //         end--;
+    //     }
 
-        // swap if start=1 and end=0
-        else {
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
+    //     // swap if start=1 and end=0
+    //     else {
+    //         int temp = arr[start];
+    //         arr[start] = arr[end];
+    //         arr[end] = temp;
 
-            start++;
-            end--;
-        }
-        }
-        for(int ele :arr){
+    //         start++;
+    //         end--;
+    //     }
+    //     }
+    //     for(int ele :arr){
         
+    //         System.out.print(ele + " ");
+    //     }
+    // }
+
+
+    //Wave Array
+    public static void print(int[] arr){
+        for(int i =0; i<arr.length; i+=2){
+            if(i==arr.length-1){
+                break;
+            }
+            int temp = arr[i];
+            arr[i] = arr[i+1];
+            arr[i+1] = temp;
+        }
+        for(int ele : arr){
             System.out.print(ele + " ");
         }
+      
+
     }
-
-
 }
