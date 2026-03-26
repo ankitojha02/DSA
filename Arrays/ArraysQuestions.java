@@ -187,23 +187,55 @@ public class ArraysQuestions {
 
 
     //Segregate 0s and 1s
+    // public static void print(int[] arr){
+    //     int numberOfZeros = 0;
+    //     int numberOfOnes = 0;
+
+    //     for(int ele : arr){
+    //         if(ele == 0) numberOfZeros++;
+    //         else numberOfOnes++;
+    //     }
+
+    //     for(int i = 0; i<numberOfZeros; i++){
+    //        arr[i] = 0;
+    //     }
+    //     for(int i=numberOfZeros; i<arr.length; i++){
+    //         arr[i] = 1;
+    //     }
+
+    //     for(int ele : arr){
+    //         System.out.print(ele + " ");
+    //     }
+    // }
+
     public static void print(int[] arr){
-        int numberOfZeros = 0;
-        int numberOfOnes = 0;
+        int n= arr.length;
+        int start = 0; 
+        int end = n-1;
 
-        for(int ele : arr){
-            if(ele == 0) numberOfZeros++;
-            else numberOfOnes++;
+        while(start<end){
+           // move start if already 0
+        if (arr[start] == 0) {
+            start++;
         }
 
-        for(int i = 0; i<numberOfZeros; i++){
-           arr[i] = 0;
-        }
-        for(int i=numberOfZeros; i<arr.length; i++){
-            arr[i] = 1;
+        // move end if already 1
+        else if (arr[end] == 1) {
+            end--;
         }
 
-        for(int ele : arr){
+        // swap if start=1 and end=0
+        else {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+
+            start++;
+            end--;
+        }
+        }
+        for(int ele :arr){
+        
             System.out.print(ele + " ");
         }
     }
