@@ -11,5 +11,7 @@ public class ArrayListsBasic {
         arr.add(10);
 
         System.out.println(arr.get(2));
+        arr.set(2, 19);
+        System.out.println(arr.get(2));
     }
 }
