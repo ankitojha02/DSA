@@ -18,5 +18,7 @@ public class ArrayListsBasic {
           
         int n = arr.size(); //here it stores array length
         System.out.println(n);
+
+        
     }
 }
