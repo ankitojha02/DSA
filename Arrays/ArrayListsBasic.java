@@ -1,6 +1,7 @@
 package Arrays;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ArrayListsBasic {
     public static void main(String[] args) {
@@ -26,5 +27,8 @@ public class ArrayListsBasic {
 
         arr.remove(1);
         System.out.println(arr); //This removes particular element using its index number
+    
+        Collections.reverse(arr); // This reverse the array
+        System.out.println(arr);
     }
 }
