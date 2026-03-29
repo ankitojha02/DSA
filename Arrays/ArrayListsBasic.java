@@ -7,6 +7,8 @@ import Methods.returntype;
 
 public class ArrayListsBasic {
     public static void main(String[] args) {
+
+        // You can also use Vector in place of Array list
         // ArrayList<Integer> arr = new ArrayList<>();
         // arr.add(25);
         // arr.add(21);
