@@ -57,11 +57,25 @@ public class tandscomplexity {
         // ------ Calculate time complexity ------
 
         // Question 1
-        for(int i=1; i<=6; i++){ // We can use any number n in place of 6
-            System.out.println("Hello");
-        }
+        // for(int i=1; i<=n; i++){ // We can use any number n in place of 6
+        //     System.out.println("Hello");
+        // }
 
         // Total operations - n times . So time complexity = O(n)
-        
+
+        // Question 2
+        // for(int i=1; i<=n; i+=2){
+        //     System.out.println("Hello");
+        // }
+
+        // Total operations : ~ (n/2). So time complexity is O(n/2) ~ O(n) approx 
+        // Note : O(k.n) = O(n)
+
+        // Question 3
+        // for(int i =1; i<n-7; i++){
+        //     System.out.println("Hello");
+        // }
+
+        // Total operations : n-7
     }
 }
