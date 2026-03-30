@@ -40,16 +40,28 @@ public class tandscomplexity {
 
         // Third Approach - The best approach
 
-        int[] arr = {5, 1, 3, 4, 2, 4};
+        // int[] arr = {5, 1, 3, 4, 2, 4};
 
-        int sumNumbers = (arr.length-1) * (arr.length)/2;
-        int sumArray = 0;
-        for(int i =0; i<arr.length; i++){
-            sumArray = sumArray + arr[i];
+        // int sumNumbers = (arr.length-1) * (arr.length)/2;
+        // int sumArray = 0;
+        // for(int i =0; i<arr.length; i++){
+        //     sumArray = sumArray + arr[i];
+        // }
+
+        // int duplicate = sumArray - sumNumbers;
+        // System.out.println("Duplicate number is : " + duplicate);
+
+        // Total number of operations is : 6 and no need to create new flag array. So, saves time and space both
+
+
+        // ------ Calculate time complexity ------
+
+        // Question 1
+        for(int i=1; i<=6; i++){ // We can use any number n in place of 6
+            System.out.println("Hello");
         }
 
-        int duplicate = sumArray - sumNumbers;
-        System.out.println("Duplicate number is : " + duplicate);
-
+        // Total operations - n times . So time complexity = O(n)
+        
     }
 }
