@@ -41,7 +41,7 @@ public class ArrayListsBasic {
         // Adding one in an Arraylist
 
         ArrayList<Integer> list = new ArrayList<>();
-        list.add(8);
+        list.add(9);
         list.add(9);
         list.add(9);
 
