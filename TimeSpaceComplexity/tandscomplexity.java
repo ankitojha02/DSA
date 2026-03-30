@@ -132,6 +132,12 @@ public class tandscomplexity {
         // }
 
         // Total opeartions : n * m. So time complexity : O(n*m)
-        
+
+        // Question 10
+        // for(int i = -8; i<n+5; i+=3){
+        //     System.out.println("Your name");
+        // }
+
+        // Time complexity = (conditional value - initial value) / increment or decrement. This formula is only for - for(int i = a; i < b; i += k)
     }
 }
