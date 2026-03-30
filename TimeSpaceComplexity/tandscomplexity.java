@@ -17,23 +17,39 @@ public class tandscomplexity {
         //     }
         // }
         
-        // In this approach , the max number of operations to be performed is : 5+4+3+2 = 14
+        // In this approach , the max number of operations to be performed is : 5+4+3+2 = 14. We saves space but not time.
 
 
         // Second Approach
 
-        int[] arr = {5,1,6,7,6,2,3};
+        // int[] arr = {5,1,6,6,2,3};
 
-        boolean[] flag = new boolean[arr.length+1];
+        // boolean[] flag = new boolean[arr.length+1];
         
-        for(int i=0; i<arr.length; i++){
-            int ele = arr[i];
-            if(flag[ele] == true){
-                System.out.println("Duplicate element is : " + ele);
-            }
-            else{
-                flag[ele] = true;
-            }
+        // for(int i=0; i<arr.length; i++){
+        //     int ele = arr[i];
+        //     if(flag[ele] == true){
+        //         System.out.println("Duplicate element is : " + ele);
+        //     }
+        //     else{
+        //         flag[ele] = true;
+        //     }
+        // }
+
+        //In this approach, number of operatiions is : 6. We saves time but not space. 
+
+        // Third Approach - The best approach
+
+        int[] arr = {5, 1, 3, 4, 2, 4};
+
+        int sumNumbers = (arr.length-1) * (arr.length)/2;
+        int sumArray = 0;
+        for(int i =0; i<arr.length; i++){
+            sumArray = sumArray + arr[i];
         }
+
+        int duplicate = sumArray - sumNumbers;
+        System.out.println("Duplicate number is : " + duplicate);
+
     }
 }
