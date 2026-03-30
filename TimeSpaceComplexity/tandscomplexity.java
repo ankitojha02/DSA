@@ -87,6 +87,17 @@ public class tandscomplexity {
         //     System.out.println("World");
         // }
 
-        
+        // Total operations : n + n = 2n. So time complexity is O(2n). i.e., O(n)
+
+
+        // Question 5
+        // for(int i=1; i<=n; i++){
+        //     System.out.println("Hello");
+        // }
+        // for(int i=1; i<=m; i++){
+        //     System.out.println("World");
+        // }
+
+        // Total operations : n + m. So time complexity is O(m+n)
     }
 }
