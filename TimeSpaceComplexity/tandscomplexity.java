@@ -76,6 +76,17 @@ public class tandscomplexity {
         //     System.out.println("Hello");
         // }
 
-        // Total operations : n-7
+        // Total operations : n-7. So time complexity is O(n-7), i.e., approx. O(n)
+
+        // Question 4
+        // for(int i =1; i<=n; i++){
+        //     System.out.println("Hello");
+        // }
+
+        // for(int i=1; i<=n; i++){
+        //     System.out.println("World");
+        // }
+
+        
     }
 }
