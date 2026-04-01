@@ -139,10 +139,11 @@ public class tandscomplexity {
         // }
 
         // Time complexity = (conditional value - initial value) / increment or decrement. This formula is only for - for(int i = a; i < b; i += k)
- 
+        // Faster : K(Constant) > log n > n > n * n > n * n * n
  
  
         // Space Complexity 
         // Auxilary Space : Extra space taken to solve the problem
+        
     }
 }
