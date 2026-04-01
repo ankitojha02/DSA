@@ -15,6 +15,6 @@ public class Array_Sorting_Basic {
         }
         System.out.println(flag ? "Array is sorted" : "Array is not sorted");
        
-        // Bubble Sort : An algorithm that sorts array
+        // Bubble Sort : An algorithm that sorts array - Swap adjacent elements
     }
 }
