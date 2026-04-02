@@ -4,7 +4,7 @@ public class Bubble_Sort {
     public static void main(String[] args) {
         // Bubble Sort : An algorithm that sorts array - Swap adjacent elements
 
-        int[] arr = { 5, -2, 6, 7, 2, 0, 7, 2 };
+        int[] arr = { 5, -2, 6, 7, 2, 0, 7, 2, 0, 0 };
         int n = arr.length;
 
         print(arr);
@@ -49,13 +49,18 @@ public class Bubble_Sort {
 
         // Move all zeros to end
         for(int i=0; i<n-1; i++){
-
+            boolean isSorted = true;
             for(int j=0; j<n-1-i; j++){
                       if(arr[j]==0){
                         int temp = arr[j];
                         arr[j] = arr[j+1];
                         arr[j+1] = temp;
+
+                        isSorted = false;
                       }
+            }
+            if (isSorted == true) {
+                break;
             }
         }
 
