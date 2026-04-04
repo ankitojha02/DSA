@@ -42,34 +42,34 @@ public class Selection_Sorting {
 
         // Two sum with time complexity - O(n * log n)
 
-        // Arrays.sort(arr);
+        Arrays.sort(arr);
         
-        // int start = 0;
-        // int end = n-1;
+        int start = 0;
+        int end = n-1;
 
-        // boolean found = false;
-        // while(start<end){
-        //        if(arr[start] + arr[end] > target){
-        //         end--;
+        boolean found = false;
+        while(start<end){
+               if(arr[start] + arr[end] > target){
+                end--;
 
-        //        }
-        //        else if (arr[start] + arr[end] < target) {
-        //         start++;
+               }
+               else if (arr[start] + arr[end] < target) {
+                start++;
                 
-        //        }
-        //        else if(arr[start] + arr[end] == target){
-        //         System.out.println("Target achieved by :" + arr[start] + " and "+ arr[end]);
-        //         found = true;
-        //         break;
-        //        }
+               }
+               else if(arr[start] + arr[end] == target){
+                System.out.println("Target achieved by :" + arr[start] + " and "+ arr[end]);
+                found = true;
+                break;
+               }
            
              
-        // }
-        // if(!found){
-        //     System.out.println("No pair found");
-        // }
+        }
+        if(!found){
+            System.out.println("No pair found");
+        }
 
         // Common Elements
-        
+
     }
 }
