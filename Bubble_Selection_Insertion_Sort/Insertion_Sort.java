@@ -19,4 +19,6 @@ public class Insertion_Sort {
             System.out.print(ele + " ");
         }
     }
+
+    // Time complexity : Worst Case - 
 }
