@@ -21,5 +21,5 @@ public class Insertion_Sort {
     }
 
     // Time complexity : Worst Case - O(n sq.), Best Case - O(n)
-    // Stability : Selection sort is stable
+    // Stability : Insertion sort is stable
 }
