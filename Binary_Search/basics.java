@@ -15,6 +15,7 @@ public class basics {
         int low = 0, high = n-1;
         boolean isAvailable = false;
 
+        // Time complexity is : log n
         while(low<=high){
             int mid = (low + high) / 2;
 
