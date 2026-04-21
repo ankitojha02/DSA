@@ -45,5 +45,43 @@ public class Questions {
         // Binary search in descending order
 
         // Sorted array search , find if k is present in an array or not
+    
+        // Last Occurence
+        int arr[] = {23, 17, 29, 90, 46, 74, 29, 67, 29, 80, 90};
+        int n = arr.length;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the target element");
+        int target = sc.nextInt();
+
+        binary(arr, n, target);
+
+    }
+
+    public static void binary(int[] arr, int n, int target){
+        Arrays.sort(arr);
+        int low = 0, high = n-1;
+        int index = -1;
+        while(low <= high){
+            int mid = (high + low) / 2;
+
+            if(arr[mid] < target){
+                low = mid + 1;
+            }
+            else if(arr[mid] > target){
+                high = mid - 1;
+            }
+            else{
+                index = mid;
+                low = mid + 1;
+            }
+        }
+
+        if(index == -1){
+            System.out.println("The number is not present in the array");
+        }
+        else{
+            System.out.println("The number is present at index : " + index);
+        }
     }
 }
