@@ -50,7 +50,8 @@ public class Questions {
         // int arr[] = {23, 17, 29, 90, 46, 74, 29, 67, 29, 80, 90};
 
         // Mountain array
-        int arr[] = {-1, 0, 1, 2, 5, 7, 8, 6, 3, 2};
+        // int arr[] = {-1, 0, 1, 2, 5, 7, 8, 6, 3, 2};
+        int arr[] = {3, 7, 11, 15, 20, 25, 27, 31, 33, 38};
         int n = arr.length;
 
         Scanner sc = new Scanner(System.in);
@@ -88,21 +89,38 @@ public class Questions {
         // }
 
         // Search in mountain array - Finding peak 
-       int low = 1, high = n-2;
+    //    int low = 1, high = n-2;
 
-       while(low<=high){
-        int mid = (high+low)/2;
+    //    while(low<=high){
+    //     int mid = (high+low)/2;
 
-        if(arr[mid]>arr[mid+1] && arr[mid]>arr[mid-1]){
-            System.out.println("Peak element is : "+ arr[mid] + " at index: "+ mid);
-            break;
+    //     if(arr[mid]>arr[mid+1] && arr[mid]>arr[mid-1]){
+    //         System.out.println("Peak element is : "+ arr[mid] + " at index: "+ mid);
+    //         break;
+    //     }
+    //     else if(arr[mid]>arr[mid-1] && arr[mid]<arr[mid+1]){
+    //         low = mid + 1;
+    //     }
+    //     else{
+    //         high = mid -1;
+    //     }
+    //    }
+
+    // Floor in sorted array question
+        int low = 0, high = n-1;
+        int ans = -1;
+        while(low <= high){
+            int mid = (high+low)/2;
+
+            if(arr[mid]>target){
+                high = mid -1;
+            }
+            else{
+                ans = arr[mid];
+                low = mid + 1;
+            } 
         }
-        else if(arr[mid]>arr[mid-1] && arr[mid]<arr[mid+1]){
-            low = mid + 1;
-        }
-        else{
-            high = mid -1;
-        }
-       }
-    }
+
+        System.out.println("The floor of the targeted element is : " + ans);
+    } 
 }
