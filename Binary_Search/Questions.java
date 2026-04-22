@@ -87,29 +87,22 @@ public class Questions {
         //     System.out.println("The number is present at index : " + index);
         // }
 
-        // Search in mountain array
-        int peak = -1;
-        for(int i=1; i<n-1; i++){
-            if(arr[i]>arr[i+1] && arr[i]>arr[i-1]){
-                peak= i;
-                System.out.println("Peak element is : "+ arr[i] + " at index : "+ peak);
-            }
-        }
-        int low = 0, high = peak ;
+        // Search in mountain array - Finding peak 
+       int low = 1, high = n-2;
 
-        while(low<=high){
-            int mid = (high + low)/2;
+       while(low<=high){
+        int mid = (high+low)/2;
 
-            if(arr[mid]<target){
-                low = mid + 1;
-            }
-            else if(arr[mid] > target){
-                high = mid - 1;
-            }
-            else{
-                System.out.println("Target element found at index: "+ mid);
-                break;
-            }
+        if(arr[mid]>arr[mid+1] && arr[mid]>arr[mid-1]){
+            System.out.println("Peak element is : "+ arr[mid] + " at index: "+ mid);
+            break;
         }
+        else if(arr[mid]>arr[mid-1] && arr[mid]<arr[mid+1]){
+            low = mid + 1;
+        }
+        else{
+            high = mid -1;
+        }
+       }
     }
 }
