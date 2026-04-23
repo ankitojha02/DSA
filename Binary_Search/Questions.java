@@ -51,7 +51,7 @@ public class Questions {
 
         // Mountain array
         // int arr[] = {-1, 0, 1, 2, 5, 7, 8, 6, 3, 2};
-        int arr[] = {3, 7, 11, 15, 20, 25, 27, 31, 33, 38};
+        int arr[] = {-11, -10, -9, -7, -6, -4, -3, -2, 0, 0, 1, 11, 14, 19, 21};
         int n = arr.length;
 
         Scanner sc = new Scanner(System.in);
@@ -107,20 +107,60 @@ public class Questions {
     //    }
 
     // Floor in sorted array question
-        int low = 0, high = n-1;
-        int ans = -1;
-        while(low <= high){
-            int mid = (high+low)/2;
+        // int low = 0, high = n-1;
+        // int ans = -1;
+        // while(low <= high){
+        //     int mid = (high+low)/2;
 
-            if(arr[mid]>target){
+        //     if(arr[mid]>target){
+        //         high = mid -1;
+        //     }
+        //     else{
+        //         ans = arr[mid];
+        //         low = mid + 1;
+        //     } 
+        // }
+
+        // System.out.println("The floor of the targeted element is : " + ans);
+
+        // Maximum count of positive and negative integer
+       int low = 0, high = n-1;
+       int zero = 0;
+       int neg = n; // neg means negative index
+       int pos = n; // pos means positive index
+       while (low <= high) {
+        int mid = (high + low)/2;
+        if(arr[mid]>=zero){
+            neg = mid;
+            high = mid - 1;
+        }
+        else{
+            low = mid + 1;
+        }
+       }
+
+       low =0;
+       high = n-1;
+
+       while (low <= high) {
+            int mid = (high + low)/2;
+
+            if (arr[mid]>zero) {
+                pos = mid;
                 high = mid -1;
+
             }
             else{
-                ans = arr[mid];
                 low = mid + 1;
-            } 
-        }
+            }
+       }
 
-        System.out.println("The floor of the targeted element is : " + ans);
+       int negCount = neg;
+       int posCount = n - pos;
+
+       int result = Math.max(negCount, posCount);
+
+       System.out.println(result);
+
     } 
 }
