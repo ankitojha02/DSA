@@ -164,11 +164,11 @@ public class Questions {
 
 
     // Square root of a number
-    int low = 1;
-    int high = target;
+    long low = 1;
+    long high = target;
 
     while (low<=high) {
-        int mid = (high + low)/2;
+        long mid = (high + low)/2;
 
         if (mid*mid== target) {
             System.out.println("Square root is :" + mid);
