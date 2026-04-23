@@ -124,43 +124,43 @@ public class Questions {
         // System.out.println("The floor of the targeted element is : " + ans);
 
         // Maximum count of positive and negative integer
-       int low = 0, high = n-1;
-       int zero = 0;
-       int neg = n; // neg means negative index
-       int pos = n; // pos means positive index
-       while (low <= high) {
-        int mid = (high + low)/2;
-        if(arr[mid]>=zero){
-            neg = mid;
-            high = mid - 1;
-        }
-        else{
-            low = mid + 1;
-        }
-       }
+    //    int low = 0, high = n-1;
+    //    int zero = 0;
+    //    int neg = n; // neg means negative index
+    //    int pos = n; // pos means positive index
+    //    while (low <= high) {
+    //     int mid = (high + low)/2;
+    //     if(arr[mid]>=zero){
+    //         neg = mid;
+    //         high = mid - 1;
+    //     }
+    //     else{
+    //         low = mid + 1;
+    //     }
+    //    }
 
-       low =0;
-       high = n-1;
+    //    low =0;
+    //    high = n-1;
 
-       while (low <= high) {
-            int mid = (high + low)/2;
+    //    while (low <= high) {
+    //         int mid = (high + low)/2;
 
-            if (arr[mid]>zero) {
-                pos = mid;
-                high = mid -1;
+    //         if (arr[mid]>zero) {
+    //             pos = mid;
+    //             high = mid -1;
 
-            }
-            else{
-                low = mid + 1;
-            }
-       }
+    //         }
+    //         else{
+    //             low = mid + 1;
+    //         }
+    //    }
 
-       int negCount = neg;
-       int posCount = n - pos;
+    //    int negCount = neg;
+    //    int posCount = n - pos;
 
-       int result = Math.max(negCount, posCount);
+    //    int result = Math.max(negCount, posCount);
 
-       System.out.println(result);
+    //    System.out.println(result);
 
     } 
 }
