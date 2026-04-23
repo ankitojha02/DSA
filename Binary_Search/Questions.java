@@ -162,5 +162,27 @@ public class Questions {
 
     //    System.out.println(result);
 
+
+    // Square root of a number
+    int low = 1;
+    int high = target;
+
+    while (low<=high) {
+        int mid = (high + low)/2;
+
+        if (mid*mid== target) {
+            System.out.println("Square root is :" + mid);
+            break;
+        }
+        else if (mid*mid>target) {
+            high = mid - 1;
+        }
+        else if (mid * mid<target) {
+            low = mid + 1;
+        }
+    }
+
+    System.out.println(high);
+
     } 
 }
