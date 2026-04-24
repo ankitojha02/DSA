@@ -181,25 +181,30 @@ public class Questions {
         // System.out.println((int) high);
 
         // Single among doubles in sorted
-        int low = 0, high = n - 1;
+        // int low = 0, high = n - 1;
 
-        while (low < high) {
-            int mid = low + (high - low) / 2;
-            
-            // make mid even
-            if(mid % 2 == 1 ){
-                mid--;
-            }
+        // while (low < high) {
+        // int mid = low + (high - low) / 2;
 
-            
-            if(arr[mid] == arr[mid + 1]){
-                low = mid + 2; // move to right side
-            }
-            else{
-                high = mid; // move to left side
-            }
-        }
-        System.out.println("Single is : " + arr[low]);
+        // // make mid even
+        // if(mid % 2 == 1 ){
+        // mid--;
+        // }
+
+        // if(arr[mid] == arr[mid + 1]){
+        // low = mid + 2; // move to right side
+        // }
+        // else{
+        // high = mid; // move to left side
+        // }
+        // }
+        // System.out.println("Single is : " + arr[low]);
+
+        // Arranging coins question -- solve in leetcode
+        double s = Math.sqrt(8 * target + 1);
+        int ans = (int) (s - 1) / 2;
+
+        System.out.println(ans);
 
     }
     // mid = ( high + low )/2, integer overflow error
