@@ -186,15 +186,17 @@ public class Questions {
         while (low < high) {
             int mid = low + (high - low) / 2;
             
+            // make mid even
             if(mid % 2 == 1 ){
                 mid--;
             }
 
+            
             if(arr[mid] == arr[mid + 1]){
-                low = mid + 2;
+                low = mid + 2; // move to right side
             }
             else{
-                high = mid;
+                high = mid; // move to left side
             }
         }
         System.out.println("Single is : " + arr[low]);
