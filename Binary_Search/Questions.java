@@ -201,10 +201,14 @@ public class Questions {
         // System.out.println("Single is : " + arr[low]);
 
         // Arranging coins question -- solve in leetcode
-        double s = Math.sqrt(8 * target + 1);
-        int ans = (int) (s - 1) / 2;
+        // double s = Math.sqrt(1 + 8.0 * n);
+        // int ans = (int) (s - 1) / 2;
 
-        System.out.println(ans);
+        // System.out.println(ans);
+
+
+        // Search an element in sorted and rotated array
+        
 
     }
     // mid = ( high + low )/2, integer overflow error
