@@ -51,7 +51,8 @@ public class Questions {
         // Mountain array
         // int arr[] = {-1, 0, 1, 2, 5, 7, 8, 6, 3, 2};
         // int arr[] = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 6 };
-        int arr[] = {5, 6, 7, 8, 9, 10, 1, 2, 3};
+        // int arr[] = {5, 6, 7, 8, 9, 10, 1, 2, 3};
+        int arr[] = {2, 3, 4, 7, 11};
         int n = arr.length;
 
         Scanner sc = new Scanner(System.in);
@@ -209,38 +210,51 @@ public class Questions {
 
 
         // Search an element in sorted and rotated array -- Tough one 
-        int low = 0, high = n-1;
+        // int low = 0, high = n-1;
 
-        while (low <= high) {
-            int mid = low + (high - low)/2;
+        // while (low <= high) {
+        //     int mid = low + (high - low)/2;
 
-            if(arr[mid] == target){
-                System.out.println(mid);
-                break;
-            }
-            else if (arr[low]<=arr[mid]) { // low to mid is sorted
-                if (arr[low]<=target && target < arr[mid]) {
-                    high = mid -1;
-                }
-                else{
-                    low = mid + 1;
-                }
-            }
-            else{
-                 if (arr[low]<target && target <= arr[high]) {
-                    low = mid + 1;
-                }
-                else{
-                    high = mid - 1;
-                }
-            }
+        //     if(arr[mid] == target){
+        //         System.out.println(mid);
+        //         break;
+        //     }
+        //     else if (arr[low]<=arr[mid]) { // low to mid is sorted
+        //         if (arr[low]<=target && target < arr[mid]) {
+        //             high = mid -1;
+        //         }
+        //         else{
+        //             low = mid + 1;
+        //         }
+        //     }
+        //     else{
+        //          if (arr[low]<target && target <= arr[high]) {
+        //             low = mid + 1;
+        //         }
+        //         else{
+        //             high = mid - 1;
+        //         }
+        //     }
             
-        }
+        // }
 
         // Search in a sorted matrix -- solve in leetcode 
         // Search in row-wise and column wise sorted matrix
         // Kth missing positive number in a sorted array
-        
+
+        int low = 0, high = n-1;
+        while (low <= high) {
+            int mid = low + (high - low)/2;
+            int missing = arr[mid] - (mid+1);
+
+            if (missing<target) {
+                low = mid + 1;
+            }
+            else{
+                high = mid - 1;
+            }
+        }
+        System.out.println(low + target);
     }
     // mid = ( high + low )/2, integer overflow error
     // We can use : mid = low + (high - low)/2;
