@@ -238,7 +238,7 @@ public class Questions {
         }
 
         // Search in a sorted matrix -- solve in leetcode 
-        
+        // Search in row-wise and column wise sorted matrix
     }
     // mid = ( high + low )/2, integer overflow error
     // We can use : mid = low + (high - low)/2;
