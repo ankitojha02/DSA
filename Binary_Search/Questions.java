@@ -242,19 +242,22 @@ public class Questions {
         // Search in row-wise and column wise sorted matrix
         // Kth missing positive number in a sorted array
 
-        int low = 0, high = n-1;
-        while (low <= high) {
-            int mid = low + (high - low)/2;
-            int missing = arr[mid] - (mid+1);
+        // int low = 0, high = n-1;
+        // while (low <= high) {
+        //     int mid = low + (high - low)/2;
+        //     int missing = arr[mid] - (mid+1);
 
-            if (missing<target) {
-                low = mid + 1;
-            }
-            else{
-                high = mid - 1;
-            }
-        }
-        System.out.println(low + target);
+        //     if (missing<target) {
+        //         low = mid + 1;
+        //     }
+        //     else{
+        //         high = mid - 1;
+        //     }
+        // }
+        // System.out.println(low + target);
+
+
+        
     }
     // mid = ( high + low )/2, integer overflow error
     // We can use : mid = low + (high - low)/2;
