@@ -19,7 +19,7 @@ This repo is created to:
 ## 🛠️ Tech Stack
 
 - Language: **Java**
-- IDE: **VS Code / IntelliJ**
+- IDE: **VS Code**
 - Concepts: **DSA, Problem Solving, Optimization**
 
 
