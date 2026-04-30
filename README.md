@@ -71,8 +71,9 @@ Stay tuned for more problems and optimized solutions 🚀
 
 ## 🤝 Connect With Me
 
-- 💼 LinkedIn: *[Add your link here]*
-- 🐦 Twitter/X: *[Add your link here]*
+- LinkedIn: *https://www.linkedin.com/in/ankit-ojha-763387360/*
+- Twitter/X: *https://x.com/Ankit_Ojha_01*
+- Leetcode: *https://leetcode.com/u/ankit3059/*
 
 ---
 
