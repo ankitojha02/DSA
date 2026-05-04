@@ -33,14 +33,30 @@ public class strings_basics {
 
 
         // Count the number of vowels in the string
-        String str = name.toLowerCase();
-        int count = 0;
-        for (int i = 0; i<str.length(); i++){
-            if (str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u' ) {
-                count++;
-            }
-        }
+        // String str = name.toLowerCase();
+        // int count = 0;
+        // for (int i = 0; i<str.length(); i++){
+        //     if (str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i' || str.charAt(i) == 'o' || str.charAt(i) == 'u' ) {
+        //         count++;
+        //     }
+        // }
 
-        System.out.println(count);
+        // System.out.println(count);
+
+        // Palindrome String
+        String str = "madam";
+        int i = 0;
+        int j = str.length() - 1;
+        boolean isPalindrome = true;
+
+        while(i < j) {
+            if(str.charAt(i) != str.charAt(j)) {
+                isPalindrome = false;
+                break;
+            }
+            i++;
+            j--;
+        }
+        System.out.println(isPalindrome);
     }
 }
