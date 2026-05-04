@@ -44,19 +44,24 @@ public class strings_basics {
         // System.out.println(count);
 
         // Palindrome String
-        String str = "madam";
-        int i = 0;
-        int j = str.length() - 1;
-        boolean isPalindrome = true;
+        // String str = "madam";
+        // int i = 0;
+        // int j = str.length() - 1;
+        // boolean isPalindrome = true;
 
-        while(i < j) {
-            if(str.charAt(i) != str.charAt(j)) {
-                isPalindrome = false;
-                break;
-            }
-            i++;
-            j--;
-        }
-        System.out.println(isPalindrome);
+        // while(i < j) {
+        //     if(str.charAt(i) != str.charAt(j)) {
+        //         isPalindrome = false;
+        //         break;
+        //     }
+        //     i++;
+        //     j--;
+        // }
+        // System.out.println(isPalindrome);
+
+        // Passing string to method : Pass by reference
+        String str = "Satyarth";
+        // changeName(str);
+        System.out.println(str); // it will print "Satyarth" because strings are immutable
     }
 }
