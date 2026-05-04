@@ -7,7 +7,7 @@ public class strings_basics {
         String name = "Satyarth is a good boy";
         System.out.println(name);
 
-        // String Methods
+        // String Methods - Built in functions in String class
         // System.out.println(name.length());
         // System.out.println(name.toUpperCase());
         // System.out.println(name.toLowerCase());
@@ -20,17 +20,18 @@ public class strings_basics {
         //     System.out.print(name.charAt(i) + " ");
         // }
 
-        System.out.println("Enter your sentence");
+        // System.out.println("Enter your sentence");
 
-        Scanner sc = new Scanner(System.in);
-        String str = sc.next(); // it will take only the first word as input, if we want to take the entire line as input then we have to use nextLine() method
+        // Scanner sc = new Scanner(System.in);
+        // String str = sc.next(); // it will take only the first word as input, if we want to take the entire line as input then we have to use nextLine() method
 
-        System.out.println("Enter 2nd sentence");
-        String str2 = sc.nextLine(); // it will take the entire line as input
+        // System.out.println("Enter 2nd sentence");
+        // String str2 = sc.nextLine(); // it will take the entire line as input
 
-        System.out.println(str);
-        System.out.println(str2);
+        // System.out.println(str);
+        // System.out.println(str2);
 
-        
+
+
     }
 }
