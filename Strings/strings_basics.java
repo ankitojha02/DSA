@@ -64,11 +64,18 @@ public class strings_basics {
         // // changeName(str);
         // System.out.println(str); // it will print "Satyarth" because strings are immutable
         
-        String FirstName = "Ankit";
-        String LastName = "Ojha";
-        String FullName = FirstName + " " + LastName; // Concatenation of strings
-        System.out.println(FullName);
-        System.out.println(FirstName.concat(" ").concat(LastName)); // Concatenation of strings using concat() method
+        // Concatenation of strings
+        // String FirstName = "Ankit";
+        // String LastName = "Ojha";
+        // String FullName = FirstName + " " + LastName; // Concatenation of strings
+        // System.out.println(FullName);
+        // System.out.println(FirstName.concat(" ").concat(LastName)); // Concatenation of strings using concat() method
+         
+        // Concatenation of string and integer
+        int a = 10;
+        String str = "The value of a is: " + a; // Concatenation of string and integer
+        System.out.println(str);
         
+
     }
 }
