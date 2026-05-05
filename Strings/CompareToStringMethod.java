@@ -13,5 +13,6 @@ public class CompareToStringMethod {
         System.out.println(s1.compareTo(s3)); // 0
         System.out.println(s1.compareTo(s4)); // positive integer
         System.out.println(s4.compareTo(s1)); // negative integer
+        
     }
 }
