@@ -76,6 +76,19 @@ public class strings_basics {
         String str = "The value of a is: " + a; // Concatenation of string and integer
         System.out.println(str);
         
+        System.out.println("ankit" + 10 + 20); // it will print "ankit1020" because the concatenation of string and integer is done from left to right
+        System.out.println(10 + 20 + "ankit"); // it will print "30ankit" because the addition of integers is done first and then concatenation of string and integer
+        System.out.println('A' + 10); // it will print 75 because the ASCII value of 'A' is 65 and 65 + 10 = 75
+        
+        int b = 20;
+        String  w = Integer.toString(b); // it will convert the integer to string
+        System.out.println(w + 10); // it will print "2010" because the concatenation of string and integer is done from left to right
 
+        // String to charaecter array
+        String name = "Satyarth";
+        char[] charArray = name.toCharArray(); // it will convert the string to character array
+        for (char c : charArray) {
+            System.out.print(c + " ");  
+        }
     }
 }
