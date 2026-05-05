@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class strings_basics {
     public static void main(String[] args) {
-        String name = "Satyarth is a good boy";
-        System.out.println(name);
+        String s1 = "Satyarth is a good boy";
+        System.out.println(s1);
 
         // String Methods - Built in functions in String class
         // System.out.println(name.length());
@@ -59,9 +59,11 @@ public class strings_basics {
         // }
         // System.out.println(isPalindrome);
 
-        // Passing string to method : Pass by reference
-        String str = "Satyarth";
-        // changeName(str);
-        System.out.println(str); // it will print "Satyarth" because strings are immutable
+        // Passing string to method : Pass by value
+        // String str = "Satyarth";
+        // // changeName(str);
+        // System.out.println(str); // it will print "Satyarth" because strings are immutable
+        
+        
     }
 }
