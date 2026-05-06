@@ -15,9 +15,17 @@ public class substrings {
         // }
 
         // How to change some letters in the string
-        String name = "radkika";
-        String newName = name.substring(0, 3) + "h" + name.substring(4);
-        System.out.println(newName);
+        // String name = "radkika";
+        // String newName = name.substring(0, 3) + "h" + name.substring(4);
+        // System.out.println(newName);
+
+        // String Comparison
+        String s1 = "Ankit";
+        String s2 = new String("Ankit");
+
+        System.out.println(s1.equals(s2)); // it will compare the content of the string and return true
+        System.out.println(s1 == s2); // it will compare the reference of the string and return false because s1 and s2 are two different objects in the memory
+
 
     }
 }
