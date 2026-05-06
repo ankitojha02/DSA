@@ -7,6 +7,7 @@ public class strings_basics {
         String s1 = "Satyarth is a good boy";
         System.out.println(s1);
 
+        // String is immutable in Java, which means that once a string is created, it cannot be changed. If we try to change the string, a new string will be created in the memory and the reference variable will point to the new string.
         // String Methods - Built in functions in String class
         // System.out.println(name.length());
         // System.out.println(name.toUpperCase());
