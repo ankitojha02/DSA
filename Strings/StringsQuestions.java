@@ -38,7 +38,7 @@ public class StringsQuestions {
         // Most frequent character in a string: Given a string, find the most frequent character in the string. For example, in the string "hello world", the most frequent character is 'l' because it appears 3 times.
         String str = "hello world";
         // int[] freq = new int[256]; // Assuming ASCII character set
-
+        // Frequency array to count the frequency of each character in the string
         // for (int i = 0; i < str.length(); i++) {
         //     freq[str.charAt(i)]++;
         // }
