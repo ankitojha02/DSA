@@ -56,7 +56,7 @@ public class StringsQuestions {
         // System.out.println("Most frequent character: " + mostFrequentChar);
         // System.out.println("Frequency: " + maxFreq);
 
-        // sliding window technique
+        // sliding window technique - good approach for finding the most frequent character in a string
         int n = str.length();
         int maxFreq = -1;
         char ans = str.charAt(0);
