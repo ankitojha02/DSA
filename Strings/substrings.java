@@ -26,6 +26,6 @@ public class substrings {
         System.out.println(s1.equals(s2)); // it will compare the content of the string and return true
         System.out.println(s1 == s2); // it will compare the reference of the string and return false because s1 and s2 are two different objects in the memory
 
-
+        
     }
 }
