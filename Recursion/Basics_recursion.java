@@ -4,14 +4,14 @@ import java.util.Scanner;
 
 public class Basics_recursion {
 
-    static int n;
+    // static int n;
     public static void main(String[] args) {
         // print(5);
 
         Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
+       int n = sc.nextInt();
         
-        print(1);
+        print(n);
     }
 
 //    public static void print(int n) {
@@ -33,13 +33,24 @@ public class Basics_recursion {
     //     print(i+1, n);
     // }
 
-// Method 2 : Printing from n to 1 using recursion
+// Method 2 : Printing from 1 to n using recursion
+    // public static void print(int i){
+    //     if(i>n){
+    //         return;
+    //     }
+    //     System.out.println(i);
+    //     print(i+1);
+        
+    // }
+
+// Method 3 : Printing from 1 to n using recursion
     public static void print(int i){
-        if(i>n){
+        if(i==0){
             return;
         }
+         print(i-1);
         System.out.println(i);
-        print(i+1);
+       
         
     }
 }
