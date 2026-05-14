@@ -11,7 +11,9 @@ public class Basics_recursion {
         Scanner sc = new Scanner(System.in);
        int n = sc.nextInt();
         
-        print(n);
+        // print(n);
+
+        System.out.println(factorial(n));
     }
 
 //    public static void print(int n) {
@@ -44,13 +46,21 @@ public class Basics_recursion {
     // }
 
 // Method 3 : Printing from 1 to n using recursion
-    public static void print(int i){
-        if(i==0){
-            return;
-        }
-         print(i-1);
-        System.out.println(i);
+    // public static void print(int i){
+    //     if(i==0){
+    //         return;
+    //     }
+    //      print(i-1);
+    //     System.out.println(i);
        
         
+    // }
+
+    public static int factorial(int n){
+        if(n==0){
+            return 1;
+        }
+       
+        return n * factorial(n-1);
     }
 }
