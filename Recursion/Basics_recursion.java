@@ -9,11 +9,12 @@ public class Basics_recursion {
         // print(5);
 
         Scanner sc = new Scanner(System.in);
-       int n = sc.nextInt();
-        
+    //    int n= sc.nextInt();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
         // print(n);
 
-        System.out.println(factorial(n));
+        System.out.println(power(a,b));
     }
 
 //    public static void print(int n) {
@@ -56,11 +57,20 @@ public class Basics_recursion {
         
     // }
 
-    public static int factorial(int n){
-        if(n==0){
+    // public static int factorial(int n){
+    //     if(n==0 || n==1){
+    //         return 1;
+    //     }
+       
+    //     return n * factorial(n-1);
+    // }
+
+    // 'a' raise to power 'b' using recursion
+
+    public static int power(int a, int b){
+        if(b==0){
             return 1;
         }
-       
-        return n * factorial(n-1);
+        return a * power(a, b-1);
     }
 }
