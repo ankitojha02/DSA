@@ -11,12 +11,12 @@ public class Basics_recursion {
         Scanner sc = new Scanner(System.in);
     //    int n= sc.nextInt();
         int a = sc.nextInt();
-        // int b = sc.nextInt();
+        int b = sc.nextInt();
         // print(n);
 
         // System.out.println(power(a,b));
         // System.out.println(reverse(a, 0));
-          System.out.println(sum(a));
+          System.out.println(gcd(a, b));
     }
 
 //    public static void print(int n) {
@@ -100,11 +100,19 @@ public class Basics_recursion {
     // return reverse(n/10, rev);
 
     // Sum of natural numbers using recursion
-    public static int sum(int n){
-        if(n==0){
-            return 0;
+    // public static int sum(int n){
+    //     if(n==0){
+    //         return 0;
+    //     }
+    //     return n + sum(n-1);
+    // }
+
+    // GCD of two numbers using recursion
+    public static int gcd(int a, int b){
+        if(b==0){
+            return a;
         }
-        return n + sum(n-1);
+        return gcd(b, a%b);
     }
 
 }
