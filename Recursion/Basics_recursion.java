@@ -11,12 +11,14 @@ public class Basics_recursion {
         Scanner sc = new Scanner(System.in);
     //    int n= sc.nextInt();
         int a = sc.nextInt();
-        int b = sc.nextInt();
+        // int b = sc.nextInt();
         // print(n);
 
         // System.out.println(power(a,b));
         // System.out.println(reverse(a, 0));
-          System.out.println(gcd(a, b));
+        //   System.out.println(gcd(a, b));
+
+        System.out.println(fibo(a));
     }
 
 //    public static void print(int n) {
@@ -108,12 +110,18 @@ public class Basics_recursion {
     // }
 
     // GCD of two numbers using recursion
-    public static int gcd(int a, int b){
-        if(b==0){
-            return a;
+    // public static int gcd(int a, int b){
+    //     if(b==0){
+    //         return a;
+    //     }
+    //     return gcd(b, a%b);
+    // }
+    
+      public static int fibo(int n){
+        if(n==0 || n==1){
+            return n;
         }
-        return gcd(b, a%b);
+        return fibo(n-1) + fibo(n-2);
     }
-
 }
 
