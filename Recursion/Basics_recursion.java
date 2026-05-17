@@ -18,7 +18,9 @@ public class Basics_recursion {
         // System.out.println(reverse(a, 0));
         //   System.out.println(gcd(a, b));
 
-        System.out.println(fibo(a));
+        // System.out.println(fibo(a));
+
+        System.out.println(stairs(a));
     }
 
 //    public static void print(int n) {
@@ -117,11 +119,19 @@ public class Basics_recursion {
     //     return gcd(b, a%b);
     // }
     
-      public static int fibo(int n){
-        if(n==0 || n==1){
-            return n;
+    //   public static int fibo(int n){
+    //     if(n==0 || n==1){
+    //         return n;
+    //     }
+    //     return fibo(n-1) + fibo(n-2);
+    // }
+
+    // Ways to climb stairs using recursion - Time complexity - O(2^n)
+    public static int stairs(int n){
+        if(n==2|| n==1){
+            return n;   
         }
-        return fibo(n-1) + fibo(n-2);
+        return stairs(n-1) + stairs(n-2);
     }
 }
 
