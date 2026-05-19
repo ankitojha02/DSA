@@ -20,7 +20,8 @@ public class Basics_recursion {
 
         // System.out.println(fibo(a));
 
-        System.out.println(stairs(a));
+        // System.out.println(stairs(a));
+        System.out.println(unique(a, a));
     }
 
 //    public static void print(int n) {
@@ -127,14 +128,37 @@ public class Basics_recursion {
     // }
 
     // Ways to climb stairs using recursion - Time complexity - O(2^n)
-    public static int stairs(int n){
-        if(n==2|| n==1){
-            return n;   
-        }
-        return stairs(n-1) + stairs(n-2);
-    }
+    // public static int stairs(int n){
+    //     if(n==2|| n==1){
+    //         return n;   
+    //     }
+    //     return stairs(n-1) + stairs(n-2);
+    // }
 
-    // Unique paths
-    
+    // Unique paths - Time complexity - O(2^n)
+    // public static int unique(int m, int n) {
+    //     if (m == 1 || n == 1) {
+    //         return 1;
+    //     }
+    //     return unique(m - 1, n) + unique(m, n - 1);
+    // }
+
+    //Method 2 : Unique paths - Helper method - Time complexity -  O(2^n)
+    public static int unique(int m, int n) {
+        return helper(m, n, 0, 0);  
+    }
+    public static int helper(int m, int n, int i, int j) {
+        if (i == m - 1 && j == n - 1) {
+            return 1;
+        }
+        if (i >= m || j >= n) {
+            return 0;
+        }
+        int right = helper(m, n, i, j + 1);
+        int down = helper(m, n, i + 1, j);
+        return right + down;
+    }
+   
+
 }
 
