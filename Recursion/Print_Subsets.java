@@ -10,11 +10,14 @@ public class Print_Subsets {
             System.out.println(curr);
             return;
         }
-
+        // Pick and skip 
         // Include the current character
         subsets(s, idx+1, curr + s.charAt(idx));
 
         // Exclude the current character
         subsets(s, idx+1, curr);
     }
+
+    //Generate Parentheses
+   
 }
