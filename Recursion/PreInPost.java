@@ -2,7 +2,7 @@ package Recursion;
 
 public class PreInPost {
     public static void main(String[] args) {
-        int n = 3;
+        int n = 2;
         preInPost(n);
     }
     public static void preInPost(int n){
