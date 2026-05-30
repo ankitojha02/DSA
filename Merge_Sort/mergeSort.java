@@ -11,7 +11,7 @@ public class mergeSort {
     }
 
     // Time Complexity: O(n log n) - due to the divide and conquer approach
-    // Space Complexity: O(n) - due to the temporary arrays used for merging
+    // Space Complexity: O(n) - due to the temporary arrays used for merging arrays
     public static void mergeSort(int[] arr) {
         int n = arr.length;
 
