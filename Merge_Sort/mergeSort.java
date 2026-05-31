@@ -41,7 +41,7 @@ public class mergeSort {
     private static void merge(int[] arr, int[] a, int[] b) {
         int i = 0, j = 0, k = 0;
         while (i < a.length && j < b.length) {
-            if (a[i] < b[j]) {
+            if (a[i] <= b[j]) {
                 arr[k++] = a[i++];
             } else {
                 arr[k++] = b[j++];
