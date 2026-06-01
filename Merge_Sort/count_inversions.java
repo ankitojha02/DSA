@@ -1,6 +1,8 @@
 package Merge_Sort;
 
 public class count_inversions {
+
+    // This program counts the number of inversions in an array using a modified merge sort algorithm.
     public static void main(String[] args) {
         int[] arr = {8, 4, 2, 1};
         System.out.println("Number of inversions: " + countInversions(arr));
