@@ -3,7 +3,7 @@ package Cyclic_sort;
 public class missing_in_array {
     public static void main(String[] args) {
         //missing in array - using cyclic sort
-        int[] arr = {5, 2, 4, 8, 3, 7, 1};
+        int[] arr = {5, 2, 4, 6, 3, 7, 1};
         System.out.println("Missing number: " + missingNumber(arr));
 
     }
@@ -33,4 +33,6 @@ public class missing_in_array {
         arr[i] = arr[j];
         arr[j] = temp;
     }
+
+    // Leetcode 268 - Homework
 }
