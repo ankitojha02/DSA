@@ -9,7 +9,7 @@ public class first_missing_positive {
     // Time complexity: O(n)
     public static int firstMissingPositive(int[] nums) {
         int n = nums.length;
-        // Place each number in its correct position
+        // Place each number in its correct position (i.e., nums[i] should be i + 1)
         int i = 0;
         while (i < n) {
             if (nums[i] > 0 && nums[i] <= n && nums[i] != nums[nums[i] - 1]) {
