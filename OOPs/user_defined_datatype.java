@@ -5,6 +5,12 @@ public class user_defined_datatype {
         String name;
         int age;
         double cgpa;
+
+        void display() {
+            System.out.println("Name: " + name);
+            System.out.println("Age: " + age);
+            System.out.println("CGPA: " + cgpa);
+        }
     }
     public static void main(String[] args) {
         Student student1 = new Student(); // Object banaya
@@ -17,12 +23,13 @@ public class user_defined_datatype {
         student2.age = 22;
         student2.cgpa = 3.8;
 
-        System.out.println("Student 1: " + student1.name + ", Age: " + student1.age + ", CGPA: " + student1.cgpa);
-        System.out.println("Student 2: " + student2.name + ", Age: " + student2.age + ", CGPA: " + student2.cgpa);
+        student1.display();
+        student2.display();
 
         // Passing object to method
         printStudentDetails(student1);
     }
+    //Pass by reference
     public static void printStudentDetails(Student student) {
         System.out.println("Student Details: " + student.name + ", Age: " + student.age + ", CGPA: " + student.cgpa);
     }
