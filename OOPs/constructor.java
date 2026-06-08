@@ -8,7 +8,7 @@ public class constructor {
 
         // Constructor to initialize the Car object
         Car(String brand, String model, int year) {
-            this.brand = brand;
+            this.brand = brand; // This keyword is used to refer to the current object's instance variable
             this.model = model;
             this.year = year;
         }
