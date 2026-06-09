@@ -8,7 +8,7 @@
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=24&pause=1000&color=36BCF7&center=true&vCenter=true&width=700&lines=Data+Structures+%26+Algorithms;Java+DSA+Practice+Repository;Problem+Solving+Journey;Learning+Every+Day+%F0%9F%9A%80" />
 
-<img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true" />
+<img src="https://github-readme-stats.vercel.app/api?username=ankitojha02&show_icons=true" />
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=ankitojha02" />
 
