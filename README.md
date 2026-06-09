@@ -10,9 +10,9 @@
 
 <img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true" />
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=YOUR_USERNAME" />
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=ankitojha02" />
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME" />
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=ankitojha02" />
 
 </div>
 
