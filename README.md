@@ -1,85 +1,217 @@
 # 🚀 DSA Practice Repository
 
-Welcome to my Data Structures & Algorithms (DSA) practice repository!  
-This repository contains my daily practice problems, implementations, and concepts written in **Java**.
+<div align="center">
+
+![Java](https://img.shields.io/badge/Language-Java-orange?style=for-the-badge&logo=java)
+![VS Code](https://img.shields.io/badge/Editor-VS%20Code-blue?style=for-the-badge&logo=visualstudiocode)
+![DSA](https://img.shields.io/badge/Data%20Structures%20%26%20Algorithms-Practice-success?style=for-the-badge)
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=24&pause=1000&color=36BCF7&center=true&vCenter=true&width=700&lines=Data+Structures+%26+Algorithms;Java+DSA+Practice+Repository;Problem+Solving+Journey;Learning+Every+Day+%F0%9F%9A%80" />
+
+</div>
 
 ---
 
-## 📌 About
+## 📖 About
 
-This repo is created to:
+Welcome to my **Data Structures & Algorithms (DSA)** practice repository.
+
+This repository contains my daily coding practice, implementations, and problem-solving journey using **Java**.
+
+### 🎯 Goals
 
 - Strengthen problem-solving skills
 - Master Data Structures & Algorithms
-- Prepare for coding interviews (FAANG / Product-based companies)
-- Track my daily progress
+- Prepare for coding interviews
+- Improve logical thinking
+- Track daily progress
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
-- Language: **Java**
-- IDE: **VS Code**
-- Concepts: **DSA, Problem Solving, Optimization**
-
-
----
-
-## 🔍 Topics Covered
-
-- ✅ Arrays
-- ✅ Binary Search (on answers, classic problems)
-- ✅ Sorting (Bubble, Selection)
-- ✅ Patterns
-- ✅ Time & Space Complexity
-- 🔄 More coming soon...
+| Technology | Usage |
+|------------|--------|
+| Java | Programming Language |
+| VS Code | Development Environment |
+| Git | Version Control |
+| GitHub | Repository Hosting |
 
 ---
 
-## 💡 Key Problems Implemented
+# 📂 Topics Covered
 
-- Aggressive Cows 🐄
-- Koko Eating Bananas 🍌
-- Smallest Divisor Problem
-- Binary Search Variations
+## ✅ Arrays
 
----
-
-## 📈 My Goal
-
-- Solve **300+ DSA problems**
-- Master **Binary Search, DP, Graphs**
-- Crack top product-based companies 💼
+- Array Basics
+- Traversal
+- Input & Output
+- Searching
+- Array Problems
 
 ---
 
-## 🧠 Learning Approach
+## ✅ Binary Search
 
-- Understand brute force first
-- Optimize step by step
-- Focus on patterns (especially Binary Search on Answer)
-- Write clean & readable code
-
----
-
-## 📅 Progress Tracking
-
-I practice DSA regularly and keep updating this repository.  
-Stay tuned for more problems and optimized solutions 🚀
+- Binary Search Basics
+- Search in Sorted Array
+- Time Complexity Analysis
 
 ---
 
-## 🤝 Connect With Me
+## ✅ Sorting Algorithms
 
-- LinkedIn: *https://www.linkedin.com/in/ankit-ojha-763387360/*
-- Twitter/X: *https://x.com/Ankit_Ojha_01*
-- Leetcode: *https://leetcode.com/u/ankit3059/*
+### Bubble Sort
+- Ascending Sort
+- Descending Sort
+- Optimization
+
+### Cyclic Sort
+- Missing Number Problems
+- Duplicate Number Problems
+
+### Merge Sort
+- Divide and Conquer
+- Recursive Merge Sort
 
 ---
 
-## ⭐ If you find this helpful
+## ✅ Methods
 
-Give this repo a ⭐ and follow my journey!
+- Method Creation
+- Parameters
+- Return Types
+- Function Reusability
 
+---
 
+## ✅ OOPs Concepts
 
+### Encapsulation
+### Polymorphism
+### Constructors
+### Static Keyword
+### Final Keyword
+### Classes & Objects
+
+---
+
+## ✅ Pattern Printing
+
+- Star Patterns
+- Number Patterns
+- Pyramid Patterns
+- Hollow Patterns
+
+---
+
+## ✅ Recursion
+
+- Recursive Functions
+- Base Condition
+- Recursive Calls
+- Factorial
+- Fibonacci
+- Pattern Problems
+
+---
+
+## ✅ Strings
+
+- String Basics
+- String Methods
+- String Manipulation
+- String Problems
+
+---
+
+## ✅ Time & Space Complexity
+
+- Big O Notation
+- Best Case
+- Average Case
+- Worst Case
+- Complexity Analysis
+
+---
+
+# 📊 Learning Progress
+
+| Topic | Status |
+|--------|---------|
+| Arrays | ✅ Completed |
+| Binary Search | ✅ Completed |
+| Bubble Sort | ✅ Completed |
+| Cyclic Sort | ✅ Completed |
+| Merge Sort | ✅ Completed |
+| Methods | ✅ Completed |
+| OOPs | ✅ Completed |
+| Pattern Printing | ✅ Completed |
+| Recursion | ✅ Completed |
+| Strings | ✅ Completed |
+| Time Complexity | ✅ Completed |
+
+### Overall Progress
+
+```text
+██████████░░░░░░░░░░ 50%
+```
+
+---
+
+# 🗺️ Upcoming Topics
+
+- [ ] Linked List
+- [ ] Stack
+- [ ] Queue
+- [ ] HashMap
+- [ ] HashSet
+- [ ] Trees
+- [ ] Binary Search Tree
+- [ ] Heap
+- [ ] Trie
+- [ ] Graph
+- [ ] Dynamic Programming
+- [ ] Greedy Algorithms
+- [ ] Backtracking
+
+---
+
+# 📅 Daily Practice Rule
+
+```java
+while(true){
+    learn();
+    code();
+    improve();
+}
+```
+
+---
+
+# 📈 Repository Stats
+
+> Consistency beats intensity.
+
+Solve problems daily, learn continuously, and improve gradually.
+
+---
+
+## 🌟 Connect With Me
+
+### Ankit Kumar Ojha
+
+- MERN Stack Developer
+- Java Developer
+- DSA Enthusiast
+- Future Software Engineer
+
+---
+
+<div align="center">
+
+### ⭐ If you like this repository, don't forget to star it!
+
+🚀 Happy Coding 🚀
+
+</div>

@@ -18,10 +18,11 @@ class Complex {
         this.y += other.y;
     }
 
-    Complex multiply(Complex other) {
+    void multiply(Complex other) {
         int realPart = this.x * other.x - this.y * other.y;
         int imaginaryPart = this.x * other.y + this.y * other.x;
-        return new Complex(realPart, imaginaryPart);
+        this.x = realPart;
+        this.y = imaginaryPart;
     }
 }
 public class complex_number {
@@ -34,7 +35,8 @@ public class complex_number {
         c2.printComplex();
         // Perform operations
         c1.add(c2);
-        Complex product = c1.multiply(c2);
+        Complex product = new Complex(c1.x, c1.y); // Create a copy of c1 for multiplication
+        product.multiply(c2);
 
         // Display results
         System.out.println("Sum: " + c1.x + " + " + c1.y + "i");
