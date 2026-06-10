@@ -1,4 +1,6 @@
 package Arrays;
+
+// Time Complexity: O(1) for add operation (amortized), O(n) for resize operation
  class ArrayList{
      int[] arr;
      int idx = 0;
@@ -27,6 +29,20 @@ package Arrays;
                 newArr[i] = arr[i];
             }
             arr = newArr;
+        }
+
+        int get(int index) {
+            if (index < 0 || index >= size) {
+                throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+            }
+            return arr[index];
+        }
+
+        void set(int index, int value) {
+            if (index < 0 || index >= size) {
+                throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+            }
+            arr[index] = value;
         }
 
         void display() {
