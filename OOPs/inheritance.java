@@ -21,7 +21,7 @@ public class inheritance {
         dog.eat(); // Inherited method
         dog.bark(); // Dog's own method
 
-        //Multiple Inheritance using Interfaces
+        //Multiple Inheritance using Interfaces as Multiple inheritance is not supported in Java
         interface  Flyable  {
             void fly();
         }
