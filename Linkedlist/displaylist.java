@@ -34,5 +34,14 @@ public class displaylist {
         d.next = e;
 
         display(a);
+        displayRecursive(a);
+    }
+
+    public static void displayRecursive(Node head) {
+        if (head == null) {
+            return;
+        }
+        System.out.print(head.val + " ");
+        displayRecursive(head.next);
     }
 }
