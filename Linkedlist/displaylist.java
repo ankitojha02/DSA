@@ -35,7 +35,7 @@ public class displaylist {
 
         display(a);
         displayRecursive(a);
-        getNode(a, 3);
+        System.out.println("Node at index 3: " + getNode(a, 3));
     }
 
     public static void displayRecursive(Node head) {
@@ -46,17 +46,23 @@ public class displaylist {
         displayRecursive(head.next);
     }
 
-    public static void getNode(Node head, int index) {
+    public static int getNode(Node head, int index) {
         Node temp = head;
-        int count = 0;
-        while (temp != null) {
-            if (count == index) {
-                System.out.println("Node at index " + index + ": " + temp.val);
-                return;
-            }
-            count++; // why?  Because we want to keep track of the current index while traversing the list
+        // int count = 0;
+        // while (temp != null) {
+        //     if (count == index) {
+        //         System.out.println("Node at index " + index + ": " + temp.val);
+        //         return;
+        //     }
+        //     count++; // why?  Because we want to keep track of the current index while traversing the list
+        //     temp = temp.next;
+        // }
+        // System.out.println("Index out of bounds");
+
+        // using for loop
+        for (int i = 1; i <= index; i++) {
             temp = temp.next;
         }
-        System.out.println("Index out of bounds");
+        return temp.val;
     }
 }
