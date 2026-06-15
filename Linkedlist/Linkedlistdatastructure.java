@@ -60,6 +60,18 @@ class Linkedlist{
         size++;
     }
 
+    void get(int index) {
+        if(index < 0 || index >= size){
+            System.out.println("Index out of bounds");
+            return;
+        }
+        Node temp = head;
+        for(int i = 0; i < index; i++){
+            temp = temp.next; // temp ko index tak le jao, kyunki hume index pe wale node ko print karna hai
+        }
+        System.out.println("Node at index " + index + ": " + temp.val);
+    }
+    
     boolean search(int val) {
         
         Node temp = head;
@@ -114,6 +126,8 @@ public class Linkedlistdatastructure {
         
         list.addAtIndex(3, 35);
         list.display();
+
+        list.get(3);
     }
    
 }
