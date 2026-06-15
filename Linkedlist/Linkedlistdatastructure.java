@@ -37,7 +37,31 @@ class Linkedlist{
         size++;
     }
 
+    void addAtIndex(int index, int val) {
+        if(index < 0 || index > size){
+            System.out.println("Index out of bounds");
+            return;
+        }
+        if(index == 0){
+            addAtHead(val);
+            return;
+        }
+        if(index == size){
+            addAtEnd(val);
+            return;
+        }
+        Node newNode = new Node(val);
+        Node temp = head;
+        for(int i = 1; i < index; i++){
+            temp = temp.next; // temp ko index-1 tak le jao, kyunki hume index ke pehle wale node ke next me newNode ko link karna hai
+        }
+        newNode.next = temp.next; // newNode ke next me temp ke next ko link kiya, kyunki newNode ab index pe aayega, to uske next me temp ke next ko link karna padega
+        temp.next = newNode; // temp ke next me newNode ko link kiya, kyunki temp ke next me newNode ko link karna hai
+        size++;
+    }
+
     boolean search(int val) {
+        
         Node temp = head;
         while(temp != null){
             if(temp.val == val){
@@ -75,6 +99,7 @@ public class Linkedlistdatastructure {
         list.addAtEnd(20);
         list.addAtEnd(30);
         list.addAtEnd(40);
+        list.addAtEnd(50);
 
         list.display();
         list.addAtHead(50);
@@ -86,6 +111,9 @@ public class Linkedlistdatastructure {
         
         
         System.out.println("Is 20 present in the list? " + list.search(200));
+        
+        list.addAtIndex(3, 35);
+        list.display();
     }
    
 }
