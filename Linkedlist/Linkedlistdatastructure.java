@@ -71,7 +71,7 @@ class Linkedlist{
         }
         System.out.println("Node at index " + index + ": " + temp.val);
     }
-    
+
     boolean search(int val) {
         
         Node temp = head;
@@ -93,6 +93,23 @@ class Linkedlist{
             tail = null; // tail ko null kardo, kyunki ab list empty hai
             size--;
         }
+
+    void deleteAtIndex(int index) {
+        if(index < 0 || index >= size){
+            System.out.println("Index out of bounds");
+            return;
+        }
+        if(index == 0){
+            deleteAtHead();
+            return;
+        }
+        Node temp = head;
+        for(int i = 1; i < index; i++){
+            temp = temp.next; // temp ko index-1 tak le jao, kyunki hume index ke pehle wale node ke next me index ke next ko link karna hai
+        }
+        temp.next = temp.next.next; // temp ke next me temp ke next ke next ko link kiya, kyunki hume index ke node ko delete karna hai
+        size--;
+    }
 
     void display(){
         Node temp = head;
@@ -128,6 +145,9 @@ public class Linkedlistdatastructure {
         list.display();
 
         list.get(3);
+
+        list.deleteAtIndex(3);
+        list.display();
     }
    
 }
