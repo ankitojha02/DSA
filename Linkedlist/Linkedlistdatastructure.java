@@ -36,11 +36,22 @@ class Linkedlist{
         }
         size++;
     }
-    
-        void deleteAtHead() {
-            if(head == null){
-                System.out.println("List is empty");
-                return;
+
+    boolean search(int val) {
+        Node temp = head;
+        while(temp != null){
+            if(temp.val == val){
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
+
+    void deleteAtHead() {
+        if(head == null){
+            System.out.println("List is empty");
+            return;
             }
             head = head.next; // head ke next me head ko link kiya, kyunki head ko delete karna hai, to uske next me jo node hai, usko head banado
             tail = null; // tail ko null kardo, kyunki ab list empty hai
@@ -74,6 +85,7 @@ public class Linkedlistdatastructure {
         System.out.println("Size of the list: " + list.size);
         
         
+        System.out.println("Is 20 present in the list? " + list.search(200));
     }
    
 }
