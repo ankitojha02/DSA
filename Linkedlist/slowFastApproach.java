@@ -25,17 +25,36 @@ public class slowFastApproach {
 
         // Find the middle of the linked list using slow and fast pointer approach
         middleNode(a);
+        deleteMiddleNode(a);
     }
 
     public static void middleNode(Node head) {
         Node slow = head;
         Node fast = head;
 
-        while (fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) { // note order of condition is important, because if we check for fast.next before checking for fast, then we will get null pointer exception when fast is null
             slow = slow.next;
             fast = fast.next.next;
         }
 
         System.out.println("Middle node: " + slow.val);
+    }
+
+    public static void deleteMiddleNode(Node head) {
+        Node slow = head;
+        Node fast = head;
+        Node prev = null;
+
+        while (fast != null && fast.next != null) {
+            prev = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        if (prev != null) {
+            prev.next = slow.next; // delete the middle node by linking the previous node to the next node of the middle node
+        }
+
+        System.out.println("Middle node deleted");
     }
 }
