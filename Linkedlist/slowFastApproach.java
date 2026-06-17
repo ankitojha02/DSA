@@ -57,4 +57,27 @@ public class slowFastApproach {
 
         System.out.println("Middle node deleted");
     }
+
+    // Kth from end of the linked list using slow and fast pointer approach
+    public static void kthFromEnd(Node head, int k) {
+        Node slow = head;
+        Node fast = head;
+
+        // Move fast pointer k steps ahead
+        for (int i = 0; i < k; i++) {
+            if (fast == null) {
+                System.out.println("k is greater than the length of the linked list");
+                return;
+            }
+            fast = fast.next;
+        }
+
+        // Move both pointers until fast reaches the end
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        System.out.println("Kth node from the end: " + slow.val);
+    }
 }
