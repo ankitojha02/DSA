@@ -114,4 +114,48 @@ public class slowFastApproach {
 
         System.out.println("Nth node from the end deleted");
     }
+
+    // Homework: Solve Q.1721 Swapping Nodes in a Linked List using slow and fast pointer approach
+
+
+    // Intersection of two linked lists using two pointer approach
+    public static Node intersection(Node headA, Node headB) {
+       Node t1 = headA;
+       Node t2 = headB;
+
+       int size1 = 0;
+       int size2 = 0;
+         while (t1 != null) {
+              size1++;
+              t1 = t1.next;
+         }
+            while (t2 != null) {
+                size2++;
+                t2 = t2.next;
+            }
+            t1 = headA;
+            t2 = headB;
+
+            int diff = Math.abs(size1 - size2);
+
+            if (size1 > size2) {
+                for (int i = 0; i < diff; i++) {
+                    t1 = t1.next;
+                }
+            } else {
+                for (int i = 0; i < diff; i++) {
+                    t2 = t2.next;
+                }
+            }
+
+            while (t1 != null && t2 != null) {
+                if (t1 == t2) {
+                    return t1; // Intersection point found
+                }
+                t1 = t1.next;
+                t2 = t2.next;
+            }
+            return null; // No intersection
+        }
+
 }
