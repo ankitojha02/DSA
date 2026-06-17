@@ -79,5 +79,39 @@ public class slowFastApproach {
         }
 
         System.out.println("Kth node from the end: " + slow.val);
+
+    }
+
+    // Delete nth node from the end of the linked list using slow and fast pointer approach
+    public static void deleteNthFromEnd(Node head, int n) {
+        Node slow = head;
+        Node fast = head;
+        Node prev = null;
+
+        // Move fast pointer n steps ahead
+        for (int i = 0; i < n; i++) {
+            if (fast == null) {
+                System.out.println("n is greater than the length of the linked list");
+                return;
+            }
+            fast = fast.next;
+        }
+
+        // Move both pointers until fast reaches the end
+        while (fast != null) {
+            prev = slow;
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        // Delete the nth node from the end
+        if (prev != null) {
+            prev.next = slow.next;
+        } else {
+            // If prev is null, it means we are deleting the head node
+            head = head.next;
+        }
+
+        System.out.println("Nth node from the end deleted");
     }
 }
