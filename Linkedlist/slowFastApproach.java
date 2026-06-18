@@ -158,4 +158,19 @@ public class slowFastApproach {
             return null; // No intersection
         }
      // Homework: Odd even linked list
+
+     // Detect cycle in a linked list using slow and fast pointer approach
+     public static boolean hasCycle(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true; // Cycle detected
+            }
+        }
+        return false; // No cycle
+    }
 }
