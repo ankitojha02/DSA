@@ -194,4 +194,24 @@ public class slowFastApproach {
         }
         return null; // No cycle
     }
+
+    // Remove duplicates from a sorted linked list using slow and fast pointer approach
+    public static void removeDuplicates(Node head) {
+    if (head == null) {
+        return;
+    }
+        Node i = head;
+        Node j = head;
+        while (j != null) {
+            if (i.val == j.val) {
+                j = j.next; // Move j to the next node if it's a duplicate
+            } else {
+                i.next = j; // Link i to j if it's not a duplicate
+                i = i.next; // Move i to the next node
+                j = j.next; // Move j to the next node
+            }
+        }
+        i.next = null; // Set the next of the last unique node to null
+        // i now points to the last unique node
+    }
 }
