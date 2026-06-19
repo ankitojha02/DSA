@@ -173,4 +173,25 @@ public class slowFastApproach {
         }
         return false; // No cycle
     }
+
+    // Find the starting point of the cycle in a linked list using slow and fast pointer approach
+    public static Node cycleStart(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                // Cycle detected, now find the starting point
+                slow = head;
+                while (slow != fast) {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+                return slow; // Starting point of the cycle
+            }
+        }
+        return null; // No cycle
+    }
 }
