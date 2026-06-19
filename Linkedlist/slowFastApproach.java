@@ -214,4 +214,31 @@ public class slowFastApproach {
         i.next = null; // Set the next of the last unique node to null
         // i now points to the last unique node
     }
+
+
+    // VVI
+    // Remove all duplicates from sorted linked list 2 Leetcode 82
+    public static Node removeAllDuplicates(Node head) {
+        if (head == null) {
+            return null;
+        }
+        Node dummy = new Node(0); // Dummy node to handle edge cases
+        dummy.next = head;
+        Node prev = dummy; // Previous pointer to track the last unique node
+        Node current = head; // Current pointer to traverse the list
+        while (current != null) {
+            // Check if current node is a duplicate
+            if (current.next != null && current.val == current.next.val) {
+                // Skip all nodes with the same value
+                while (current.next != null && current.val == current.next.val) {
+                    current = current.next;
+                }
+                prev.next = current.next; // Link previous node to the next unique node
+            } else {
+                prev = prev.next; // Move previous pointer to the next unique node
+            }
+            current = current.next; // Move current pointer to the next node
+        }
+        return dummy.next; // Return the head of the modified list
+    }
 }
