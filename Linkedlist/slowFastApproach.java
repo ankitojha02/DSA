@@ -241,4 +241,45 @@ public class slowFastApproach {
         }
         return dummy.next; // Return the head of the modified list
     }
+
+    // Rotate a linked list to the right by k places using slow and fast pointer approach
+   public Node rotateRight(Node head, int k) {
+        int n = length(head);
+        if(head == null || head.next == null || k==0) return head;
+        k%=n;
+         if(k==0) return head;
+        
+        Node fast = head;
+        Node slow = head;
+
+        for(int i = 0; i < k+1; i++){
+            fast = fast.next;
+        }
+
+        while(fast!=null){
+            slow = slow.next;
+            fast = fast.next;
+        }
+        Node t = slow.next;
+        slow.next = null;
+        Node tail = t;
+        
+        while(tail.next != null){
+            tail = tail.next;
+        }
+
+        tail.next = head;
+
+        return t;
+    }
+
+    public int length(Node head){
+        int count = 0;
+        Node temp = head;
+        while(temp != null){
+            count++;
+            temp = temp.next;
+        }
+        return count;
+    }
 }
