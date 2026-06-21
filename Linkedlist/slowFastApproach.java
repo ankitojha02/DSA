@@ -242,7 +242,7 @@ public class slowFastApproach {
         return dummy.next; // Return the head of the modified list
     }
 
-    // Rotate a linked list to the right by k places using slow and fast pointer approach
+    // Rotate a linked list to the right by k places using slow and fast pointer approach - Time complexity O(n) and space complexity O(1)
    public Node rotateRight(Node head, int k) {
         int n = length(head);
         if(head == null || head.next == null || k==0) return head;
