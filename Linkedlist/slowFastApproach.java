@@ -323,13 +323,20 @@ public class slowFastApproach {
     private Node getMid(Node head) {
         Node slow = head;
         Node fast = head;
-     
+        Node prev = null; // To keep track of the node before slow  
 
         while (fast != null && fast.next != null) {
+            prev = slow;
             slow = slow.next;
             fast = fast.next.next;
         }
-        
+        if (prev != null) {
+            prev.next = null; // Split the list into two halves
+            return slow;
+        }
         return slow;
     }
+
+    // Homework : LeetCode challeng No. 86 Partition List
+    
 }
