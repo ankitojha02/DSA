@@ -307,4 +307,29 @@ public class slowFastApproach {
 
         return dummy.next; // Return the head of the merged list
     }
+
+    // Sort linked list using merge sort approach - Time complexity O(n log n) and space complexity O(log n) due to recursion stack
+    public Node sortList(Node head) {
+        if (head == null || head.next == null) {
+            return head; // Base case: if the list is empty or has only one node, it's already sorted
+        }
+        Node mid = getMid(head); // Find the middle node to split the list
+        Node left = sortList(head); // Recursively sort the left half
+        Node right = sortList(mid); // Recursively sort the right half
+        return mergeTwoLists(left, right); // Merge the two sorted halves   
+    }
+
+    // Helper function to find the middle node of the linked list
+    private Node getMid(Node head) {
+        Node slow = head;
+        Node fast = head;
+     
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        
+        return slow;
+    }
 }
