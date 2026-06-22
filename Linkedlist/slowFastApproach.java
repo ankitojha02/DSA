@@ -282,4 +282,29 @@ public class slowFastApproach {
         }
         return count;
     }
+
+
+    // Merge two sorted linked list using dummy node approach - Time complexity O(n) and space complexity O(1)
+    public Node mergeTwoLists(Node l1, Node l2) {
+        Node dummy = new Node(0); // Dummy node to handle edge cases
+        Node i = l1; // Pointer to build the merged list
+        Node j = l2; // Pointer to build the merged list
+        Node k = dummy; // Pointer to build the merged list
+
+        while (i != null && j != null) {
+            if (i.val < j.val) {
+                k.next = i;
+                i = i.next;
+            } else {
+                k.next = j;
+                j = j.next;
+            }
+            k = k.next;
+        }
+
+        // Attach the remaining nodes from either list
+        k.next = (i != null) ? i : j;
+
+        return dummy.next; // Return the head of the merged list
+    }
 }
