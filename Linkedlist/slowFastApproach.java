@@ -338,5 +338,46 @@ public class slowFastApproach {
     }
 
     // Homework : LeetCode challeng No. 86 Partition List
-    
+     public Node partition(Node head, int x) {
+        Node dummy1 = new Node(0);
+        Node dummy2 = new Node(-1);
+
+        Node t1 = dummy1;
+        Node t2 = dummy2;
+        
+        Node t = head;
+
+        while(t != null) {
+            if(t.val < x) {
+                t1.next = t;
+                t = t.next;
+                t1 = t1.next;
+            }
+            else{
+                t2.next = t;
+                t = t.next;
+                t2 = t2.next;
+            }
+        }
+        t1.next = dummy2.next;
+        t2.next = null;
+        return dummy1.next;
+
+    }
+
+    // Reverse a linked list - Time complexity O(n) and space complexity O(1)
+    // Time complexity is O(n) because we are traversing the entire list once, and space complexity is O(1) because we are using a constant amount of extra space (three pointers: prev, curr, forward).
+    public Node reverseList(Node head) {
+        Node prev = null;
+        Node curr = head;
+        Node forward = null; // This variable is not necessary, but can be used for clarity
+
+        while (curr != null) {
+            forward = curr.next; // Store the next node
+            curr.next = prev; // Reverse the link
+            prev = curr; // Move prev to current node
+            curr = forward; // Move to the next node
+        }
+        return prev; // New head of the reversed list
+    }
 }
