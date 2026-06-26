@@ -380,4 +380,44 @@ public class slowFastApproach {
         }
         return prev; // New head of the reversed list
     }
+
+    // using recursion
+    public Node reverseListRecursive(Node head) {
+        if (head == null || head.next == null) {
+            return head; // Base case: if the list is empty or has only one node, return it as is
+        }
+        Node newHead = reverseListRecursive(head.next); // Recursively reverse the rest of the list
+        head.next.next = head; // Make the next node point to the current node
+        head.next = null; // Set the next of the current node to null
+        return newHead; // Return the new head of the reversed list
+    }
+
+    // Palindrome linked list - Time complexity O(n) and space complexity O(1)
+     public boolean isPalindrome(Node head) {
+        if(head == null || head.next == null) return true;
+
+        Node slow = head;
+        Node prev = null;
+        Node fast = head;
+
+        while(fast != null && fast.next != null) {
+            fast = fast.next.next;
+            prev = slow;
+            slow = slow.next;
+        }
+        prev.next = null;
+        Node newN = reverseList(slow);
+
+        Node i = head;
+        Node j = newN;
+
+        while(i != null && j != null) {
+            if(i.val != j.val) return false;
+            i = i.next;
+            j = j.next;
+        }
+        return true;
+    }
+
+
 }
