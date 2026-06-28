@@ -423,8 +423,37 @@ public class slowFastApproach {
 
     // Re-order list - Leetcode 143 - Homework
     
-    // Merge k sorted linked list - Leetcode 23
-   
-   
+    // Merge k sorted linked list - Leetcode 23 - Homework - Hard Question
+    
+    // Reverse a sublist of a linked list - Leetcode 92
+    public Node reverseSublist(Node head, int left, int right) {
+        if (head == null || left == right) {
+            return head; // No need to reverse if the list is empty or left equals right
+        }
+
+        Node dummy = new Node(0); // Create a dummy node to simplify edge cases
+        dummy.next = head;
+        Node prev = dummy; // Pointer to the node before the sublist
+
+        // Move prev to the node just before the left position
+        for (int i = 1; i < left; i++) {
+            prev = prev.next;
+        }
+
+        Node curr = prev.next; // The first node of the sublist to be reversed
+        Node next = null; // Pointer to keep track of the next node during reversal
+
+        // Reverse the sublist from left to right
+        for (int i = 0; i < right - left + 1; i++) {
+            next = curr.next; // Store the next node
+            curr.next = next.next; // Reverse the link
+            next.next = prev.next; // Insert next at the beginning of the reversed sublist
+            prev.next = next; // Update prev to point to the new head of the reversed sublist
+        }
+
+        return dummy.next; // Return the new head of the list
+    }
+
+    
 
 }
