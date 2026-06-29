@@ -9,7 +9,7 @@ class Listnode {
     }
 }
 
-class circularLinkedlist {
+class Circularlinkedlists {
     Listnode head;
     Listnode tail;
     int size;
@@ -96,7 +96,7 @@ public class circularlinkedlist {
 
     public static void main(String[] args) {
 
-        circularLinkedlist cll = new circularLinkedlist();
+        Circularlinkedlists cll = new Circularlinkedlists();
 
         cll.addAtEnd(10);
         cll.addAtEnd(20);
@@ -108,4 +108,7 @@ public class circularlinkedlist {
 
         cll.display();
     }
+
+    // split a linked list into two halves - Homework
+    // reverse circular linked list - Homework
 }
