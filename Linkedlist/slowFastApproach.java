@@ -425,7 +425,8 @@ public class slowFastApproach {
     
     // Merge k sorted linked list - Leetcode 23 - Homework - Hard Question
     
-    // Reverse a sublist of a linked list - Leetcode 92
+    // Reverse a sublist of a linked list - Leetcode 92 - Time complexity O(n) and space complexity O(1)
+    // Time complexity is O(n) because we are traversing the entire list once, and space complexity is O(1) because we are using a constant amount of extra space (a few
     public Node reverseSublist(Node head, int left, int right) {
         if (head == null || left == right) {
             return head; // No need to reverse if the list is empty or left equals right
@@ -453,7 +454,10 @@ public class slowFastApproach {
 
         return dummy.next; // Return the new head of the list
     }
-
+     
+    // Add two numbers represented by linked lists - Leetcode 2 - Time complexity O(max(m,n)) and space complexity O(max(m,n))
+    
+    // Circular Linked list
     
 
 }
