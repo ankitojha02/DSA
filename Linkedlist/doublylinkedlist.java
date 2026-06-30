@@ -46,21 +46,22 @@ class dll {
         size++;
     }
 
-    void deleteAtHead() {
+   void deleteAtHead() {
         if (head == null) {
             System.out.println("List is empty");
             return;
         }
         head = head.next;
-        if(size == 1) {
-            head = null;
-            tail = null;
+        if (head != null) {
+            head.prev = null;
+        } else {
+            tail = null; // If the list becomes empty, set tail to null as well
         }
         size--;
     }
 
-    void deleteAtEnd() {
-        if (tail == null) {
+   void deleteAtEnd() {
+        if (head == null) {
             System.out.println("List is empty");
             return;
         }
@@ -68,6 +69,8 @@ class dll {
         if(size == 1) {
             head = null;
             tail = null;
+        } else {
+            tail.next = null;
         }
         size--;
     }
@@ -90,18 +93,60 @@ class dll {
         System.out.println();
     }
 
+    void insertAtIndex(int index, int val) {
+        if (index < 0 || index > size) {
+            System.out.println("Index out of bounds");
+            return;
+        }
 
+        if (index == 0) {
+            addAtHead(val);
+            return;
+        }
+
+        if (index == size) {
+            addAtEnd(val);
+            return;
+        }
+
+        DoublyNode newNode = new DoublyNode(val);
+        DoublyNode temp = head;
+
+        for (int i = 1; i < index; i++) {
+            temp = temp.next;
+        }
+
+        newNode.next = temp.next;
+        newNode.prev = temp;
+        temp.next.prev = newNode;
+        temp.next = newNode;
+
+        size++;
+    }
 
 }
 
 public class doublylinkedlist {
     public static void main(String[] args) {
         dll list = new dll();
-        list.addAtEnd(10);
-        list.addAtEnd(20);
-        list.addAtHead(5);
+        list.addAtHead(10);
+        list.addAtHead(20);
+        list.addAtEnd(30);
+        list.addAtEnd(40);
+        list.addAtEnd(50);
+        list.addAtHead(60);
        
         list.displayForward();
         list.displayBackward();
+
+        list.deleteAtHead();
+        list.deleteAtEnd();
+
+        list.displayForward();
+        list.insertAtIndex(2, 25);
+        list.displayForward();
+        list.displayBackward();
+
+
     }
 }
