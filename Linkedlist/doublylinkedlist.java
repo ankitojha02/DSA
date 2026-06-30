@@ -46,6 +46,15 @@ class dll {
         size++;
     }
 
+    void displayForward() {
+        DoublyNode temp = head;
+        while (temp != null) {
+            System.out.print(temp.val + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
 }
 
 public class doublylinkedlist {
@@ -54,8 +63,7 @@ public class doublylinkedlist {
         list.addAtEnd(10);
         list.addAtEnd(20);
         list.addAtHead(5);
-        System.out.println("Doubly linked list created with size: " + list.size);
-        System.out.println("Head value: " + list.head.val);
-        System.out.println("Tail value: " + list.tail.val);
+       
+        list.displayForward();
     }
 }
