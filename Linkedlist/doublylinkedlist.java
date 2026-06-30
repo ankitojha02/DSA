@@ -46,6 +46,20 @@ class dll {
         size++;
     }
 
+    void deleteAtHead() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        head = head.next;
+        if (head != null) {
+            head.prev = null;
+        } else {
+            tail = null; // List is now empty
+        }
+        size--;
+    }
+
     void displayForward() {
         DoublyNode temp = head;
         while (temp != null) {
@@ -54,6 +68,8 @@ class dll {
         }
         System.out.println();
     }
+
+
 
 }
 
