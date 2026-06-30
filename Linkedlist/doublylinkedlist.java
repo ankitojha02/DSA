@@ -52,10 +52,9 @@ class dll {
             return;
         }
         head = head.next;
-        if (head != null) {
-            head.prev = null;
-        } else {
-            tail = null; // List is now empty
+        if(size == 1) {
+            head = null;
+            tail = null;
         }
         size--;
     }
@@ -66,10 +65,9 @@ class dll {
             return;
         }
         tail = tail.prev;
-        if (tail != null) {
-            tail.next = null;
-        } else {
-            head = null; // List is now empty
+        if(size == 1) {
+            head = null;
+            tail = null;
         }
         size--;
     }
@@ -79,6 +77,15 @@ class dll {
         while (temp != null) {
             System.out.print(temp.val + " ");
             temp = temp.next;
+        }
+        System.out.println();
+    }
+
+    void displayBackward() {
+        DoublyNode temp = tail;
+        while (temp != null) {
+            System.out.print(temp.val + " ");
+            temp = temp.prev;
         }
         System.out.println();
     }
@@ -95,5 +102,6 @@ public class doublylinkedlist {
         list.addAtHead(5);
        
         list.displayForward();
+        list.displayBackward();
     }
 }
