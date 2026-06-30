@@ -124,6 +124,36 @@ class dll {
         size++;
     }
 
+    void deleteAtIndex(int index) {
+        if (index < 0 || index >= size) {
+            System.out.println("Index out of bounds");
+            return;
+        }
+
+        if (index == 0) {
+            deleteAtHead();
+            return;
+        }
+
+        if (index == size - 1) {
+            deleteAtEnd();
+            return;
+        }
+
+        DoublyNode temp = head;
+
+        for (int i = 1; i < index; i++) {
+            temp = temp.next;
+        }
+
+        temp.next = temp.next.next;
+        if (temp.next != null) {
+            temp.next.prev = temp;
+        }
+
+        size--;
+    }
+
 }
 
 public class doublylinkedlist {
@@ -146,7 +176,9 @@ public class doublylinkedlist {
         list.insertAtIndex(2, 25);
         list.displayForward();
         list.displayBackward();
-
+        list.deleteAtIndex(2);
+        list.displayForward();
+        list.displayBackward();
 
     }
 }
