@@ -1,0 +1,61 @@
+package Linkedlist;
+
+class DoublyNode {
+    int val;
+    DoublyNode next;
+    DoublyNode prev;
+
+    DoublyNode(int val) {
+        this.val = val;
+    }
+}
+
+/**
+ * Innerdoublylinkedlist
+ */
+class dll {
+    DoublyNode head;
+    DoublyNode tail;
+    int size;
+
+    void addAtEnd(int val) {
+        DoublyNode newNode = new DoublyNode(val);
+
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            newNode.prev = tail;
+            tail = newNode;
+        }
+        size++;
+    }
+
+    void addAtHead(int val) {
+        DoublyNode newNode = new DoublyNode(val);
+
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
+        }
+        size++;
+    }
+
+}
+
+public class doublylinkedlist {
+    public static void main(String[] args) {
+        dll list = new dll();
+        list.addAtEnd(10);
+        list.addAtEnd(20);
+        list.addAtHead(5);
+        System.out.println("Doubly linked list created with size: " + list.size);
+        System.out.println("Head value: " + list.head.val);
+        System.out.println("Tail value: " + list.tail.val);
+    }
+}
