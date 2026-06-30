@@ -60,6 +60,20 @@ class dll {
         size--;
     }
 
+    void deleteAtEnd() {
+        if (tail == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        tail = tail.prev;
+        if (tail != null) {
+            tail.next = null;
+        } else {
+            head = null; // List is now empty
+        }
+        size--;
+    }
+
     void displayForward() {
         DoublyNode temp = head;
         while (temp != null) {
