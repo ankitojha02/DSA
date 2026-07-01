@@ -200,4 +200,8 @@ public class doublylinkedlist {
         }
         return prev;
     }
+
+    // Homework: Rotate Doubly Linked List - GFG Practice Problem
+    // Homework: Remove Duplicates from Sorted Doubly Linked List - GFG Practice Problem
+    
 }
