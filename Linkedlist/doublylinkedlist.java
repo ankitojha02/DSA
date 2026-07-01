@@ -181,4 +181,23 @@ public class doublylinkedlist {
         list.displayBackward();
 
     }
+
+    // Reverse Doubly Linked List
+    public static DoublyNode reverseDoublyLinkedList(DoublyNode head) {
+        if (head == null) {
+            return null;
+        }
+      DoublyNode current = head;
+      DoublyNode prev = null;
+      DoublyNode forward = null;
+
+        while (current != null) {
+            forward = current.next;
+            current.next = prev;
+            current.prev = forward;
+            prev = current;
+            current = forward;
+        }
+        return prev;
+    }
 }
