@@ -46,7 +46,7 @@ class dll {
         size++;
     }
 
-   void deleteAtHead() {
+    void deleteAtHead() {
         if (head == null) {
             System.out.println("List is empty");
             return;
@@ -60,13 +60,13 @@ class dll {
         size--;
     }
 
-   void deleteAtEnd() {
+    void deleteAtEnd() {
         if (head == null) {
             System.out.println("List is empty");
             return;
         }
         tail = tail.prev;
-        if(size == 1) {
+        if (size == 1) {
             head = null;
             tail = null;
         } else {
@@ -165,7 +165,7 @@ public class doublylinkedlist {
         list.addAtEnd(40);
         list.addAtEnd(50);
         list.addAtHead(60);
-       
+
         list.displayForward();
         list.displayBackward();
 
@@ -187,9 +187,9 @@ public class doublylinkedlist {
         if (head == null) {
             return null;
         }
-      DoublyNode current = head;
-      DoublyNode prev = null;
-      DoublyNode forward = null;
+        DoublyNode current = head;
+        DoublyNode prev = null;
+        DoublyNode forward = null;
 
         while (current != null) {
             forward = current.next;
@@ -202,6 +202,43 @@ public class doublylinkedlist {
     }
 
     // Homework: Rotate Doubly Linked List - GFG Practice Problem
-    // Homework: Remove Duplicates from Sorted Doubly Linked List - GFG Practice Problem
+    // Homework: Remove Duplicates from Sorted Doubly Linked List - GFG Practice
+    // Problem
+
+    // Flatten a Multilevel Doubly Linked List - LeetCode Problem - Using Recursion
+    // public static DoublyNode flatten(DoublyNode head) {
+    //     if (head == null) {
+    //         return null;
+    //     }
+
+    //     DoublyNode curr = head;
+
+    //     while (curr != null) {
+    //         if (curr.child != null) {
+    //             DoublyNode next = curr.next;
+    //             DoublyNode child = flatten(curr.child);
+
+    //             curr.next = child;
+    //             child.prev = curr;
+    //             curr.child = null;
+
+    //             // Move to the tail of the child list
+    //             while (curr.next != null) {
+    //                 curr = curr.next;
+    //             }
+
+    //             // Connect the tail with the original next node
+    //             curr.next = next;
+    //             if (next != null) {
+    //                 next.prev = curr;
+    //             }
+    //         }
+
+    //         curr = curr.next;
+    //     }
+
+    //     return head;
+    // }
+
     
 }
