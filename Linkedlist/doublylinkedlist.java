@@ -240,5 +240,7 @@ public class doublylinkedlist {
     //     return head;
     // }
 
+    // Time complexity of flatten function is O(n) where n is the number of nodes in the multilevel doubly linked list. This is because we are visiting each node exactly once during the flattening process.
+
     
 }

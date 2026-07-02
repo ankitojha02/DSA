@@ -457,6 +457,47 @@ public class slowFastApproach {
      
     // Add two numbers represented by linked lists - Leetcode 2 - Time complexity O(max(m,n)) and space complexity O(max(m,n))
     
-  
+    // Find the minimum and maximum number of nodes between critical points - Leetcode 2058 - Time complexity O(n) and space complexity O(1)
+    public int[] nodesBetweenCriticalPoints(Node head) {
+        if (head == null || head.next == null || head.next.next == null) {
+            return new int[]{-1, -1}; // Not enough nodes to have critical points
+        }
+
+        int minDistance = Integer.MAX_VALUE;
+        int maxDistance = Integer.MIN_VALUE;
+        int firstCriticalIndex = -1;
+        int lastCriticalIndex = -1;
+        int index = 1; // Start from the second node
+        Node a = head;
+        Node b = a.next;
+        Node c = b.next;
+
+        if(c == null) {
+            return new int[]{-1, -1}; // Not enough nodes to have critical points
+        }
+
+        while (c != null) {
+            if ((b.val > a.val && b.val > c.val) || (b.val < a.val && b.val < c.val)) {
+                if (firstCriticalIndex == -1) {
+                    firstCriticalIndex = index; // First critical point found
+                } else {
+                    minDistance = Math.min(minDistance, index - lastCriticalIndex); // Update min distance
+                }
+                lastCriticalIndex = index; // Update last critical point index
+            }
+            a = b;
+            b = c;
+            c = c.next;
+            index++;
+        }
+
+        if (firstCriticalIndex == -1 || lastCriticalIndex == firstCriticalIndex) {
+            return new int[]{-1, -1}; // Not enough critical points to calculate distances
+        }
+
+        maxDistance = lastCriticalIndex - firstCriticalIndex; // Calculate max distance
+
+        return new int[]{minDistance, maxDistance};
+    }
 
 }
