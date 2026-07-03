@@ -500,4 +500,88 @@ public class slowFastApproach {
         return new int[]{minDistance, maxDistance};
     }
 
+    // Clone a linked list with random pointers - Leetcode 138 - Time complexity O(n) and space complexity O(1)
+    // public Node copyRandomList(Node head1) {
+    //     if (head1 == null) {
+    //         return null; // If the original list is empty, return null
+    //     }
+    //     Node head2 = deepCopy(head1); // Create a deep copy of the original list
+        
+    //     // Step 2: Alternatively connecting lists
+    //     merge(head1, head2);
+
+    //     // Step 3: Assign random pointers
+    //     randomConnection(head1, head2);
+
+    //     // Step 4: Separate the two lists
+    //     split(head1);
+    // }
+
+    // private void split(Node head1) {
+    //     Node temp1 = head1;
+    //     Node temp2 = head1.next;
+
+    //     while (temp1 != null && temp2 != null) {
+    //         temp1.next = temp2.next; // Restore the next pointer of the original node
+    //         if (temp2.next != null) {
+    //             temp2.next = temp2.next.next; // Restore the next pointer of the copied node
+    //         }
+    //         temp1 = temp1.next; // Move to the next original node
+    //         temp2 = temp2.next; // Move to the next copied node
+    //     }
+    // }
+
+    // private void randomConnection(Node head1, Node head2) {
+    //     Node temp1 = head1;
+    //     Node temp2 = head2;
+
+    //     while (temp1 != null && temp2 != null) {
+    //         if (temp1.next != null) {
+    //             temp2.next = temp1.next; // Connect the next pointer of the copied node to the next original node
+    //         }
+    //         if (temp1.random != null) {
+    //             temp2.random = temp1.random.next; // Connect the random pointer of the copied node to the corresponding copied node
+    //         }
+    //         temp1 = temp1.next.next; // Move to the next original node
+    //     if(temp2.next != null) temp2 = temp2.next.next; // Move to the next copied node
+    //     }
+    // }
+
+    // private void merge(Node head1, Node head2) {
+    //   Node dummy = new Node(-1);
+    //   Node temp = dummy;
+    //   Node temp1 = head1;
+    //   Node temp2 = head2;
+      
+    //     while (temp1 != null && temp2 != null) {
+    //             temp.next = temp1;
+    //             temp1 = temp1.next;
+    //             temp = temp.next;
+    
+    //             temp.next = temp2;
+    //             temp2 = temp2.next;
+    //             temp = temp.next;
+    //         }
+    
+    //         if (temp1 != null) {
+    //             temp.next = temp1; // Attach remaining nodes from list 1
+    //         } else if (temp2 != null) {
+    //             temp.next = temp2; // Attach remaining nodes from list 2
+    //         }
+
+    // }
+
+    // private Node deepCopy(Node head1) {
+    //   Node temp1 = head1;
+    //   Node head2 = new Node(-1);
+    //     Node temp2 = head2;
+
+    //     while (temp1 != null) {
+    //         Node t = new Node(temp1.val); // Create a new node with the same value
+    //         temp2.next = t; // Link the new node to the copied list
+    //         temp2 = temp2.next; // Move to the next node in the copied list
+    //         temp1 = temp1.next; // Move to the next node in the original list
+    //     }
+    //     return head2.next; // Return the head of the copied list
+    // }
 }
