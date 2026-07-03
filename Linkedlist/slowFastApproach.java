@@ -3,9 +3,10 @@ package Linkedlist;
 class Node {
     int val;
     Node next; // default value of next is null
+
     Node(int val) {
         this.val = val;
-       
+
     }
 }
 
@@ -15,11 +16,11 @@ public class slowFastApproach {
         Node b = new Node(20);
         Node c = new Node(30);
         Node d = new Node(40);
-        Node e = new Node(50); 
+        Node e = new Node(50);
 
         // Node ko link kiya
         a.next = b;
-        b.next = c; 
+        b.next = c;
         c.next = d;
         d.next = e;
 
@@ -32,7 +33,9 @@ public class slowFastApproach {
         Node slow = head;
         Node fast = head;
 
-        while (fast != null && fast.next != null) { // note order of condition is important, because if we check for fast.next before checking for fast, then we will get null pointer exception when fast is null
+        while (fast != null && fast.next != null) { // note order of condition is important, because if we check for
+                                                    // fast.next before checking for fast, then we will get null pointer
+                                                    // exception when fast is null
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -52,7 +55,8 @@ public class slowFastApproach {
         }
 
         if (prev != null) {
-            prev.next = slow.next; // delete the middle node by linking the previous node to the next node of the middle node
+            prev.next = slow.next; // delete the middle node by linking the previous node to the next node of the
+                                   // middle node
         }
 
         System.out.println("Middle node deleted");
@@ -82,7 +86,8 @@ public class slowFastApproach {
 
     }
 
-    // Delete nth node from the end of the linked list using slow and fast pointer approach
+    // Delete nth node from the end of the linked list using slow and fast pointer
+    // approach
     public static void deleteNthFromEnd(Node head, int n) {
         Node slow = head;
         Node fast = head;
@@ -115,52 +120,52 @@ public class slowFastApproach {
         System.out.println("Nth node from the end deleted");
     }
 
-    // Homework: Solve Q.1721 Swapping Nodes in a Linked List using slow and fast pointer approach
-
+    // Homework: Solve Q.1721 Swapping Nodes in a Linked List using slow and fast
+    // pointer approach
 
     // Intersection of two linked lists using two pointer approach
     public static Node intersection(Node headA, Node headB) {
-       Node t1 = headA;
-       Node t2 = headB;
+        Node t1 = headA;
+        Node t2 = headB;
 
-       int size1 = 0;
-       int size2 = 0;
-         while (t1 != null) {
-              size1++;
-              t1 = t1.next;
-         }
-            while (t2 != null) {
-                size2++;
-                t2 = t2.next;
-            }
-            t1 = headA;
-            t2 = headB;
-
-            int diff = Math.abs(size1 - size2);
-
-            if (size1 > size2) {
-                for (int i = 0; i < diff; i++) {
-                    t1 = t1.next;
-                }
-            } else {
-                for (int i = 0; i < diff; i++) {
-                    t2 = t2.next;
-                }
-            }
-
-            while (t1 != null && t2 != null) {
-                if (t1 == t2) {
-                    return t1; // Intersection point found
-                }
-                t1 = t1.next;
-                t2 = t2.next;
-            }
-            return null; // No intersection
+        int size1 = 0;
+        int size2 = 0;
+        while (t1 != null) {
+            size1++;
+            t1 = t1.next;
         }
-     // Homework: Odd even linked list
+        while (t2 != null) {
+            size2++;
+            t2 = t2.next;
+        }
+        t1 = headA;
+        t2 = headB;
 
-     // Detect cycle in a linked list using slow and fast pointer approach
-     public static boolean hasCycle(Node head) {
+        int diff = Math.abs(size1 - size2);
+
+        if (size1 > size2) {
+            for (int i = 0; i < diff; i++) {
+                t1 = t1.next;
+            }
+        } else {
+            for (int i = 0; i < diff; i++) {
+                t2 = t2.next;
+            }
+        }
+
+        while (t1 != null && t2 != null) {
+            if (t1 == t2) {
+                return t1; // Intersection point found
+            }
+            t1 = t1.next;
+            t2 = t2.next;
+        }
+        return null; // No intersection
+    }
+    // Homework: Odd even linked list
+
+    // Detect cycle in a linked list using slow and fast pointer approach
+    public static boolean hasCycle(Node head) {
         Node slow = head;
         Node fast = head;
 
@@ -174,7 +179,8 @@ public class slowFastApproach {
         return false; // No cycle
     }
 
-    // Find the starting point of the cycle in a linked list using slow and fast pointer approach
+    // Find the starting point of the cycle in a linked list using slow and fast
+    // pointer approach
     public static Node cycleStart(Node head) {
         Node slow = head;
         Node fast = head;
@@ -195,11 +201,12 @@ public class slowFastApproach {
         return null; // No cycle
     }
 
-    // Remove duplicates from a sorted linked list using slow and fast pointer approach
+    // Remove duplicates from a sorted linked list using slow and fast pointer
+    // approach
     public static void removeDuplicates(Node head) {
-    if (head == null) {
-        return;
-    }
+        if (head == null) {
+            return;
+        }
         Node i = head;
         Node j = head;
         while (j != null) {
@@ -214,7 +221,6 @@ public class slowFastApproach {
         i.next = null; // Set the next of the last unique node to null
         // i now points to the last unique node
     }
-
 
     // VVI
     // Remove all duplicates from sorted linked list 2 Leetcode 82
@@ -242,29 +248,32 @@ public class slowFastApproach {
         return dummy.next; // Return the head of the modified list
     }
 
-    // Rotate a linked list to the right by k places using slow and fast pointer approach - Time complexity O(n) and space complexity O(1)
-   public Node rotateRight(Node head, int k) {
+    // Rotate a linked list to the right by k places using slow and fast pointer
+    // approach - Time complexity O(n) and space complexity O(1)
+    public Node rotateRight(Node head, int k) {
         int n = length(head);
-        if(head == null || head.next == null || k==0) return head;
-        k%=n;
-         if(k==0) return head;
-        
+        if (head == null || head.next == null || k == 0)
+            return head;
+        k %= n;
+        if (k == 0)
+            return head;
+
         Node fast = head;
         Node slow = head;
 
-        for(int i = 0; i < k+1; i++){
+        for (int i = 0; i < k + 1; i++) {
             fast = fast.next;
         }
 
-        while(fast!=null){
+        while (fast != null) {
             slow = slow.next;
             fast = fast.next;
         }
         Node t = slow.next;
         slow.next = null;
         Node tail = t;
-        
-        while(tail.next != null){
+
+        while (tail.next != null) {
             tail = tail.next;
         }
 
@@ -273,18 +282,18 @@ public class slowFastApproach {
         return t;
     }
 
-    public int length(Node head){
+    public int length(Node head) {
         int count = 0;
         Node temp = head;
-        while(temp != null){
+        while (temp != null) {
             count++;
             temp = temp.next;
         }
         return count;
     }
 
-
-    // Merge two sorted linked list using dummy node approach - Time complexity O(n) and space complexity O(1)
+    // Merge two sorted linked list using dummy node approach - Time complexity O(n)
+    // and space complexity O(1)
     public Node mergeTwoLists(Node l1, Node l2) {
         Node dummy = new Node(0); // Dummy node to handle edge cases
         Node i = l1; // Pointer to build the merged list
@@ -308,7 +317,8 @@ public class slowFastApproach {
         return dummy.next; // Return the head of the merged list
     }
 
-    // Sort linked list using merge sort approach - Time complexity O(n log n) and space complexity O(log n) due to recursion stack
+    // Sort linked list using merge sort approach - Time complexity O(n log n) and
+    // space complexity O(log n) due to recursion stack
     public Node sortList(Node head) {
         if (head == null || head.next == null) {
             return head; // Base case: if the list is empty or has only one node, it's already sorted
@@ -316,14 +326,14 @@ public class slowFastApproach {
         Node mid = getMid(head); // Find the middle node to split the list
         Node left = sortList(head); // Recursively sort the left half
         Node right = sortList(mid); // Recursively sort the right half
-        return mergeTwoLists(left, right); // Merge the two sorted halves   
+        return mergeTwoLists(left, right); // Merge the two sorted halves
     }
 
     // Helper function to find the middle node of the linked list
     private Node getMid(Node head) {
         Node slow = head;
         Node fast = head;
-        Node prev = null; // To keep track of the node before slow  
+        Node prev = null; // To keep track of the node before slow
 
         while (fast != null && fast.next != null) {
             prev = slow;
@@ -338,22 +348,21 @@ public class slowFastApproach {
     }
 
     // Homework : LeetCode challeng No. 86 Partition List
-     public Node partition(Node head, int x) {
+    public Node partition(Node head, int x) {
         Node dummy1 = new Node(0);
         Node dummy2 = new Node(-1);
 
         Node t1 = dummy1;
         Node t2 = dummy2;
-        
+
         Node t = head;
 
-        while(t != null) {
-            if(t.val < x) {
+        while (t != null) {
+            if (t.val < x) {
                 t1.next = t;
                 t = t.next;
                 t1 = t1.next;
-            }
-            else{
+            } else {
                 t2.next = t;
                 t = t.next;
                 t2 = t2.next;
@@ -366,7 +375,9 @@ public class slowFastApproach {
     }
 
     // Reverse a linked list - Time complexity O(n) and space complexity O(1)
-    // Time complexity is O(n) because we are traversing the entire list once, and space complexity is O(1) because we are using a constant amount of extra space (three pointers: prev, curr, forward).
+    // Time complexity is O(n) because we are traversing the entire list once, and
+    // space complexity is O(1) because we are using a constant amount of extra
+    // space (three pointers: prev, curr, forward).
     public Node reverseList(Node head) {
         Node prev = null;
         Node curr = head;
@@ -393,14 +404,15 @@ public class slowFastApproach {
     }
 
     // Palindrome linked list - Time complexity O(n) and space complexity O(1)
-     public boolean isPalindrome(Node head) {
-        if(head == null || head.next == null) return true;
+    public boolean isPalindrome(Node head) {
+        if (head == null || head.next == null)
+            return true;
 
         Node slow = head;
         Node prev = null;
         Node fast = head;
 
-        while(fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             fast = fast.next.next;
             prev = slow;
             slow = slow.next;
@@ -411,22 +423,26 @@ public class slowFastApproach {
         Node i = head;
         Node j = newN;
 
-        while(i != null && j != null) {
-            if(i.val != j.val) return false;
+        while (i != null && j != null) {
+            if (i.val != j.val)
+                return false;
             i = i.next;
             j = j.next;
         }
         return true;
     }
-    
+
     // Homework: Q.2130 Maximum Twin Sum of a Linked List - Leetcode
 
     // Re-order list - Leetcode 143 - Homework
-    
+
     // Merge k sorted linked list - Leetcode 23 - Homework - Hard Question
-    
-    // Reverse a sublist of a linked list - Leetcode 92 - Time complexity O(n) and space complexity O(1)
-    // Time complexity is O(n) because we are traversing the entire list once, and space complexity is O(1) because we are using a constant amount of extra space (a few
+
+    // Reverse a sublist of a linked list - Leetcode 92 - Time complexity O(n) and
+    // space complexity O(1)
+    // Time complexity is O(n) because we are traversing the entire list once, and
+    // space complexity is O(1) because we are using a constant amount of extra
+    // space (a few
     public Node reverseSublist(Node head, int left, int right) {
         if (head == null || left == right) {
             return head; // No need to reverse if the list is empty or left equals right
@@ -454,13 +470,15 @@ public class slowFastApproach {
 
         return dummy.next; // Return the new head of the list
     }
-     
-    // Add two numbers represented by linked lists - Leetcode 2 - Time complexity O(max(m,n)) and space complexity O(max(m,n))
-    
-    // Find the minimum and maximum number of nodes between critical points - Leetcode 2058 - Time complexity O(n) and space complexity O(1)
+
+    // Add two numbers represented by linked lists - Leetcode 2 - Time complexity
+    // O(max(m,n)) and space complexity O(max(m,n))
+
+    // Find the minimum and maximum number of nodes between critical points -
+    // Leetcode 2058 - Time complexity O(n) and space complexity O(1)
     public int[] nodesBetweenCriticalPoints(Node head) {
         if (head == null || head.next == null || head.next.next == null) {
-            return new int[]{-1, -1}; // Not enough nodes to have critical points
+            return new int[] { -1, -1 }; // Not enough nodes to have critical points
         }
 
         int minDistance = Integer.MAX_VALUE;
@@ -472,8 +490,8 @@ public class slowFastApproach {
         Node b = a.next;
         Node c = b.next;
 
-        if(c == null) {
-            return new int[]{-1, -1}; // Not enough nodes to have critical points
+        if (c == null) {
+            return new int[] { -1, -1 }; // Not enough nodes to have critical points
         }
 
         while (c != null) {
@@ -492,96 +510,116 @@ public class slowFastApproach {
         }
 
         if (firstCriticalIndex == -1 || lastCriticalIndex == firstCriticalIndex) {
-            return new int[]{-1, -1}; // Not enough critical points to calculate distances
+            return new int[] { -1, -1 }; // Not enough critical points to calculate distances
         }
 
         maxDistance = lastCriticalIndex - firstCriticalIndex; // Calculate max distance
 
-        return new int[]{minDistance, maxDistance};
+        return new int[] { minDistance, maxDistance };
     }
 
-    // Clone a linked list with random pointers - Leetcode 138 - Time complexity O(n) and space complexity O(1)
+    // Clone a linked list with random pointers - Leetcode 138 - Time complexity
+    // O(n) and space complexity O(1)
+    // Clone a linked list with random pointers - Leetcode 138
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
+
     // public Node copyRandomList(Node head1) {
-    //     if (head1 == null) {
-    //         return null; // If the original list is empty, return null
-    //     }
-    //     Node head2 = deepCopy(head1); // Create a deep copy of the original list
-        
-    //     // Step 2: Alternatively connecting lists
-    //     merge(head1, head2);
-
-    //     // Step 3: Assign random pointers
-    //     randomConnection(head1, head2);
-
-    //     // Step 4: Separate the two lists
-    //     split(head1);
+    // if (head1 == null) {
+    // return null;
     // }
 
-    // private void split(Node head1) {
-    //     Node temp1 = head1;
-    //     Node temp2 = head1.next;
+    // Node head2 = deepCopy(head1);
 
-    //     while (temp1 != null && temp2 != null) {
-    //         temp1.next = temp2.next; // Restore the next pointer of the original node
-    //         if (temp2.next != null) {
-    //             temp2.next = temp2.next.next; // Restore the next pointer of the copied node
-    //         }
-    //         temp1 = temp1.next; // Move to the next original node
-    //         temp2 = temp2.next; // Move to the next copied node
-    //     }
-    // }
+    // // Step 1: Merge the original and copied lists
+    // merge(head1, head2);
 
-    // private void randomConnection(Node head1, Node head2) {
-    //     Node temp1 = head1;
-    //     Node temp2 = head2;
+    // // Step 2: Connect random pointers
+    // randomConnection(head1, head2);
 
-    //     while (temp1 != null && temp2 != null) {
-    //         if (temp1.next != null) {
-    //             temp2.next = temp1.next; // Connect the next pointer of the copied node to the next original node
-    //         }
-    //         if (temp1.random != null) {
-    //             temp2.random = temp1.random.next; // Connect the random pointer of the copied node to the corresponding copied node
-    //         }
-    //         temp1 = temp1.next.next; // Move to the next original node
-    //     if(temp2.next != null) temp2 = temp2.next.next; // Move to the next copied node
-    //     }
+    // // Step 3: Separate both lists
+    // split(head1);
+
+    // return head2;
     // }
 
     // private void merge(Node head1, Node head2) {
-    //   Node dummy = new Node(-1);
-    //   Node temp = dummy;
-    //   Node temp1 = head1;
-    //   Node temp2 = head2;
-      
-    //     while (temp1 != null && temp2 != null) {
-    //             temp.next = temp1;
-    //             temp1 = temp1.next;
-    //             temp = temp.next;
-    
-    //             temp.next = temp2;
-    //             temp2 = temp2.next;
-    //             temp = temp.next;
-    //         }
-    
-    //         if (temp1 != null) {
-    //             temp.next = temp1; // Attach remaining nodes from list 1
-    //         } else if (temp2 != null) {
-    //             temp.next = temp2; // Attach remaining nodes from list 2
-    //         }
 
+    // Node temp1 = head1;
+    // Node temp2 = head2;
+
+    // while (temp1 != null && temp2 != null) {
+
+    // Node next1 = temp1.next;
+    // Node next2 = temp2.next;
+
+    // temp1.next = temp2;
+    // temp2.next = next1;
+
+    // temp1 = next1;
+    // temp2 = next2;
+    // }
+    // }
+
+    // private void randomConnection(Node head1, Node head2) {
+
+    // Node temp1 = head1;
+    // Node temp2 = head2;
+
+    // while (temp1 != null && temp2 != null) {
+
+    // if (temp1.random != null) {
+    // temp2.random = temp1.random.next;
+    // }
+
+    // temp1 = temp2.next;
+
+    // if (temp1 != null) {
+    // temp2 = temp1.next;
+    // } else {
+    // temp2 = null;
+    // }
+    // }
+    // }
+
+    // private void split(Node head1) {
+
+    // Node temp1 = head1;
+    // Node temp2 = head1.next;
+
+    // while (temp1 != null && temp2 != null) {
+
+    // temp1.next = temp2.next;
+
+    // temp1 = temp1.next;
+
+    // if (temp1 != null) {
+    // temp2.next = temp1.next;
+    // } else {
+    // temp2.next = null;
+    // }
+
+    // temp2 = temp2.next;
+    // }
     // }
 
     // private Node deepCopy(Node head1) {
-    //   Node temp1 = head1;
-    //   Node head2 = new Node(-1);
-    //     Node temp2 = head2;
 
-    //     while (temp1 != null) {
-    //         Node t = new Node(temp1.val); // Create a new node with the same value
-    //         temp2.next = t; // Link the new node to the copied list
-    //         temp2 = temp2.next; // Move to the next node in the copied list
-    //         temp1 = temp1.next; // Move to the next node in the original list
-    //     }
-    //     return head2.next; // Return the head of the copied list
+    // Node temp1 = head1;
+
+    // Node head2 = new Node(-1);
+    // Node temp2 = head2;
+
+    // while (temp1 != null) {
+
+    // Node t = new Node(temp1.val);
+
+    // temp2.next = t;
+    // temp2 = temp2.next;
+
+    // temp1 = temp1.next;
+    // }
+
+    // return head2.next;
     // }
 }
