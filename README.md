@@ -141,6 +141,16 @@ This repository contains my daily coding practice, implementations, and problem-
 
 ---
 
+## ✅ Linked List
+
+- Creating Linked List Data Structure
+- Slow and Fast Approach
+- Practice Multiple Questions: LeetCode, GeeksforGeeks
+- Circular Linked List
+- Doubly Linked List
+
+---
+
 # 📊 Learning Progress
 
 | Topic | Status |
@@ -156,18 +166,12 @@ This repository contains my daily coding practice, implementations, and problem-
 | Recursion | ✅ Completed |
 | Strings | ✅ Completed |
 | Time Complexity | ✅ Completed |
-
-### Overall Progress
-
-```text
-██████████░░░░░░░░░░ 50%
-```
+| Linked List | ✅ Completed |
 
 ---
 
 # 🗺️ Upcoming Topics
 
-- [ ] Linked List
 - [ ] Stack
 - [ ] Queue
 - [ ] HashMap
