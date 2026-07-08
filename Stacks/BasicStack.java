@@ -48,12 +48,24 @@ public class BasicStack {
         // peek at particular index
         int index = 2;
 
-        while(st.size() > index + 1) {
+        // while(st.size() > index + 1) {
+        //     st1.push(st.pop());
+        // }
+        // System.out.println(st.peek());
+        // while(st1.size() > 0) {
+        //     st.push(st1.pop());
+        // }
+
+        // Add at particular index
+        index = 2;
+
+        while(st.size() > index) {
             st1.push(st.pop());
         }
-        System.out.println(st.peek());
+        st.push(25);
         while(st1.size() > 0) {
             st.push(st1.pop());
         }
+       
     }
 }
