@@ -32,17 +32,28 @@ public class BasicStack {
         // } // Now the stack is empty and if we try to pop an element it will throw EmptyStackException
 
         // Print the elemnts from top to bottom
-        while(st.size() > 0) {
-            int top = st.pop();
-            System.out.println(top);
-            st1.push(top);
-        }
+        // while(st.size() > 0) {
+        //     int top = st.pop();
+        //     System.out.println(top);
+        //     st1.push(top);
+        // }
 
-        // Print the elements from bottom to top
+        // // Print the elements from bottom to top
+        // while(st1.size() > 0) {
+        //     int top = st1.pop();
+        //     System.out.println(top);
+        //     st.push(top);
+        // }
+
+        // peek at particular index
+        int index = 2;
+
+        while(st.size() > index + 1) {
+            st1.push(st.pop());
+        }
+        System.out.println(st.peek());
         while(st1.size() > 0) {
-            int top = st1.pop();
-            System.out.println(top);
-            st.push(top);
+            st.push(st1.pop());
         }
     }
 }
