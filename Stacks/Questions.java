@@ -38,4 +38,7 @@ public class Questions {
         reverseStack(st);
         pushAtBottom(st, top);
     }
+
+     // parenthesis checker
+     
 }

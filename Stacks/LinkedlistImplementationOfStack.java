@@ -11,41 +11,50 @@ class Node {
 }
 
 class MyStack {
-       Node head;
-       int len;
+    Node head;
+    int len;
 
-       int peek() {
-           if (head == null) {
-               return -1;
-           }
-           return head.val;
-       }
+    int peek() {
+        if (head == null) {
+            return -1;
+        }
+        return head.val;
+    }
 
-       int pop() {
-           if (head == null) {
-               return -1;
-           }
-           int top = head.val;
-           head = head.next;
-           len--;
-           return top;
-       }
+    int pop() {
+        if (head == null) {
+            return -1;
+        }
+        int top = head.val;
+        head = head.next;
+        len--;
+        return top;
+    }
 
-       void push(int val) {
+    void push(int val) {
         if (head == null) {
             head = new Node(val);
             len++;
             return;
         }
-           Node newNode = new Node(val);
-           newNode.next = head;
-           head = newNode;
-           len++;
-       }
+        Node newNode = new Node(val);
+        newNode.next = head;
+        head = newNode;
+        len++;
+    }
 
-       int size() {
-           return len;
-       }
+    int size() {
+        return len;
+    }
+
+    void display() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.val + " ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
 }
 
 public class LinkedlistImplementationOfStack {
@@ -57,5 +66,6 @@ public class LinkedlistImplementationOfStack {
         System.out.println(st.peek());
         System.out.println(st.pop());
         System.out.println(st.size());
+        st.display();
     }
 }
