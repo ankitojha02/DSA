@@ -17,6 +17,8 @@ public class Questions {
          // Reverse a stack using recursion
          reverseStack(st);
          System.out.println(st);
+
+         System.out.println(removeDuplicates("aaaaabbcccdaa"));
     }
 
     public static void pushAtBottom(Stack<Integer> st, int data) {
@@ -49,8 +51,8 @@ public class Questions {
             char ch = s.charAt(i);
             if (ch == '(' || ch == '{' || ch == '[') {
                 st.push(ch);
-            } else {
-                if (st.isEmpty()) {
+            } else { // closing bracket
+                if (st.isEmpty()) { // if stack is empty and we get a closing bracket, then it is invalid
                     return false;
                 }
                 char top = st.pop();
@@ -62,4 +64,19 @@ public class Questions {
         return st.isEmpty();
     }
 
+    // Remove Consecutive Duplicates from a String using Stack
+    public static String removeDuplicates(String s) {
+        if(s.length() == 0) {
+            return "";
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        sb.append(s.charAt(0));
+        for(int i = 1; i < s.length(); i++) {
+            if(s.charAt(i) != sb.charAt(sb.length() - 1)) {
+                sb.append(s.charAt(i));
+            }
+        }
+        return sb.toString();
+    }
 }
