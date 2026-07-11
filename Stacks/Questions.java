@@ -127,4 +127,7 @@ public class Questions {
         }
         return sum;
     }
+
+    // Remove nodes from linked list which have a greater value on right side - Leetcode 2487 Homework
+    
 }
