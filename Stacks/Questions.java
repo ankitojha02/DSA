@@ -129,5 +129,7 @@ public class Questions {
     }
 
     // Remove nodes from linked list which have a greater value on right side - Leetcode 2487 Homework
-    
+    // Time Complexity - O(n)
+
+    // Next Greater Element - Leetcode 496
 }
