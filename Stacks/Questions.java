@@ -1,6 +1,7 @@
 package Stacks;
 
 import java.util.Stack;
+import java.util.Arrays;
 public class Questions {
     public static void main(String[] args) {
         Stack<Integer> st = new Stack<>();
@@ -19,6 +20,11 @@ public class Questions {
          System.out.println(st);
 
          System.out.println(removeDuplicates("aaaaabbcccdaa"));
+
+         // Next Greater Element 2
+         int[] nums = {1, 2, 1};
+         int[] result = nextGreaterElements(nums);
+         System.out.println(Arrays.toString(result));
     }
 
     public static void pushAtBottom(Stack<Integer> st, int data) {
@@ -132,7 +138,24 @@ public class Questions {
     // Time Complexity - O(n)
 
     // Next Greater Element -- VVI - GeeksForGeeks
-    // Next Greater Element 2 - Leetcode 503
+    // Next Greater Element 2 - Leetcode 503 - Homework
     
- 
+    public static int[] nextGreaterElements(int[] nums) {
+        int n = nums.length;
+        int[] result = new int[n];
+        Stack<Integer> st = new Stack<>();
+
+        for (int i = n - 1; i>=0; i--) {
+            st.push(nums[i]);
+        }
+
+        for (int i = n - 1; i >= 0; i--) {
+            while (!st.isEmpty() && st.peek() <= nums[i]) {
+                st.pop();
+            }
+            result[i] = st.isEmpty() ? -1 : st.peek();
+            st.push(nums[i]);
+        }
+        return result;
+    }
 }
