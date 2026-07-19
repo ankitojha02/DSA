@@ -25,6 +25,11 @@ public class Questions {
          int[] nums = {1, 2, 1};
          int[] result = nextGreaterElements(nums);
          System.out.println(Arrays.toString(result));
+
+         // Stock Span Problem
+         int[] prices = {100, 80, 60, 70, 60, 75, 85};
+         int[] span = stockSpan(prices);
+         System.out.println(Arrays.toString(span));
     }
 
     public static void pushAtBottom(Stack<Integer> st, int data) {
@@ -138,8 +143,8 @@ public class Questions {
     // Time Complexity - O(n)
 
     // Next Greater Element -- VVI - GeeksForGeeks
-    // Next Greater Element 2 - Leetcode 503 - Homework
-    
+    // Next Greater Element 2 - Leetcode 503 
+    // Time Complexity - O(n)
     public static int[] nextGreaterElements(int[] nums) {
         int n = nums.length;
         int[] result = new int[n];
@@ -158,4 +163,7 @@ public class Questions {
         }
         return result;
     }
+
+    // Stock Span Problem - Leetcode 901
+
 }
