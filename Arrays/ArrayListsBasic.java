@@ -42,33 +42,33 @@ public class ArrayListsBasic {
 
         ArrayList<Integer> list = new ArrayList<>();
         list.add(9);
-        list.add(9);
-        list.add(9);
+        list.add(10);
+        list.add(11);
 
-        ArrayList<Integer> result = plusOne(list);
+        // ArrayList<Integer> result = plusOne(list);
 
-        System.out.println(result);
+        System.out.println(list);
 
     }
 
-    public static ArrayList<Integer> plusOne(ArrayList<Integer> list){
-        int n = list.size();
+    // public static ArrayList<Integer> plusOne(ArrayList<Integer> list){
+    //     int n = list.size();
 
-        //Traverse from last digit
+    //     //Traverse from last digit
 
-        for(int i = n-1; i>=0; i--){
-            if(list.get(i) < 9){
-                list.set(i, list.get(i) + 1);
-                return list;
-            }
+    //     for(int i = n-1; i>=0; i--){
+    //         if(list.get(i) < 9){
+    //             list.set(i, list.get(i) + 1);
+    //             return list;
+    //         }
 
-            // if digits is 9, make it 0
-            list.set(i, 0);
-        }
+    //         // if digits is 9, make it 0
+    //         list.set(i, 0);
+    //     }
 
-        // if all digits were 9
-        list.add(0,1);
+    //     // if all digits were 9
+    //     list.add(0,1);
 
-        return list;
-    }
+    //     return list;
+    // }
 }
