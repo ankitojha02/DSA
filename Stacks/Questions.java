@@ -224,4 +224,7 @@ public class Questions {
         }
         return candidate;
     }
+
+    // Number of visible people in a queue - Leetcode 1944
+    
 }
