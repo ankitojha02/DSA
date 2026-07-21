@@ -43,6 +43,10 @@ public class Questions {
         } else {
             System.out.println("Celebrity is person " + celebrity); 
         }
+
+        // Number of visible people in a queue - Leetcode 1944
+        int[] heights = {10, 6, 8, 5, 11, 9};
+        System.out.println(Arrays.toString(canSeePersonsCount(heights)));
     }
 
     public static void pushAtBottom(Stack<Integer> st, int data) {
@@ -226,5 +230,24 @@ public class Questions {
     }
 
     // Number of visible people in a queue - Leetcode 1944
-    
+    public static int[] canSeePersonsCount(int[] heights) {
+        int n = heights.length;
+        int[] result = new int[n];
+        Stack<Integer> st = new Stack<>();
+        st.push(heights[n - 1]);
+
+        for (int i = n - 2; i >= 0; i--) {
+            int count = 0;
+            while (!st.isEmpty() && heights[i] > st.peek()) {
+                st.pop();
+                count++;
+            }
+            if(!st.isEmpty()) {
+                count++;
+            }
+            result[i] = count;
+            st.push(heights[i]);
+        }
+        return result;
+    }
 }
