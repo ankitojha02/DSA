@@ -30,6 +30,19 @@ public class Questions {
          int[] prices = {100, 80, 60, 70, 60, 75, 85};
          int[] span = stockSpan(prices);
          System.out.println(Arrays.toString(span));
+
+         // Celebrity Problem
+         int[][] matrix = {
+            {0, 1, 0},
+            {0, 0, 0},
+            {1, 1, 0}
+        };
+        int celebrity = findCelebrity(matrix);
+        if (celebrity == -1) {
+            System.out.println("No celebrity found.");
+        } else {
+            System.out.println("Celebrity is person " + celebrity); 
+        }
     }
 
     public static void pushAtBottom(Stack<Integer> st, int data) {
@@ -181,4 +194,34 @@ public class Questions {
     }
 
     // Celebrity Problem 
+    public static int findCelebrity(int[][] matrix) {
+        int n = matrix.length;
+        Stack<Integer> st = new Stack<>();
+        
+        // Push all people onto the stack
+        for (int i = 0; i < n; i++) {
+            st.push(i);
+        }
+        
+        // Find the potential celebrity
+        while (st.size() > 1) {
+            int a = st.pop();
+            int b = st.pop();
+
+            if (matrix[a][b] == 1) {
+                st.push(b);
+            } else { // a does not knows b, so b cannot be a celebrity
+                st.push(a);
+            }
+        }
+
+        int candidate = st.pop();
+
+        for (int i = 0; i < n; i++) {
+            if (i != candidate && (matrix[candidate][i] == 1 || matrix[i][candidate] == 0)) {
+                return -1;
+            }
+        }
+        return candidate;
+    }
 }
