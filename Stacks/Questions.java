@@ -263,6 +263,7 @@ public class Questions {
         nse[n - 1] = n; // If there is no smaller element to the right, we consider the index as n
         Stack<Integer> st = new Stack<>();
         st.push(n - 1);
+        // Find Next Smaller Element for each bar
         for (int i = n - 2; i >= 0; i--) {
             while (!st.isEmpty() && heights[st.peek()] >= heights[i]) {
                 st.pop();
@@ -270,6 +271,8 @@ public class Questions {
             nse[i] = st.isEmpty() ? n : st.peek();
             st.push(i);
         }
+
+        // Empty the stack to reuse it for Previous Smaller Element
         while (!st.isEmpty()) {
             st.pop();
         }
@@ -282,7 +285,8 @@ public class Questions {
             pse[i] = st.isEmpty() ? -1 : st.peek();
             st.push(i);
         }
-
+        
+        // Calculate the maximum area for each bar using the width between the next and previous smaller elements
         int maxArea = 0;
         for (int i = 0; i < n; i++) {
             int width = nse[i] - pse[i] - 1;
@@ -292,4 +296,7 @@ public class Questions {
 
         return maxArea;
     }
+
+    // Homework - Maximal Rectangle in a 2D binary matrix - Leetcode 85
+    
 }
