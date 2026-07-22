@@ -47,6 +47,10 @@ public class Questions {
         // Number of visible people in a queue - Leetcode 1944
         int[] heights = {10, 6, 8, 5, 11, 9};
         System.out.println(Arrays.toString(canSeePersonsCount(heights)));
+
+        // Largest Rectangle in Histogram
+        int[] heights2 = {2, 1, 5, 6, 2, 3};
+        System.out.println(largestRectangleArea(heights2));
     }
 
     public static void pushAtBottom(Stack<Integer> st, int data) {
@@ -251,5 +255,41 @@ public class Questions {
         return result;
     }
 
-    // Largest Rectangle in Histogram - Leetcode 84
+    // Largest Rectangle in Histogram - Leetcode 84 - Time Complexity - O(n)
+    public static int largestRectangleArea(int[] heights) {
+        int n = heights.length;
+        int[] nse = new int[n]; // Next Smaller Element
+        int[] pse = new int[n]; // Previous Smaller Element
+        nse[n - 1] = n; // If there is no smaller element to the right, we consider the index as n
+        Stack<Integer> st = new Stack<>();
+        st.push(n - 1);
+        for (int i = n - 2; i >= 0; i--) {
+            while (!st.isEmpty() && heights[st.peek()] >= heights[i]) {
+                st.pop();
+            }
+            nse[i] = st.isEmpty() ? n : st.peek();
+            st.push(i);
+        }
+        while (!st.isEmpty()) {
+            st.pop();
+        }
+        pse[0] = -1; // If there is no smaller element to the left, we consider the index as -1
+        st.push(0);
+        for (int i = 1; i < n; i++) {
+            while (!st.isEmpty() && heights[st.peek()] >= heights[i]) {
+                st.pop();
+            }
+            pse[i] = st.isEmpty() ? -1 : st.peek();
+            st.push(i);
+        }
+
+        int maxArea = 0;
+        for (int i = 0; i < n; i++) {
+            int width = nse[i] - pse[i] - 1;
+            int area = heights[i] * width;
+            maxArea = Math.max(maxArea, area);
+        }
+
+        return maxArea;
+    }
 }
