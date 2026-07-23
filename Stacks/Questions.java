@@ -297,6 +297,24 @@ public class Questions {
         return maxArea;
     }
 
-    // Homework - Maximal Rectangle in a 2D binary matrix - Leetcode 85
-    
+    // Homework - Maximal Rectangle in a 2D binary matrix - Leetcode 85 - Hard Question
+    public static int maximalRectangle(char[][] matrix) {
+        if (matrix.length == 0) {
+            return 0;
+        }
+        int maxArea = 0;
+        int[] heights = new int[matrix[0].length];
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] == '1') {
+                    heights[j]++;
+                } else {
+                    heights[j] = 0;
+                }
+            }
+            maxArea = Math.max(maxArea, largestRectangleArea(heights));
+        }
+        return maxArea;
+    }
 }
