@@ -17,6 +17,13 @@ public class BasicQueue {
         System.out.println("Front element: " + queue.peek()); // Getting the front element  
         System.out.println("Is the queue empty? " + queue.isEmpty()); // Checking if the queue is empty
         System.out.println("Size of the queue: " + queue.size()); // Getting the size of the queue
+
+        // Traversing the queue
+        int n = queue.size();
+        for (int i = 0; i < n; i++) {
+            System.out.println(queue.peek()); // Print the front element
+            queue.add(queue.remove()); // Move the front element to the back of the queue
+        }
         
     }
 }
