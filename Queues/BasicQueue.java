@@ -44,5 +44,15 @@ public class BasicQueue {
         for (int i = 0; i < n - index; i++) {
             queue.add(queue.remove()); // Move the front element to the back of the queue
         }
+
+        // Removing an element at a particular index
+        index = 2;
+        for (int i = 0; i < index; i++) {
+            queue.add(queue.remove()); // Move the front element to the back of the queue
+        }
+        queue.remove(); // Remove the element at the desired index
+        for (int i = 0; i < n - index - 1; i++) {
+            queue.add(queue.remove()); // Move the front element to the back of the queue
+        }
     }
 }
