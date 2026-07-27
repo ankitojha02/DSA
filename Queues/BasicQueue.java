@@ -34,5 +34,15 @@ public class BasicQueue {
         for (int i = 0; i < n - index; i++) {
             queue.add(queue.remove()); // Move the front element to the back of the queue
         }
+
+        // Peeking at a particular index
+        index = 2;
+        for (int i = 0; i < index; i++) {
+            queue.add(queue.remove()); // Move the front element to the back of the queue
+        }
+        System.out.println("Element at index " + index + ": " + queue.peek());
+        for (int i = 0; i < n - index; i++) {
+            queue.add(queue.remove()); // Move the front element to the back of the queue
+        }
     }
 }
