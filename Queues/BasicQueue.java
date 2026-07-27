@@ -24,6 +24,15 @@ public class BasicQueue {
             System.out.println(queue.peek()); // Print the front element
             queue.add(queue.remove()); // Move the front element to the back of the queue
         }
-        
+
+        // Adding elements at a particular index
+        int index = 2;
+        for (int i = 0; i < index; i++) {
+            queue.add(queue.remove()); // Move the front element to the back of the queue
+        }
+        queue.add(5); // Add the new element at the desired index
+        for (int i = 0; i < n - index; i++) {
+            queue.add(queue.remove()); // Move the front element to the back of the queue
+        }
     }
 }
