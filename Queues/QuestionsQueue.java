@@ -47,4 +47,22 @@ public class QuestionsQueue {
             q.add(q.remove());
         }
     }
+
+    // Find the winner of the Circular Game - Leetcode 1823
+    public static int findTheWinner(int n, int k) {
+        Queue<Integer> q = new LinkedList<>();
+        // Add players to the queue
+        for (int i = 1; i <= n; i++) {
+            q.add(i);
+        }
+        // Simulate the game
+        // Remove every k-th player until only one remains
+        while (q.size() > 1) {
+            for (int i = 0; i < k - 1; i++) {
+                q.add(q.remove());
+            }
+            q.remove();
+        }
+        return q.peek();
+    }
 }
