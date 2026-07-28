@@ -18,6 +18,26 @@
 
 ---
 
+<div align="center">
+
+## 🏆 LeetCode Achievements
+
+<table>
+<tr>
+<td align="center">
+<img src="assets/badges/leetcode50days.png" width="200"/><br>
+<b>🏅 50 Days Badge</b>
+</td>
+
+<td align="center">
+<img src="assets/badges/leetcode100days.png" width="200"/><br>
+<b>🏅 100 Days Badge</b>
+</td>
+</tr>
+</table>
+
+</div>
+
 ## 📖 About
 
 Welcome to my **Data Structures & Algorithms (DSA)** practice repository.

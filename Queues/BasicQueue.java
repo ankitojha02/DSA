@@ -54,5 +54,7 @@ public class BasicQueue {
         for (int i = 0; i < n - index - 1; i++) {
             queue.add(queue.remove()); // Move the front element to the back of the queue
         }
+
+        
     }
 }
