@@ -57,6 +57,8 @@ public class QuestionsQueue {
         }
         // Simulate the game
         // Remove every k-th player until only one remains
+        // Time Complexity: O(n*k)
+        // Worst Case: O(n*k) when k is large and n is large
         while (q.size() > 1) {
             for (int i = 0; i < k - 1; i++) {
                 q.add(q.remove());
@@ -65,4 +67,5 @@ public class QuestionsQueue {
         }
         return q.peek();
     }
+    
 }
