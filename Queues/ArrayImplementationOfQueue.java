@@ -45,6 +45,17 @@ class CircularQueue {
     int size() {
         return size;
     }
+
+    void display() {
+        if (size == 0) {
+            System.out.println("Queue is empty");
+            return;
+        }
+        for (int i = 0; i < size; i++) {
+            System.out.print(arr[(f + i) % arr.length] + " ");
+        }
+        System.out.println();
+    }
 }
 
 public class ArrayImplementationOfQueue {
