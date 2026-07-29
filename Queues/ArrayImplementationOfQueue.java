@@ -1,10 +1,10 @@
 package Queues;
 
 class CircularQueue {
-    int[] arr;
-    int f;
-    int r;
-    int size;
+    private int[] arr;
+    private int f;
+    private int r;
+    private int size;
     CircularQueue(int capacity) {
         arr = new int[capacity];
     }
@@ -47,14 +47,25 @@ class CircularQueue {
     }
 
     void display() {
-        if (size == 0) {
-            System.out.println("Queue is empty");
-            return;
-        }
-        for (int i = 0; i < size; i++) {
-            System.out.print(arr[(f + i) % arr.length] + " ");
+       if (size == 0) {
+        System.out.println("Queue is empty");
+        return;
+       }
+
+       if(f < r) {
+        for (int i = f; i < r; i++) {
+            System.out.print(arr[i] + " ");
         }
         System.out.println();
+       } else {
+        for (int i = f; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        for (int i = 0; i < r; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
     }
 }
 

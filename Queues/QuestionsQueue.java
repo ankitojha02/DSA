@@ -67,5 +67,9 @@ public class QuestionsQueue {
         }
         return q.peek();
     }
+
+    // Homework: Implement a queue using two stacks - Leetcode 232
+    // Push Efficient Implementation
+    // Pop Efficient Implementation
     
 }
