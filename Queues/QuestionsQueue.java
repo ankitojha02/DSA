@@ -74,5 +74,17 @@ public class QuestionsQueue {
 
     // Homework: Implement a stack using two queues - Leetcode 225
     
-    
+    // Rearrange Queue - Gfg Practice
+    public static Queue<Integer> rearrangeQueue(Queue<Integer> q) {
+        Queue<Integer> oddQueue = new LinkedList<>();
+        int n = q.size();
+        for (int i = 1; i <=n/2; i++) {
+            oddQueue.add(q.remove());
+        }
+        while (!oddQueue.isEmpty()) {
+            q.add(oddQueue.remove());
+            q.add(q.remove());
+        }
+        return q;
+    }
 }
