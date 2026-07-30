@@ -87,4 +87,30 @@ public class QuestionsQueue {
         }
         return q;
     }
+
+    // Using One Stack
+    public static Queue<Integer> rearrangeQueueUsingStack(Queue<Integer> q) {
+        Stack<Integer> stack = new Stack<>();
+        int n = q.size();
+        // Put first half elements in stack
+        for (int i = 0; i < n/2; i++) {
+            stack.push(q.remove());
+        }
+        // Put elements from stack and queue in alternate order
+        while (!stack.isEmpty()) {
+            q.add(stack.pop());
+        }
+
+        // Again put first half elements in stack
+        for (int i = 0; i < n/2; i++) {
+            stack.push(q.remove());
+        }
+
+        while (!stack.isEmpty()) {
+            q.add(stack.pop());
+            q.add(q.remove());
+        }
+        return q;
+
+    }
 }
