@@ -1,6 +1,7 @@
 package Queues;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -115,5 +116,29 @@ public class QuestionsQueue {
 
         return q;
 
+    }
+
+    // First negative number in every window of size k - Gfg Practice
+    public static List<Integer> firstNegativeNumberInWindow(int[] arr, int k) {
+        Queue<Integer> q = new LinkedList<>();
+        List<Integer> result = new LinkedList<>();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 0) {
+                q.add(i);
+            }
+        }
+        for (int i = 0; i < arr.length - k + 1; i++) {
+            // Remove elements which are out of the current window
+            while (!q.isEmpty() && q.peek() < i) {
+                q.remove();
+            }
+            // Add the first negative number of the current window to the result
+            if (!q.isEmpty() && q.peek() <= i + k -1) {
+                result.add(arr[q.peek()]);
+            } else {
+                result.add(0);
+            }
+        }
+        return result;
     }
 }
