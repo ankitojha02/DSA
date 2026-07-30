@@ -13,11 +13,9 @@ public class QuestionsQueue {
         q.add(40);
         q.add(50);
 
-
         // Reverse the queue
         reverseQueue(q);
 
-       
     }
 
     // Function to reverse the queue
@@ -73,12 +71,12 @@ public class QuestionsQueue {
     // Pop Efficient Implementation
 
     // Homework: Implement a stack using two queues - Leetcode 225
-    
+
     // Rearrange Queue - Gfg Practice
     public static Queue<Integer> rearrangeQueue(Queue<Integer> q) {
         Queue<Integer> oddQueue = new LinkedList<>();
         int n = q.size();
-        for (int i = 1; i <=n/2; i++) {
+        for (int i = 1; i <= n / 2; i++) {
             oddQueue.add(q.remove());
         }
         while (!oddQueue.isEmpty()) {
@@ -93,7 +91,7 @@ public class QuestionsQueue {
         Stack<Integer> stack = new Stack<>();
         int n = q.size();
         // Put first half elements in stack
-        for (int i = 0; i < n/2; i++) {
+        for (int i = 0; i < n / 2; i++) {
             stack.push(q.remove());
         }
         // Put elements from stack and queue in alternate order
@@ -102,14 +100,19 @@ public class QuestionsQueue {
         }
 
         // Again put first half elements in stack
-        for (int i = 0; i < n/2; i++) {
+        for (int i = 0; i < n / 2; i++) {
             stack.push(q.remove());
         }
 
+        // Put elements from stack and queue in alternate order
         while (!stack.isEmpty()) {
             q.add(stack.pop());
             q.add(q.remove());
         }
+
+        // Reverse the queue to maintain the original order
+        reverseQueue(q);
+
         return q;
 
     }
