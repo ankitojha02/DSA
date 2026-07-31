@@ -171,6 +171,29 @@ This repository contains my daily coding practice, implementations, and problem-
 
 ---
 
+## ✅ Stacks
+
+- LIFO Principle
+- Basic Stack methods
+- Linkedlist implementation of stack
+- LeetCode practice
+- Questions
+
+---
+
+## ✅ Queue
+
+- FIFO Principle
+- Basic Queue
+- Linkedlist implementation of Queue
+- Stack implementation of Queue
+- Array implementation of Queue
+
+---
+
+
+
+
 # 📊 Learning Progress
 
 | Topic | Status |
@@ -187,13 +210,14 @@ This repository contains my daily coding practice, implementations, and problem-
 | Strings | ✅ Completed |
 | Time Complexity | ✅ Completed |
 | Linked List | ✅ Completed |
+| Stacks | ✅ Completed |
+| Queues | ✅ Completed |
 
 ---
 
 # 🗺️ Upcoming Topics
 
-- [ ] Stack
-- [ ] Queue
+- [ ] Binary Tree
 - [ ] HashMap
 - [ ] HashSet
 - [ ] Trees

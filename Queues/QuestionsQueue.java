@@ -139,6 +139,6 @@ public class QuestionsQueue {
                 result.add(0);
             }
         }
-        return result;
+        return result; // Time Complexity: O(n), Space Complexity: O(k) because we are using a queue to store the indices of negative numbers in the current window of size k.
     }
 }
