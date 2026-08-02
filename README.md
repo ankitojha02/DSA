@@ -228,6 +228,7 @@ This repository contains my daily coding practice, implementations, and problem-
 - [ ] Dynamic Programming
 - [ ] Greedy Algorithms
 - [ ] Backtracking
+- [ ] Algorithm Techniques
 
 ---
 
