@@ -6,7 +6,7 @@ class Node {
     Node right;
     Node(int val) {
         this.val = val;
-        
+        this.left = null;
     }
 }
 
@@ -34,14 +34,36 @@ public class Implementation {
         b.right = e;
         c.left = f;
         c.right = g;
+
+        // Performing pre-order traversal
+        System.out.println("Pre-order Traversal:");
+        preOrderTraversal(a);
     }
 
-    private static void preOrderTraversal(Node node) {
-        if (node == null) {
+    private static void preOrderTraversal(Node root) {
+        if (root == null) {
             return;
         }
-        System.out.print(node.val + " ");
-        preOrderTraversal(node.left);
-        preOrderTraversal(node.right);
+        System.out.print(root.val + " ");
+        preOrderTraversal(root.left); // left ki saari values print karne ke liye
+        preOrderTraversal(root.right); // right ki saari values print karne ke liye
     }
+
+    // private static void inOrderTraversal(Node root) {
+    //     if (root == null) {
+    //         return;
+    //     }
+    //     inOrderTraversal(root.left); // left ki saari values print karne ke liye
+    //     System.out.print(root.val + " ");
+    //     inOrderTraversal(root.right); // right ki saari values print karne ke liye
+    // }
+
+    // private static void postOrderTraversal(Node root) {
+    //     if (root == null) {
+    //         return;
+    //     }
+    //     postOrderTraversal(root.left); // left ki saari values print karne ke liye
+    //     postOrderTraversal(root.right); // right ki saari values print karne ke liye
+    //     System.out.print(root.val + " ");
+    // }
 }
