@@ -66,4 +66,11 @@ public class Implementation {
     //     postOrderTraversal(root.right); // right ki saari values print karne ke liye
     //     System.out.print(root.val + " ");
     // }
+
+    public int size(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        return 1 + size(root.left) + size(root.right);
+    }
 }
