@@ -21,11 +21,27 @@ public class Implementation {
         Node f = new Node(6);
         Node g = new Node(7);
 
+        // Connecting nodes to form the binary tree
+        //       a
+        //      / \
+        //     b   c
+        //    / \ / \
+        //   d  e f  g
+
         a.left = b;
         a.right = c;
         b.left = d;
         b.right = e;
         c.left = f;
         c.right = g;
+    }
+
+    private static void preOrderTraversal(Node node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.val + " ");
+        preOrderTraversal(node.left);
+        preOrderTraversal(node.right);
     }
 }
