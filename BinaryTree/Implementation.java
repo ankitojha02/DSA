@@ -38,6 +38,9 @@ public class Implementation {
         // Performing pre-order traversal
         System.out.println("Pre-order Traversal:");
         preOrderTraversal(a);
+
+        System.out.println("\nSize of the binary tree: " + size(a));
+        System.out.println("Sum of values in the binary tree: " + sum(a));
     }
 
     private static void preOrderTraversal(Node root) {
@@ -67,10 +70,18 @@ public class Implementation {
     //     System.out.print(root.val + " ");
     // }
 
-    public int size(Node root) {
+    public static int size(Node root) {
         if (root == null) {
             return 0;
         }
         return 1 + size(root.left) + size(root.right);
+    }
+
+    // Sum of values of Binary Tree
+    public static int sum(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        return root.val + sum(root.left) + sum(root.right);
     }
 }
