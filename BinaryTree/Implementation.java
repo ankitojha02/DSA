@@ -41,6 +41,7 @@ public class Implementation {
 
         System.out.println("\nSize of the binary tree: " + size(a));
         System.out.println("Sum of values in the binary tree: " + sum(a));
+        System.out.println("Product of values in the binary tree: " + product(a));
     }
 
     private static void preOrderTraversal(Node root) {
@@ -83,5 +84,23 @@ public class Implementation {
             return 0;
         }
         return root.val + sum(root.left) + sum(root.right);
+    }
+
+    // Product of values of Binary Tree
+    public static int product(Node root) {
+        if (root == null) {
+            return 1; // Return 1 for multiplication identity
+        }
+        return root.val * product(root.left) * product(root.right);
+    }
+
+    // Maximum value in Binary Tree
+    public static int max(Node root) {
+        if (root == null) {
+            return Integer.MIN_VALUE; // Return minimum value for comparison
+        }
+        int leftMax = max(root.left);
+        int rightMax = max(root.right);
+        return Math.max(root.val, Math.max(leftMax, rightMax));
     }
 }
