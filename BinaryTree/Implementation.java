@@ -103,4 +103,15 @@ public class Implementation {
         int rightMax = max(root.right);
         return Math.max(root.val, Math.max(leftMax, rightMax));
     }
+
+    // Find the level of Binary Tree
+    public static int level(Node root){
+        if (root == null) {
+            return 0;
+        }
+        int leftLevel = level(root.left);
+        int rightLevel = level(root.right);
+        return 1 + Math.max(leftLevel, rightLevel);
+    }
+    
 }
