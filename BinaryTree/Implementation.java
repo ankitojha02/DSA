@@ -120,5 +120,17 @@ public class Implementation {
     // Post Order Traversal - Left -> Right -> Root
 
     // Homework - LeetCode 144, 145, 94 - Preorder, Postorder, Inorder Traversal
-    
+
+
+    // LeetCode 226 - Invert Binary Tree - Given the root of a binary tree, invert the tree, and return its root.
+    public static Node invertTree(Node root) {
+        if (root == null) {
+            return null;
+        }
+        Node left = invertTree(root.left);
+        Node right = invertTree(root.right);
+        root.left = right;
+        root.right = left;
+        return root;
+    }
 }
