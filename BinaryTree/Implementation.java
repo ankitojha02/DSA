@@ -104,7 +104,7 @@ public class Implementation {
         return Math.max(root.val, Math.max(leftMax, rightMax));
     }
 
-    // Find the level of Binary Tree
+    // Find the level of Binary Tree - Important
     public static int level(Node root){
         if (root == null) {
             return 0;
@@ -113,5 +113,9 @@ public class Implementation {
         int rightLevel = level(root.right);
         return 1 + Math.max(leftLevel, rightLevel);
     }
+    // Time complexity of all the above functions is O(n) where n is the number of nodes in the binary tree because we are visiting each node exactly once. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
     
+    // Pre Order Traversal - Root -> Left -> Right
+    // In Order Traversal - Left -> Root -> Right
+    // Post Order Traversal - Left -> Right -> Root
 }
