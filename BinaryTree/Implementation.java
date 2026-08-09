@@ -168,4 +168,16 @@ public class Implementation {
         }
         return isMirror(left.left, right.right) && isMirror(left.right, right.left);
     }
+
+   // LeetCode 112 - Path Sum - Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum.
+    public static boolean hasPathSum(Node root, int targetSum) {
+        if (root == null) {
+            return false;
+        }
+        if (root.left == null && root.right == null) {
+            return root.val == targetSum;
+        }
+        int newTarget = targetSum - root.val;
+        return hasPathSum(root.left, newTarget) || hasPathSum(root.right, newTarget);
+    }
 }
