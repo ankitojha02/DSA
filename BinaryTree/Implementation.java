@@ -12,6 +12,15 @@ class Node {
     }
 }
 
+class Pair {
+    Node node;
+    int level;
+    Pair(Node node, int level) {
+        this.node = node;
+        this.level = level;
+    }
+}
+
 public class Implementation {
     public static void main(String[] args) {
         // Creating nodes of the binary tree
@@ -183,7 +192,7 @@ public class Implementation {
         return hasPathSum(root.left, newTarget) || hasPathSum(root.right, newTarget);
     }
 
-    // Level Order Traversal - BFS - LeetCode 102 - Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+    // Level Order Traversal - Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
     public static void levelOrderTraversal(Node root) {
         if (root == null) {
             return;
@@ -191,13 +200,39 @@ public class Implementation {
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
-            Node current = queue.poll();
+            Node current = queue.remove();
             System.out.print(current.val + " ");
             if (current.left != null) {
                 queue.add(current.left);
             }
             if (current.right != null) {
                 queue.add(current.right);
+            }
+        }
+    }
+
+    // Level Order Traversal line wise - Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+    public static void levelOrderTraversalLineWise(Node root) {
+        if (root == null) {
+            return;
+        }
+        Queue<Pair> queue = new LinkedList<>();
+        queue.add(new Pair(root, 0));
+        int currentLevel = 0;
+        while (!queue.isEmpty()) {
+            Pair p = queue.remove();
+            Node node = p.node;
+            int level = p.level;
+            if (level != currentLevel) {
+                System.out.println();
+                currentLevel = level;
+            }
+            System.out.print(node.val + " ");
+            if (node.left != null) {
+                queue.add(new Pair(node.left, level + 1));
+            }
+            if (node.right != null) {
+                queue.add(new Pair(node.right, level + 1));
             }
         }
     }
