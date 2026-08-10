@@ -1,6 +1,8 @@
 package BinaryTree;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.List;
+import java.util.ArrayList;
 
 class Node {
     int val;
@@ -193,23 +195,23 @@ public class Implementation {
     }
 
     // Level Order Traversal - Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
-    public static void levelOrderTraversal(Node root) {
-        if (root == null) {
-            return;
-        }
-        Queue<Node> queue = new LinkedList<>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            Node current = queue.remove();
-            System.out.print(current.val + " ");
-            if (current.left != null) {
-                queue.add(current.left);
-            }
-            if (current.right != null) {
-                queue.add(current.right);
-            }
-        }
-    }
+    // public static void levelOrderTraversal(Node root) {
+    //     if (root == null) {
+    //         return;
+    //     }
+    //     Queue<Node> queue = new LinkedList<>();
+    //     queue.add(root);
+    //     while (!queue.isEmpty()) {
+    //         Node current = queue.remove();
+    //         System.out.print(current.val + " ");
+    //         if (current.left != null) {
+    //             queue.add(current.left);
+    //         }
+    //         if (current.right != null) {
+    //             queue.add(current.right);
+    //         }
+    //     }
+    // }
 
     // Level Order Traversal line wise - Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
     public static void levelOrderTraversalLineWise(Node root) {
@@ -236,4 +238,38 @@ public class Implementation {
             }
         }
     }
+
+    // LeetCode 102 - Binary Tree Level Order Traversal - Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+    public static List<List<Integer>> levelOrder(Node root) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        Queue<Pair> queue = new LinkedList<>();
+        queue.add(new Pair(root, 0));
+        int currentLevel = 0;
+        List<Integer> currentLevelValues = new ArrayList<>();
+        while (!queue.isEmpty()) {
+            Pair p = queue.remove();
+            Node node = p.node;
+            int level = p.level;
+            if (level != currentLevel) {
+                result.add(currentLevelValues);
+                currentLevelValues = new ArrayList<>();
+                currentLevel = level;
+            }
+            currentLevelValues.add(node.val);
+            if (node.left != null) {
+                queue.add(new Pair(node.left, level + 1));
+            }
+            if (node.right != null) {
+                queue.add(new Pair(node.right, level + 1));
+            }
+        }
+        result.add(currentLevelValues);
+        return result;
+    }
+
+    // Homework - Zig Zag Level Order Traversal - LeetCode 103 - Given the root of a binary tree, return the zigzag level order traversal of its nodes' values. (i.e., from left to right, then right to left for the next level and alternate between).
+    
 }
