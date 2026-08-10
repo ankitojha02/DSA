@@ -1,4 +1,6 @@
 package BinaryTree;
+import java.util.LinkedList;
+import java.util.Queue;
 
 class Node {
     int val;
@@ -179,5 +181,24 @@ public class Implementation {
         }
         int newTarget = targetSum - root.val;
         return hasPathSum(root.left, newTarget) || hasPathSum(root.right, newTarget);
+    }
+
+    // Level Order Traversal - BFS - LeetCode 102 - Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+    public static void levelOrderTraversal(Node root) {
+        if (root == null) {
+            return;
+        }
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node current = queue.poll();
+            System.out.print(current.val + " ");
+            if (current.left != null) {
+                queue.add(current.left);
+            }
+            if (current.right != null) {
+                queue.add(current.right);
+            }
+        }
     }
 }
