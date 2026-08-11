@@ -272,4 +272,17 @@ public class Implementation {
 
     // Homework - Zig Zag Level Order Traversal - LeetCode 103 - Given the root of a binary tree, return the zigzag level order traversal of its nodes' values. (i.e., from left to right, then right to left for the next level and alternate between).
     
+    // Kth level of Binary Tree - Given the root of a binary tree and an integer n, return the values of the nodes at the nth level of the tree. (The root is considered to be at level 0).
+    public static void nthLevel(Node root, int level, int k) {
+       if (root == null) {
+        return;
+       }
+
+    if (level == k) {
+        System.out.print(root.val + " ");
+        
+    }
+    nthLevel(root.left, level + 1, k);
+    nthLevel(root.right, level + 1, k);
+}
 }
