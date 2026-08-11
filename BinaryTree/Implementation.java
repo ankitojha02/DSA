@@ -1,4 +1,5 @@
 package BinaryTree;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.List;
@@ -8,6 +9,7 @@ class Node {
     int val;
     Node left;
     Node right;
+
     Node(int val) {
         this.val = val;
         this.left = null;
@@ -17,6 +19,7 @@ class Node {
 class Pair {
     Node node;
     int level;
+
     Pair(Node node, int level) {
         this.node = node;
         this.level = level;
@@ -35,11 +38,11 @@ public class Implementation {
         Node g = new Node(7);
 
         // Connecting nodes to form the binary tree
-        //       a
-        //      / \
-        //     b   c
-        //    / \ / \
-        //   d  e f  g
+        // a
+        // / \
+        // b c
+        // / \ / \
+        // d e f g
 
         a.left = b;
         a.right = c;
@@ -67,21 +70,21 @@ public class Implementation {
     }
 
     // private static void inOrderTraversal(Node root) {
-    //     if (root == null) {
-    //         return;
-    //     }
-    //     inOrderTraversal(root.left); // left ki saari values print karne ke liye
-    //     System.out.print(root.val + " ");
-    //     inOrderTraversal(root.right); // right ki saari values print karne ke liye
+    // if (root == null) {
+    // return;
+    // }
+    // inOrderTraversal(root.left); // left ki saari values print karne ke liye
+    // System.out.print(root.val + " ");
+    // inOrderTraversal(root.right); // right ki saari values print karne ke liye
     // }
 
     // private static void postOrderTraversal(Node root) {
-    //     if (root == null) {
-    //         return;
-    //     }
-    //     postOrderTraversal(root.left); // left ki saari values print karne ke liye
-    //     postOrderTraversal(root.right); // right ki saari values print karne ke liye
-    //     System.out.print(root.val + " ");
+    // if (root == null) {
+    // return;
+    // }
+    // postOrderTraversal(root.left); // left ki saari values print karne ke liye
+    // postOrderTraversal(root.right); // right ki saari values print karne ke liye
+    // System.out.print(root.val + " ");
     // }
 
     public static int size(Node root) {
@@ -118,7 +121,7 @@ public class Implementation {
     }
 
     // Find the level of Binary Tree - Important
-    public static int level(Node root){
+    public static int level(Node root) {
         if (root == null) {
             return 0;
         }
@@ -126,16 +129,19 @@ public class Implementation {
         int rightLevel = level(root.right);
         return 1 + Math.max(leftLevel, rightLevel);
     }
-    // Time complexity of all the above functions is O(n) where n is the number of nodes in the binary tree because we are visiting each node exactly once. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
-    
+    // Time complexity of all the above functions is O(n) where n is the number of
+    // nodes in the binary tree because we are visiting each node exactly once. The
+    // space complexity is O(h) where h is the height of the binary tree due to the
+    // recursive call stack.
+
     // Pre Order Traversal - Root -> Left -> Right
     // In Order Traversal - Left -> Root -> Right
     // Post Order Traversal - Left -> Right -> Root
 
     // Homework - LeetCode 144, 145, 94 - Preorder, Postorder, Inorder Traversal
 
-
-    // LeetCode 226 - Invert Binary Tree - Given the root of a binary tree, invert the tree, and return its root.
+    // LeetCode 226 - Invert Binary Tree - Given the root of a binary tree, invert
+    // the tree, and return its root.
     public static Node invertTree(Node root) {
         if (root == null) {
             return null;
@@ -147,7 +153,8 @@ public class Implementation {
         return root;
     }
 
-    // LeetCode 100 - Same Tree - Given the roots of two binary trees p and q, write a function to check if they are the same or not.
+    // LeetCode 100 - Same Tree - Given the roots of two binary trees p and q, write
+    // a function to check if they are the same or not.
     public static boolean isSameTree(Node p, Node q) {
         if (p == null && q == null) {
             return true;
@@ -161,7 +168,8 @@ public class Implementation {
         return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
 
-    // LeetCode 101 - Symmetric Tree - Given the root of a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
+    // LeetCode 101 - Symmetric Tree - Given the root of a binary tree, check
+    // whether it is a mirror of itself (i.e., symmetric around its center).
     public static boolean isSymmetric(Node root) {
         if (root == null) {
             return true;
@@ -182,7 +190,9 @@ public class Implementation {
         return isMirror(left.left, right.right) && isMirror(left.right, right.left);
     }
 
-   // LeetCode 112 - Path Sum - Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum.
+    // LeetCode 112 - Path Sum - Given the root of a binary tree and an integer
+    // targetSum, return true if the tree has a root-to-leaf path such that adding
+    // up all the values along the path equals targetSum.
     public static boolean hasPathSum(Node root, int targetSum) {
         if (root == null) {
             return false;
@@ -194,26 +204,30 @@ public class Implementation {
         return hasPathSum(root.left, newTarget) || hasPathSum(root.right, newTarget);
     }
 
-    // Level Order Traversal - Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+    // Level Order Traversal - Given the root of a binary tree, return the level
+    // order traversal of its nodes' values. (i.e., from left to right, level by
+    // level).
     // public static void levelOrderTraversal(Node root) {
-    //     if (root == null) {
-    //         return;
-    //     }
-    //     Queue<Node> queue = new LinkedList<>();
-    //     queue.add(root);
-    //     while (!queue.isEmpty()) {
-    //         Node current = queue.remove();
-    //         System.out.print(current.val + " ");
-    //         if (current.left != null) {
-    //             queue.add(current.left);
-    //         }
-    //         if (current.right != null) {
-    //             queue.add(current.right);
-    //         }
-    //     }
+    // if (root == null) {
+    // return;
+    // }
+    // Queue<Node> queue = new LinkedList<>();
+    // queue.add(root);
+    // while (!queue.isEmpty()) {
+    // Node current = queue.remove();
+    // System.out.print(current.val + " ");
+    // if (current.left != null) {
+    // queue.add(current.left);
+    // }
+    // if (current.right != null) {
+    // queue.add(current.right);
+    // }
+    // }
     // }
 
-    // Level Order Traversal line wise - Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+    // Level Order Traversal line wise - Given the root of a binary tree, return the
+    // level order traversal of its nodes' values. (i.e., from left to right, level
+    // by level).
     public static void levelOrderTraversalLineWise(Node root) {
         if (root == null) {
             return;
@@ -239,7 +253,9 @@ public class Implementation {
         }
     }
 
-    // LeetCode 102 - Binary Tree Level Order Traversal - Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+    // LeetCode 102 - Binary Tree Level Order Traversal - Given the root of a binary
+    // tree, return the level order traversal of its nodes' values. (i.e., from left
+    // to right, level by level).
     public static List<List<Integer>> levelOrder(Node root) {
         List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
@@ -270,19 +286,48 @@ public class Implementation {
         return result;
     }
 
-    // Homework - Zig Zag Level Order Traversal - LeetCode 103 - Given the root of a binary tree, return the zigzag level order traversal of its nodes' values. (i.e., from left to right, then right to left for the next level and alternate between).
-    
-    // Kth level of Binary Tree - Given the root of a binary tree and an integer n, return the values of the nodes at the nth level of the tree. (The root is considered to be at level 0).
-    public static void nthLevel(Node root, int level, int k) {
-       if (root == null) {
-        return;
-       }
+    // Homework - Zig Zag Level Order Traversal - LeetCode 103 - Given the root of a
+    // binary tree, return the zigzag level order traversal of its nodes' values.
+    // (i.e., from left to right, then right to left for the next level and
+    // alternate between).
 
-    if (level == k) {
-        System.out.print(root.val + " ");
-        
+    // Kth level of Binary Tree - Given the root of a binary tree and an integer n,
+    // return the values of the nodes at the nth level of the tree. (The root is
+    // considered to be at level 0).
+    public static void nthLevel(Node root, int level, int k) {
+        if (root == null) {
+            return;
+        }
+
+        if (level == k) {
+            System.out.print(root.val + " ");
+
+        }
+        nthLevel(root.left, level + 1, k);
+        nthLevel(root.right, level + 1, k);
+    } 
+
+    //  Binary Tree Paths / Root to Leaf Paths - Given the root of a binary tree, return all root-to-leaf paths in any order. A leaf is a node with no children. - GFG Practice
+    public ArrayList<ArrayList<Integer>> paths (Node root) {
+        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+        if (root == null) {
+            return ans;
+        }
+        dfs(root, new ArrayList<>(), ans);
+        return ans;
     }
-    nthLevel(root.left, level + 1, k);
-    nthLevel(root.right, level + 1, k);
-}
+
+    private void dfs(Node root, ArrayList<Integer> path, ArrayList<ArrayList<Integer>> ans) {
+        if (root == null) {
+            return;
+        }
+        path.add(root.val);
+        if (root.left == null && root.right == null) {
+            ans.add(new ArrayList<>(path));
+        } else {
+            dfs(root.left, path, ans);
+            dfs(root.right, path, ans);
+        }
+        path.remove(path.size() - 1); // Backtrack to explore other paths
+    }
 }
