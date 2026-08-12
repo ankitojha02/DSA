@@ -390,4 +390,16 @@ public class Implementation {
         return 1 + Math.max(leftHeight, rightHeight);
     }
 
+    // LeetCode 543 - Diameter of Binary Tree - Given the root of a binary tree, return the length of the diameter of the tree. The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
+    public static int diameterOfBinaryTree(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftHeight = height(root.left);
+        int rightHeight = height(root.right);
+        int leftDiameter = diameterOfBinaryTree(root.left);
+        int rightDiameter = diameterOfBinaryTree(root.right);
+        return Math.max(leftHeight + rightHeight, Math.max(leftDiameter, rightDiameter));
+    }
+
 }
