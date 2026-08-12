@@ -29,6 +29,7 @@ class Pair {
 
 public class Implementation {
     static boolean flag = true;
+    static int max = 0;
     public static void main(String[] args) {
         // Creating nodes of the binary tree
         Node a = new Node(1);
@@ -402,4 +403,23 @@ public class Implementation {
         return Math.max(leftHeight + rightHeight, Math.max(leftDiameter, rightDiameter));
     }
 
+    // Optimized version of diameterOfBinaryTree - Time complexity is O(n) because we are calculating the height of the tree in a single traversal. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
+    public static int diameterOfBinaryTreeOptimized(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        max = 0;
+        heightDiameter(root);
+        return max;
+    }
+
+    public static int heightDiameter(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftHeight = heightDiameter(root.left);
+        int rightHeight = heightDiameter(root.right);
+        max = Math.max(max, leftHeight + rightHeight);
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
 }
