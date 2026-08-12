@@ -26,7 +26,9 @@ class Pair {
     }
 }
 
+
 public class Implementation {
+    static boolean flag = true;
     public static void main(String[] args) {
         // Creating nodes of the binary tree
         Node a = new Node(1);
@@ -364,6 +366,28 @@ public class Implementation {
             return 0;
         }
         return 1 + Math.max(height(root.left), height(root.right));
+    }
+    
+    // Optimized version of isBalanced - Time complexity is O(n) because we are calculating the height of the tree in a single traversal. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
+    public static boolean isBalancedOptimized(Node root) {
+        if(root == null) {
+            return true;
+        }
+        flag = true;
+        heightOptimized(root);
+        return flag;
+    }
+
+    public static int heightOptimized(Node root) {
+        if(root == null) {
+            return 0;
+        }
+        int leftHeight = heightOptimized(root.left);
+        int rightHeight = heightOptimized(root.right);
+        if(Math.abs(leftHeight - rightHeight) > 1) {
+            flag = false;
+        }
+        return 1 + Math.max(leftHeight, rightHeight);
     }
 
 }
