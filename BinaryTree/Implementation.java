@@ -332,6 +332,18 @@ public class Implementation {
     }
 
     // Homework - Full Binary Tree - GFG Practice
+    public static boolean isFullBinaryTree(Node root) {
+        if (root == null) {
+            return true;
+        }
+        if (root.left == null && root.right == null) {
+            return true; // Leaf node
+        }
+        if (root.left != null && root.right != null) {
+            return isFullBinaryTree(root.left) && isFullBinaryTree(root.right);
+        }
+        return false; // One child is null and the other is not
+    }
 
     // LeetCode 110 - Balanced Binary Tree
 
@@ -353,4 +365,5 @@ public class Implementation {
         }
         return 1 + Math.max(height(root.left), height(root.right));
     }
+
 }
