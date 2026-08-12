@@ -330,4 +330,27 @@ public class Implementation {
         }
         path.remove(path.size() - 1); // Backtrack to explore other paths
     }
+
+    // Homework - Full Binary Tree - GFG Practice
+
+    // LeetCode 110 - Balanced Binary Tree
+
+    public static boolean isBalanced(Node root) {
+        if (root == null) {
+            return true;
+        }
+        int leftHeight = height(root.left);
+        int rightHeight = height(root.right);
+        if (Math.abs(leftHeight - rightHeight) > 1) {
+            return false;
+        }
+        return isBalanced(root.left) && isBalanced(root.right);
+    }
+
+    public static int height(Node root) {
+        if (root == null) {
+            return 0;
+        }
+        return 1 + Math.max(height(root.left), height(root.right));
+    }
 }
