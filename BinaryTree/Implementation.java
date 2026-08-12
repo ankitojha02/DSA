@@ -345,7 +345,7 @@ public class Implementation {
         return false; // One child is null and the other is not
     }
 
-    // LeetCode 110 - Balanced Binary Tree
+    // LeetCode 110 - Balanced Binary Tree - Time complexity is O(n^2) because for each node, we are calculating the height of its left and right subtrees, which takes O(n) time. Since we do this for each node, the overall time complexity becomes O(n^2). The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
 
     public static boolean isBalanced(Node root) {
         if (root == null) {
