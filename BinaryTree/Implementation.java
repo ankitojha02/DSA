@@ -422,4 +422,27 @@ public class Implementation {
         max = Math.max(max, leftHeight + rightHeight);
         return Math.max(leftHeight, rightHeight) + 1;
     }
+
+    // Right View of Binary Tree - Given the root of a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom. - LeetCode 199
+    public static List<Integer> rightSideView(Node root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        rightSideViewHelper(root, result, 0);
+        return result;
+    }
+
+    private static void rightSideViewHelper(Node root, List<Integer> result, int level) {
+        if (root == null) {
+            return;
+        }
+
+        if (level == result.size()) {
+            result.add(root.val);
+        }
+        rightSideViewHelper(root.right, result, level + 1);
+        rightSideViewHelper(root.left, result, level + 1);
+    
+    }
 }
