@@ -432,7 +432,7 @@ public class Implementation {
         rightSideViewHelper(root, result, 0);
         return result;
     }
-
+    // Time complexity is O(n) because we are visiting each node exactly once. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
     private static void rightSideViewHelper(Node root, List<Integer> result, int level) {
         if (root == null) {
             return;
@@ -444,5 +444,27 @@ public class Implementation {
         rightSideViewHelper(root.right, result, level + 1);
         rightSideViewHelper(root.left, result, level + 1);
     
+    }
+
+    // Left view of Binary Tree - Given the root of a binary tree, imagine yourself standing on the left side of it, return the values of the nodes you can see ordered from top to bottom. - LeetCode 199
+    public static List<Integer> leftSideView(Node root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        leftSideViewHelper(root, result, 0);
+        return result;
+    }
+
+    public static void leftSideViewHelper(Node root, List<Integer> result, int level) {
+        if (root == null) {
+            return;
+        }
+
+        if (level == result.size()) {
+            result.add(root.val);
+        }
+        leftSideViewHelper(root.left, result, level + 1);
+        leftSideViewHelper(root.right, result, level + 1);
     }
 }
