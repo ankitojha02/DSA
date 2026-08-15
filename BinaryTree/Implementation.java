@@ -520,5 +520,24 @@ public class Implementation {
         }
         current.right = temp;
     } // Time complexity is O(n) because we are visiting each node exactly once. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
-    
+
+
+    // Another approach using Pre order Traversal and ArrayList
+    public static void flattenUsingPreOrder(Node root) {
+        List<Node> nodes = new ArrayList<>();
+        preOrderCollect(root, nodes);
+        for (int i = 0; i < nodes.size() - 1; i++) {
+            nodes.get(i).left = null;
+            nodes.get(i).right = nodes.get(i + 1);
+        }
+    }
+
+    private static void preOrderCollect(Node root, List<Node> nodes) {
+        if (root == null) {
+            return;
+        }
+        nodes.add(root);
+        preOrderCollect(root.left, nodes);
+        preOrderCollect(root.right, nodes);
+    }
 } 
