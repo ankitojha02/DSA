@@ -482,5 +482,27 @@ public class Implementation {
     }
 
     // GFG Practice - Min distance between two nodes of a Binary Tree - Given a binary tree and two node values, find the minimum distance between the two nodes. The distance between two nodes is defined as the number of edges in the shortest path connecting them.
+    public static int minDistance(Node root, int n1, int n2) {
+        Node lca = lowestCommonAncestor(root, new Node(n1), new Node(n2));
+        int d1 = distanceFromLCA(lca, n1);
+        int d2 = distanceFromLCA(lca, n2);
+        return d1 + d2;
+    }
+
+    private static int distanceFromLCA(Node root, int val) {
+        if (root == null) {
+            return -1;
+        }
+        if (root.val == val) {
+            return 0;
+        }
+        int leftDistance = distanceFromLCA(root.left, val);
+        int rightDistance = distanceFromLCA(root.right, val);
+        if (leftDistance == -1 && rightDistance == -1) {
+            return -1;
+        }
+        return leftDistance != -1 ? leftDistance + 1 : rightDistance + 1;
+    }
+
 
 }
