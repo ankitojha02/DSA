@@ -480,4 +480,7 @@ public class Implementation {
         }
         return left != null ? left : right;
     }
+
+    // GFG Practice - Min distance between two nodes of a Binary Tree - Given a binary tree and two node values, find the minimum distance between the two nodes. The distance between two nodes is defined as the number of edges in the shortest path connecting them.
+
 }
