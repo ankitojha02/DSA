@@ -503,6 +503,22 @@ public class Implementation {
         }
         return leftDistance != -1 ? leftDistance + 1 : rightDistance + 1;
     }
-
-
-}
+    
+    // LeetCode 114 - Flatten Binary Tree to Linked List - Given the root of a binary tree, flatten the tree into a "linked list":
+    public static void flatten(Node root) {
+        if (root == null) {
+            return;
+        }
+        flatten(root.left);
+        flatten(root.right);
+        Node temp = root.right;
+        root.right = root.left;
+        root.left = null;
+        Node current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        current.right = temp;
+    } // Time complexity is O(n) because we are visiting each node exactly once. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
+    
+} 
