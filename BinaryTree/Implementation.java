@@ -509,16 +509,16 @@ public class Implementation {
         if (root == null) {
             return;
         }
-        flatten(root.left);
-        flatten(root.right);
-        Node temp = root.right;
-        root.right = root.left;
-        root.left = null;
-        Node current = root;
+        flatten(root.left); // Flatten the left subtree
+        flatten(root.right); // Flatten the right subtree
+        Node temp = root.right; // Store the right subtree
+        root.right = root.left; // Move the flattened left subtree to the right
+        root.left = null; // Set the left child to null
+        Node current = root; // Traverse to the end of the new right subtree
         while (current.right != null) {
             current = current.right;
         }
-        current.right = temp;
+        current.right = temp; // Attach the original right subtree to the end of the new right subtree
     } // Time complexity is O(n) because we are visiting each node exactly once. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
 
 
@@ -539,5 +539,29 @@ public class Implementation {
         nodes.add(root);
         preOrderCollect(root.left, nodes);
         preOrderCollect(root.right, nodes);
+    }
+
+    // LeetCode 113 - Path Sum II - Given the root of a binary tree and an integer targetSum, return all root-to-leaf paths where the sum of the node values in the path equals targetSum. Each path should be returned as a list of the node values, not node references.
+    public static List<List<Integer>> pathSum(Node root, int targetSum) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        pathSumHelper(root, targetSum, new ArrayList<>(), result);
+        return result;
+    }
+    
+    private static void pathSumHelper(Node root, int targetSum, List<Integer> currentPath, List<List<Integer>> result) {
+        if (root == null) {
+            return;
+        }
+        currentPath.add(root.val);
+        if (root.left == null && root.right == null && root.val == targetSum) {
+            result.add(new ArrayList<>(currentPath));
+        } else {
+            pathSumHelper(root.left, targetSum - root.val, currentPath, result);
+            pathSumHelper(root.right, targetSum - root.val, currentPath, result);
+        }
+        currentPath.remove(currentPath.size() - 1); // Backtrack to explore other paths
     }
 } 
