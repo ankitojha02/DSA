@@ -551,6 +551,7 @@ public class Implementation {
         return result;
     }
     
+    // same as dfs 
     private static void pathSumHelper(Node root, int targetSum, List<Integer> currentPath, List<List<Integer>> result) {
         if (root == null) {
             return;
@@ -563,5 +564,8 @@ public class Implementation {
             pathSumHelper(root.right, targetSum - root.val, currentPath, result);
         }
         currentPath.remove(currentPath.size() - 1); // Backtrack to explore other paths
-    }
+    } // Time complexity is O(n) because we are visiting each node exactly once. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
+
+    
+
 } 
