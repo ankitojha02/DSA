@@ -52,6 +52,7 @@ public class Basics_BST {
     }
 
     // LeetCode 700 : Search in a Binary Search Tree
+    // Time Complexity: O(h), where h is the height of the tree. In the worst case, the height of the tree can be equal to the number of nodes in the tree (O(n)), making the time complexity O(n). In a balanced BST, the height is log(n), making the time complexity O(log n).
     public static Node searchBST(Node root, int val) {
         if (root == null || root.val == val) {
             return root;
