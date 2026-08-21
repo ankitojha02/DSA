@@ -77,4 +77,19 @@ public class Basics_BST {
         }
         return root.val + rangeSumBST(root.left, low, high) + rangeSumBST(root.right, low, high);
     }
+
+    // Count BST Nodes in a given range - GFG Practice
+    // Time Complexity: O(n), where n is the number of nodes in the tree.
+    public static int countNodesInRange(Node root, int low, int high) {
+        if (root == null) {
+            return 0;
+        }
+        if (root.val < low) {
+            return countNodesInRange(root.right, low, high);
+        }
+        if (root.val > high) {
+            return countNodesInRange(root.left, low, high);
+        }
+        return 1 + countNodesInRange(root.left, low, high) + countNodesInRange(root.right, low, high);
+    }
 }
