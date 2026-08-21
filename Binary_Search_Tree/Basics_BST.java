@@ -94,6 +94,17 @@ public class Basics_BST {
     }
 
     // LeetCode 701 - Insert into a Binary Search Tree
-    // Time Complexity: O(h), where h is the height of the tree. In the
-    
+    // Time Complexity: O(h), where h is the height of the tree. In the worst case, the height of the tree can be equal to the number of nodes in the tree (O(n)), making the time complexity O(n). In a balanced BST, the height is log(n), making the time complexity O(log n).
+    public static Node insertIntoBST(Node root, int val) {
+
+        if (root == null) {
+            return new Node(val);
+        }
+        if (val < root.val) {
+            root.left = insertIntoBST(root.left, val);
+        } else {
+            root.right = insertIntoBST(root.right, val);
+        }
+        return root;
+    }
 }
