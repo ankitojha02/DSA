@@ -62,4 +62,19 @@ public class Basics_BST {
         }
         return searchBST(root.right, val);
     }
+
+    // LeetCode 938 : Range Sum of BST
+    // Time Complexity: O(n), where n is the number of nodes in the tree.
+    public static int rangeSumBST(Node root, int low, int high) {
+        if (root == null) {
+            return 0;
+        }
+        if (root.val < low) {
+            return rangeSumBST(root.right, low, high);
+        }
+        if (root.val > high) {
+            return rangeSumBST(root.left, low, high);
+        }
+        return root.val + rangeSumBST(root.left, low, high) + rangeSumBST(root.right, low, high);
+    }
 }
