@@ -1,5 +1,7 @@
 package Binary_Search_Tree;
 
+import java.util.ArrayList;
+
 class Node {
     int val;
     Node left, right;
@@ -111,5 +113,18 @@ public class Basics_BST {
     // Inoder traversal of BST is always sorted in ascending order
     // Time Complexity: O(n), where n is the number of nodes in the tree.
     // LeetCode 230 - Kth Smallest Element in a BST
-    
+    public static int kthSmallest(Node root, int k) {
+       ArrayList<Integer> arr = new ArrayList<>();
+         inorderTraversal(root, arr);
+          return arr.get(k - 1);    
+    }
+
+    public static void inorderTraversal(Node root, ArrayList<Integer> arr) {
+        if (root == null) {
+            return;
+        }
+        inorderTraversal(root.left, arr);
+        arr.add(root.val);
+        inorderTraversal(root.right, arr);
+    }
 }
