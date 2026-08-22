@@ -127,4 +127,8 @@ public class Basics_BST {
         arr.add(root.val);
         inorderTraversal(root.right, arr);
     }
+
+    // LeetCode 98 - Validate Binary Search Tree
+    // Time Complexity: O(n), where n is the number of nodes in the tree.
+    
 }
