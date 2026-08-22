@@ -130,5 +130,17 @@ public class Basics_BST {
 
     // LeetCode 98 - Validate Binary Search Tree
     // Time Complexity: O(n), where n is the number of nodes in the tree.
+    // Using Inorder Traversal to check if the BST is valid or not
+    public static boolean isValidBST(Node root) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        inorderTraversal(root, arr);
+        for (int i = 1; i < arr.size(); i++) {
+            if (arr.get(i) <= arr.get(i - 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     
 }
