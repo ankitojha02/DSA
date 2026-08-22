@@ -100,11 +100,15 @@ public class Basics_BST {
         if (root == null) {
             return new Node(val);
         }
-        if (val < root.val) {
-            root.left = insertIntoBST(root.left, val);
+        if (val < root.val) { // If the value to be inserted is less than the current node's value, we go to the left subtree
+            root.left = insertIntoBST(root.left, val); // Recursively call the function on the left subtree and assign the returned node to the left child of the current node
         } else {
-            root.right = insertIntoBST(root.right, val);
+            root.right = insertIntoBST(root.right, val); // If the value to be inserted is greater than or equal to the current node's value, we go to the right subtree and recursively call the function on the right subtree and assign the returned node to the right child of the current node
         }
         return root;
     }
+
+    // Inoder traversal of BST is always sorted in ascending order
+    // Time Complexity: O(n), where n is the number of nodes in the tree.
+    
 }
