@@ -212,12 +212,13 @@ This repository contains my daily coding practice, implementations, and problem-
 | Linked List | ✅ Completed |
 | Stacks | ✅ Completed |
 | Queues | ✅ Completed |
+| Binary Tree | ✅ Completed |
 
 ---
 
 # 🗺️ Upcoming Topics
 
-- [ ] Binary Tree
+
 - [ ] HashMap
 - [ ] HashSet
 - [ ] Trees
