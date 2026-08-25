@@ -146,11 +146,25 @@ public class Basics_BST {
     // LeetCode 538 - Convert BST to Greater Tree
     // Time Complexity: O(n), where n is the number of nodes in the tree.
     
-    
+    // Homework
     // LeetCode 1373 - Maximum Sum BST in Binary Tree - Solution on LeetCode
     // Time Complexity: O(n), where n is the number of nodes in the tree.
 
   
-   
+   // LeetCode 235 - Lowest Common Ancestor of a Binary Search Tree
+   // Time Complexity: O(h), where h is the height of the tree. In the worst case, the height of the tree can be equal to the number of nodes in the tree.
+    public static Node lowestCommonAncestor(Node root, Node p, Node q) {
+          if (root == null) {
+                return null;
+          }
+          if (p.val < root.val && q.val < root.val) {
+                return lowestCommonAncestor(root.left, p, q);
+          }
+          if (p.val > root.val && q.val > root.val) {
+                return lowestCommonAncestor(root.right, p, q);
+          }
+          return root;
+     }
+
     
 }
