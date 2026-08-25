@@ -1,6 +1,7 @@
 package Binary_Search_Tree;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 class Node {
     int val;
@@ -146,20 +147,35 @@ public class Basics_BST {
     // LeetCode 538 - Convert BST to Greater Tree
     // Time Complexity: O(n), where n is the number of nodes in the tree.
     public static Node convertBST(Node root) {
-        int[] sum = new int[1]; // Using an array to hold the sum so that it can be updated in the recursive calls
-        convertBSTHelper(root, sum);
+        ArrayList<Node> arr = new ArrayList<>();
+        inorderTraversalNodes(root, arr);
+        Collections.reverse(arr);
+        int sum = 0;
+        for (Node node : arr) {
+            sum += node.val;
+            node.val = sum;
+        }
         return root;
     }
 
-    public static void convertBSTHelper(Node root, int[] sum) {
+    public static void inorderTraversalNodes(Node root, ArrayList<Node> arr) {
         if (root == null) {
             return;
         }
-        convertBSTHelper(root.right, sum);
-        sum[0] += root.val;
-        root.val = sum[0];
-        convertBSTHelper(root.left, sum);
+        inorderTraversalNodes(root.left, arr);
+        arr.add(root);
+        inorderTraversalNodes(root.right, arr);
     }
+
+    // public static void convertBSTHelper(Node root, int[] sum) {
+    //     if (root == null) {
+    //         return;
+    //     }
+    //     convertBSTHelper(root.right, sum);
+    //     sum[0] += root.val;
+    //     root.val = sum[0];
+    //     convertBSTHelper(root.left, sum);
+    // }
     // Homework
     // LeetCode 1373 - Maximum Sum BST in Binary Tree - Solution on LeetCode
     // Time Complexity: O(n), where n is the number of nodes in the tree.
