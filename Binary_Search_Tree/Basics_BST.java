@@ -145,7 +145,21 @@ public class Basics_BST {
     // Homework
     // LeetCode 538 - Convert BST to Greater Tree
     // Time Complexity: O(n), where n is the number of nodes in the tree.
-    
+    public static Node convertBST(Node root) {
+        int[] sum = new int[1]; // Using an array to hold the sum so that it can be updated in the recursive calls
+        convertBSTHelper(root, sum);
+        return root;
+    }
+
+    public static void convertBSTHelper(Node root, int[] sum) {
+        if (root == null) {
+            return;
+        }
+        convertBSTHelper(root.right, sum);
+        sum[0] += root.val;
+        root.val = sum[0];
+        convertBSTHelper(root.left, sum);
+    }
     // Homework
     // LeetCode 1373 - Maximum Sum BST in Binary Tree - Solution on LeetCode
     // Time Complexity: O(n), where n is the number of nodes in the tree.
