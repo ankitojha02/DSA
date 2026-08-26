@@ -167,15 +167,6 @@ public class Basics_BST {
         inorderTraversalNodes(root.right, arr);
     }
 
-    // public static void convertBSTHelper(Node root, int[] sum) {
-    //     if (root == null) {
-    //         return;
-    //     }
-    //     convertBSTHelper(root.right, sum);
-    //     sum[0] += root.val;
-    //     root.val = sum[0];
-    //     convertBSTHelper(root.left, sum);
-    // }
     // Homework
     // LeetCode 1373 - Maximum Sum BST in Binary Tree - Solution on LeetCode
     // Time Complexity: O(n), where n is the number of nodes in the tree.
@@ -196,5 +187,6 @@ public class Basics_BST {
           return root;
      }
 
+    // LeetCode 108 - Convert Sorted Array to Binary Search Tree
     
 }
