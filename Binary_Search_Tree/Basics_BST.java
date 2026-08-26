@@ -193,7 +193,7 @@ public class Basics_BST {
     }
 
     public static Node sortedArrayToBSTHelper(int[] nums, int low, int high) {
-        if (low > high) {
+        if (low > high) { // Base case: If the low index is greater than the high index, it means there are no elements to process, so we return null.
             return null;
         }
         int mid = low + (high - low) / 2;
@@ -201,5 +201,18 @@ public class Basics_BST {
         node.left = sortedArrayToBSTHelper(nums, low, mid - 1);
         node.right = sortedArrayToBSTHelper(nums, mid + 1, high);
         return node;
+    }
+
+    // Inorder Predecessor in BST
+    public static Node inorderPredecessor(Node root, Node p) {
+       // Ek baar jaao left subtree mein, aur wahan se rightmost node ko return karo
+       if (p.left != null) {
+           Node curr = p.left;
+           while (curr.right != null) {
+               curr = curr.right;
+           }
+           return curr;
+       }
+       return null;
     }
 }
