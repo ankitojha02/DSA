@@ -217,5 +217,29 @@ public class Basics_BST {
     }
 
     // Introduction to Morris Traversal
-    
+    public static void morrisTraversal(Node root) {
+        Node curr = root;
+        while (curr != null) {
+           if (curr.left != null) {
+            // Find predecessor
+            Node pred = curr.left;
+            while (pred.right != null && pred.right != curr) {
+                pred = pred.right;
+            }
+
+            if (pred.right == null) {
+                pred.right = curr;
+                curr = curr.left;
+            } else {
+                pred.right = null;
+                System.out.print(curr.val + " ");
+                curr = curr.right;
+            }
+           }
+           else {
+                System.out.print(curr.val + " ");
+                curr = curr.right;
+           }
+        }
+    }
 }
