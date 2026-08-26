@@ -188,5 +188,18 @@ public class Basics_BST {
      }
 
     // LeetCode 108 - Convert Sorted Array to Binary Search Tree
-    
+    public static Node sortedArrayToBST(int[] nums) {
+        return sortedArrayToBSTHelper(nums, 0, nums.length - 1);
+    }
+
+    public static Node sortedArrayToBSTHelper(int[] nums, int low, int high) {
+        if (low > high) {
+            return null;
+        }
+        int mid = low + (high - low) / 2;
+        Node node = new Node(nums[mid]);
+        node.left = sortedArrayToBSTHelper(nums, low, mid - 1);
+        node.right = sortedArrayToBSTHelper(nums, mid + 1, high);
+        return node;
+    }
 }
