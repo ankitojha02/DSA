@@ -2,7 +2,7 @@ package Binary_Search_Tree;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
+import java.util.Stack;
 class Node {
     int val;
     Node left, right;
@@ -256,7 +256,8 @@ public class Basics_BST {
         }
     }
 
-    // You can solve LeetCode 114 Flatten Binary Tree to Linked List using Morris Traversal
+    // You can solve LeetCode 114 Flatten Binary Tree to Linked List using Morris
+    // Traversal
 
     public static void flatten(Node root) {
         Node curr = root;
@@ -274,7 +275,22 @@ public class Basics_BST {
         }
     }
 
-
     // PreOrder Traversal (Iterative)
-    
+    public static void preOrderIterative(Node root) {
+        if (root == null) {
+            return;
+        }
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            Node curr = stack.pop();
+            System.out.print(curr.val + " ");
+            if (curr.right != null) {
+                stack.push(curr.right);
+            }
+            if (curr.left != null) {
+                stack.push(curr.left);
+            }
+        }
+    }
 }
