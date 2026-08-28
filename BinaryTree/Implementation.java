@@ -26,10 +26,10 @@ class Pair {
     }
 }
 
-
 public class Implementation {
     static boolean flag = true;
     static int max = 0;
+
     public static void main(String[] args) {
         // Creating nodes of the binary tree
         Node a = new Node(1);
@@ -308,10 +308,12 @@ public class Implementation {
         }
         nthLevel(root.left, level + 1, k);
         nthLevel(root.right, level + 1, k);
-    } 
+    }
 
-    //  Binary Tree Paths / Root to Leaf Paths - Given the root of a binary tree, return all root-to-leaf paths in any order. A leaf is a node with no children. - GFG Practice
-    public ArrayList<ArrayList<Integer>> paths (Node root) {
+    // Binary Tree Paths / Root to Leaf Paths - Given the root of a binary tree,
+    // return all root-to-leaf paths in any order. A leaf is a node with no
+    // children. - GFG Practice
+    public ArrayList<ArrayList<Integer>> paths(Node root) {
         ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
         if (root == null) {
             return ans;
@@ -348,7 +350,11 @@ public class Implementation {
         return false; // One child is null and the other is not
     }
 
-    // LeetCode 110 - Balanced Binary Tree - Time complexity is O(n^2) because for each node, we are calculating the height of its left and right subtrees, which takes O(n) time. Since we do this for each node, the overall time complexity becomes O(n^2). The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
+    // LeetCode 110 - Balanced Binary Tree - Time complexity is O(n^2) because for
+    // each node, we are calculating the height of its left and right subtrees,
+    // which takes O(n) time. Since we do this for each node, the overall time
+    // complexity becomes O(n^2). The space complexity is O(h) where h is the height
+    // of the binary tree due to the recursive call stack.
 
     public static boolean isBalanced(Node root) {
         if (root == null) {
@@ -368,10 +374,13 @@ public class Implementation {
         }
         return 1 + Math.max(height(root.left), height(root.right));
     }
-    
-    // Optimized version of isBalanced - Time complexity is O(n) because we are calculating the height of the tree in a single traversal. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
+
+    // Optimized version of isBalanced - Time complexity is O(n) because we are
+    // calculating the height of the tree in a single traversal. The space
+    // complexity is O(h) where h is the height of the binary tree due to the
+    // recursive call stack.
     public static boolean isBalancedOptimized(Node root) {
-        if(root == null) {
+        if (root == null) {
             return true;
         }
         flag = true;
@@ -380,18 +389,21 @@ public class Implementation {
     }
 
     public static int heightOptimized(Node root) {
-        if(root == null) {
+        if (root == null) {
             return 0;
         }
         int leftHeight = heightOptimized(root.left);
         int rightHeight = heightOptimized(root.right);
-        if(Math.abs(leftHeight - rightHeight) > 1) {
+        if (Math.abs(leftHeight - rightHeight) > 1) {
             flag = false;
         }
         return 1 + Math.max(leftHeight, rightHeight);
     }
 
-    // LeetCode 543 - Diameter of Binary Tree - Given the root of a binary tree, return the length of the diameter of the tree. The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
+    // LeetCode 543 - Diameter of Binary Tree - Given the root of a binary tree,
+    // return the length of the diameter of the tree. The diameter of a binary tree
+    // is the length of the longest path between any two nodes in a tree. This path
+    // may or may not pass through the root.
     public static int diameterOfBinaryTree(Node root) {
         if (root == null) {
             return 0;
@@ -403,7 +415,10 @@ public class Implementation {
         return Math.max(leftHeight + rightHeight, Math.max(leftDiameter, rightDiameter));
     }
 
-    // Optimized version of diameterOfBinaryTree - Time complexity is O(n) because we are calculating the height of the tree in a single traversal. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
+    // Optimized version of diameterOfBinaryTree - Time complexity is O(n) because
+    // we are calculating the height of the tree in a single traversal. The space
+    // complexity is O(h) where h is the height of the binary tree due to the
+    // recursive call stack.
     public static int diameterOfBinaryTreeOptimized(Node root) {
         if (root == null) {
             return 0;
@@ -423,7 +438,9 @@ public class Implementation {
         return Math.max(leftHeight, rightHeight) + 1;
     }
 
-    // Right View of Binary Tree - Given the root of a binary tree, imagine yourself standing on the right side of it, return the values of the nodes you can see ordered from top to bottom. - LeetCode 199
+    // Right View of Binary Tree - Given the root of a binary tree, imagine yourself
+    // standing on the right side of it, return the values of the nodes you can see
+    // ordered from top to bottom. - LeetCode 199
     public static List<Integer> rightSideView(Node root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) {
@@ -432,7 +449,10 @@ public class Implementation {
         rightSideViewHelper(root, result, 0);
         return result;
     }
-    // Time complexity is O(n) because we are visiting each node exactly once. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
+
+    // Time complexity is O(n) because we are visiting each node exactly once. The
+    // space complexity is O(h) where h is the height of the binary tree due to the
+    // recursive call stack.
     private static void rightSideViewHelper(Node root, List<Integer> result, int level) {
         if (root == null) {
             return;
@@ -443,10 +463,12 @@ public class Implementation {
         }
         rightSideViewHelper(root.right, result, level + 1);
         rightSideViewHelper(root.left, result, level + 1);
-    
+
     }
 
-    // Left view of Binary Tree - Given the root of a binary tree, imagine yourself standing on the left side of it, return the values of the nodes you can see ordered from top to bottom. - LeetCode 199
+    // Left view of Binary Tree - Given the root of a binary tree, imagine yourself
+    // standing on the left side of it, return the values of the nodes you can see
+    // ordered from top to bottom. - LeetCode 199
     public static List<Integer> leftSideView(Node root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) {
@@ -481,7 +503,10 @@ public class Implementation {
         return left != null ? left : right;
     }
 
-    // GFG Practice - Min distance between two nodes of a Binary Tree - Given a binary tree and two node values, find the minimum distance between the two nodes. The distance between two nodes is defined as the number of edges in the shortest path connecting them.
+    // GFG Practice - Min distance between two nodes of a Binary Tree - Given a
+    // binary tree and two node values, find the minimum distance between the two
+    // nodes. The distance between two nodes is defined as the number of edges in
+    // the shortest path connecting them.
     public static int minDistance(Node root, int n1, int n2) {
         Node lca = lowestCommonAncestor(root, new Node(n1), new Node(n2));
         int d1 = distanceFromLCA(lca, n1);
@@ -503,8 +528,9 @@ public class Implementation {
         }
         return leftDistance != -1 ? leftDistance + 1 : rightDistance + 1;
     }
-    
-    // LeetCode 114 - Flatten Binary Tree to Linked List - Given the root of a binary tree, flatten the tree into a "linked list":
+
+    // LeetCode 114 - Flatten Binary Tree to Linked List - Given the root of a
+    // binary tree, flatten the tree into a "linked list":
     public static void flatten(Node root) {
         if (root == null) {
             return;
@@ -519,8 +545,9 @@ public class Implementation {
             current = current.right;
         }
         current.right = temp; // Attach the original right subtree to the end of the new right subtree
-    } // Time complexity is O(n) because we are visiting each node exactly once. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
-
+    } // Time complexity is O(n) because we are visiting each node exactly once. The
+      // space complexity is O(h) where h is the height of the binary tree due to the
+      // recursive call stack.
 
     // Another approach using Pre order Traversal and ArrayList
     public static void flattenUsingPreOrder(Node root) {
@@ -541,7 +568,10 @@ public class Implementation {
         preOrderCollect(root.right, nodes);
     }
 
-    // LeetCode 113 - Path Sum II - Given the root of a binary tree and an integer targetSum, return all root-to-leaf paths where the sum of the node values in the path equals targetSum. Each path should be returned as a list of the node values, not node references.
+    // LeetCode 113 - Path Sum II - Given the root of a binary tree and an integer
+    // targetSum, return all root-to-leaf paths where the sum of the node values in
+    // the path equals targetSum. Each path should be returned as a list of the node
+    // values, not node references.
     public static List<List<Integer>> pathSum(Node root, int targetSum) {
         List<List<Integer>> result = new ArrayList<>();
         if (root == null) {
@@ -550,8 +580,8 @@ public class Implementation {
         pathSumHelper(root, targetSum, new ArrayList<>(), result);
         return result;
     }
-    
-    // same as dfs 
+
+    // same as dfs
     private static void pathSumHelper(Node root, int targetSum, List<Integer> currentPath, List<List<Integer>> result) {
         if (root == null) {
             return;
@@ -564,9 +594,14 @@ public class Implementation {
             pathSumHelper(root.right, targetSum - root.val, currentPath, result);
         }
         currentPath.remove(currentPath.size() - 1); // Backtrack to explore other paths
-    } // Time complexity is O(n) because we are visiting each node exactly once. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
+    } // Time complexity is O(n) because we are visiting each node exactly once. The
+      // space complexity is O(h) where h is the height of the binary tree due to the
+      // recursive call stack.
 
-    
+
+
+      // This is a common pattern in backtracking problems where we explore all possible paths and then backtrack to explore other paths.
+
     // Tree Boundary Traversal - GFG Practice
     public static List<Integer> boundaryTraversal(Node root) {
         List<Integer> result = new ArrayList<>();
@@ -608,25 +643,25 @@ public class Implementation {
     }
 
     private static void addRightBoundary(Node root, List<Integer> result) {
-    ArrayList<Integer> temp = new ArrayList<>();
-    Node current = root;
+        ArrayList<Integer> temp = new ArrayList<>();
+        Node current = root;
 
-    while (current != null) {
-        if (current.left != null || current.right != null) {
-            temp.add(current.val);
+        while (current != null) {
+            if (current.left != null || current.right != null) {
+                temp.add(current.val);
+            }
+
+            if (current.right != null) {
+                current = current.right;
+            } else {
+                current = current.left;
+            }
         }
 
-        if (current.right != null) {
-            current = current.right;
-        } else {
-            current = current.left;
+        for (int i = temp.size() - 1; i >= 0; i--) {
+            result.add(temp.get(i));
         }
     }
 
-    for (int i = temp.size() - 1; i >= 0; i--) {
-        result.add(temp.get(i));
-    }
+    
 }
-
-
-} 

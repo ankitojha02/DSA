@@ -268,6 +268,6 @@ Solve problems daily, learn continuously, and improve gradually.
 
 ### ⭐ If you like this repository, don't forget to star it!
 
-🚀 Happy Coding 🚀
+ Happy Coding 
 
 </div>
