@@ -608,18 +608,25 @@ public class Implementation {
     }
 
     private static void addRightBoundary(Node root, List<Integer> result) {
-        Node current = root;
-        while (current != null) {
-            if (current.left != null || current.right != null) {
-                result.add(current.val);
-            }
-            if (current.right != null) {
-                current = current.right;
-            } else {
-                current = current.left;
-            }
+    ArrayList<Integer> temp = new ArrayList<>();
+    Node current = root;
+
+    while (current != null) {
+        if (current.left != null || current.right != null) {
+            temp.add(current.val);
+        }
+
+        if (current.right != null) {
+            current = current.right;
+        } else {
+            current = current.left;
         }
     }
+
+    for (int i = temp.size() - 1; i >= 0; i--) {
+        result.add(temp.get(i));
+    }
+}
 
 
 } 
