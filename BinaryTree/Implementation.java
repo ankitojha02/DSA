@@ -567,7 +567,59 @@ public class Implementation {
     } // Time complexity is O(n) because we are visiting each node exactly once. The space complexity is O(h) where h is the height of the binary tree due to the recursive call stack.
 
     
-    // Tree Boundary Traversal 
-    
+    // Tree Boundary Traversal - GFG Practice
+    public static List<Integer> boundaryTraversal(Node root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+        result.add(root.val);
+        addLeftBoundary(root.left, result);
+        addLeaves(root.left, result);
+        addLeaves(root.right, result);
+        addRightBoundary(root.right, result);
+        return result;
+    }
+
+    private static void addLeftBoundary(Node root, List<Integer> result) {
+        Node current = root;
+        while (current != null) {
+            if (current.left != null || current.right != null) {
+                result.add(current.val);
+            }
+            if (current.left != null) {
+                current = current.left;
+            } else {
+                current = current.right;
+            }
+        }
+    }
+
+    private static void addLeaves(Node root, List<Integer> result) {
+        if (root == null) {
+            return;
+        }
+        if (root.left == null && root.right == null) {
+            result.add(root.val);
+        } else {
+            addLeaves(root.left, result);
+            addLeaves(root.right, result);
+        }
+    }
+
+    private static void addRightBoundary(Node root, List<Integer> result) {
+        Node current = root;
+        while (current != null) {
+            if (current.left != null || current.right != null) {
+                result.add(current.val);
+            }
+            if (current.right != null) {
+                current = current.right;
+            } else {
+                current = current.left;
+            }
+        }
+    }
+
 
 } 
