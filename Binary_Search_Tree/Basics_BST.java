@@ -3,6 +3,7 @@ package Binary_Search_Tree;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Stack;
+import java.util.List;
 class Node {
     int val;
     Node left, right;
@@ -319,5 +320,27 @@ public class Basics_BST {
     }
 
     // Inorder Traversal (Iterative)
-    
+    public List<Integer> inorderTraversalIterative(Node root) {
+        List<Integer> result = new ArrayList<>();
+        Stack<Node> stack = new Stack<>();
+        Node curr = root;
+       while(curr != null || !stack.isEmpty()) {
+        if(curr != null) {
+             if (curr.left != null) {
+                stack.push(curr);
+                curr = curr.left;
+            } else {
+                result.add(curr.val);
+                curr = curr.right;
+            }
+        }
+
+        else {
+            Node top = stack.pop();
+            result.add(top.val);
+            curr = top.right;
+        }
+       }
+        return result;
+    }
 }
