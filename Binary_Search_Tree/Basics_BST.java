@@ -344,6 +344,24 @@ public class Basics_BST {
         return result;
     }
 
+    // Delete Node in BST (0 child nodes)
+    public static Node deleteNode(Node root, int target) {
+        if (root == null) {
+            return null;
+        }
+
+        if (root.val > target) {
+            root.left = deleteNode(root.left, target);
+        } else if (root.val < target) {
+            root.right = deleteNode(root.right, target);
+        } else {
+            // Node to be deleted found
+           return null; // Return null to delete the node
+        }
+        return root;
+    }
+
+
     // Delete Node in a BST - LeetCode 450
     
 }
