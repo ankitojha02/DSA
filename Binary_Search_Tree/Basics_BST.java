@@ -413,5 +413,27 @@ public class Basics_BST {
     // (O(n)), making the time complexity O(n). In a balanced BST, the height is
     // log(n), making the time complexity O(log n).
 
-    
+    // LeetCode 1008 - Construct Binary Search Tree from Preorder Traversal
+    public static Node bstFromPreorder(int[] preorder) {
+        if (preorder == null || preorder.length == 0) {
+            return null;
+        }
+        return bstFromPreorderHelper(preorder, 0, preorder.length - 1);
+}
+
+    private static Node bstFromPreorderHelper(int[] preorder, int low, int high) {
+        if (low > high) {
+            return null;
+        }
+        Node root = new Node(preorder[low]);
+        int i;
+        for (i = low + 1; i <= high; i++) {
+            if (preorder[i] > preorder[low]) {
+                break;
+            }
+        }
+        root.left = bstFromPreorderHelper(preorder, low + 1, i - 1);
+        root.right = bstFromPreorderHelper(preorder, i, high);
+        return root;
+    }
 }
