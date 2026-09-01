@@ -689,4 +689,31 @@ public class Implementation {
         root.right = buildTree(preorder, preLow + leftSubtreeSize + 1, preHigh, inorder, r + 1, inHigh);
         return root;
     }
+
+    // LeetCode 106 - Construct Binary Tree from Inorder and Postorder Traversal
+    public static Node buildTreeFromInorderAndPostorder(int[] inorder, int[] postorder) {
+        if (inorder == null || postorder == null || inorder.length != postorder.length) {
+            return null;
+        }
+        return buildTreeFromInorderAndPostorder(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
+    }
+
+    public static Node buildTreeFromInorderAndPostorder(int[] inorder, int inLow, int inHigh, int[] postorder, int postLow, int postHigh) {
+        if (inLow > inHigh || postLow > postHigh) {
+            return null;
+        }
+        int rootVal = postorder[postHigh];
+        Node root = new Node(rootVal);
+        int r = -1;
+        for (int i = inLow; i <= inHigh; i++) { // Find the index of the root value in the inorder array
+            if (inorder[i] == rootVal) {
+                r = i;
+                break;
+            }
+        }
+        int leftSubtreeSize = r - inLow;
+        root.left = buildTreeFromInorderAndPostorder(inorder, inLow, r - 1, postorder, postLow, postLow + leftSubtreeSize - 1);
+        root.right = buildTreeFromInorderAndPostorder(inorder, r + 1, inHigh, postorder, postLow + leftSubtreeSize, postHigh - 1);
+        return root;
+    }
 }
