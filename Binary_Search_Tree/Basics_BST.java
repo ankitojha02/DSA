@@ -356,11 +356,10 @@ public class Basics_BST {
             root.right = deleteNode(root.right, target);
         } else {
             // Node to be deleted found
-           return null; // Return null to delete the node
+            return null; // Return null to delete the node
         }
         return root;
     }
-
 
     // Delete Node in BST (1 child node)
     public static Node deleteNodeWithOneChild(Node root, int target) {
@@ -381,8 +380,6 @@ public class Basics_BST {
         }
         return root;
     }
-
-
 
     // Delete Node in a BST - LeetCode 450
     public static Node deleteNodeInBST(Node root, int key) {
@@ -411,4 +408,10 @@ public class Basics_BST {
         }
         return root;
     }
+    // Time Complexity: O(h), where h is the height of the tree. In the worst case,
+    // the height of the tree can be equal to the number of nodes in the tree
+    // (O(n)), making the time complexity O(n). In a balanced BST, the height is
+    // log(n), making the time complexity O(log n).
+
+    
 }
