@@ -664,5 +664,29 @@ public class Implementation {
     }
 
     // LeetCode 105 - Construct Binary Tree from Preorder and Inorder Traversal
-    
+    public static Node buildTree(int[] preorder, int[] inorder) {
+        if (preorder == null || inorder == null || preorder.length != inorder.length) {
+            return null;
+        }
+        return buildTree(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
+    }
+
+    private static Node buildTree(int[] preorder, int preLow, int preHigh, int[] inorder, int inLow, int inHigh) {
+        if (preLow > preHigh || inLow > inHigh) {
+            return null;
+        }
+        int rootVal = preorder[preLow];
+        Node root = new Node(rootVal);
+        int r = -1;
+        for (int i = inLow; i <= inHigh; i++) { // Find the index of the root value in the inorder array
+            if (inorder[i] == rootVal) {
+                r = i;
+                break;
+            }
+        }
+        int leftSubtreeSize = r - inLow;
+        root.left = buildTree(preorder, preLow + 1, preLow + leftSubtreeSize, inorder, inLow, r - 1);
+        root.right = buildTree(preorder, preLow + leftSubtreeSize + 1, preHigh, inorder, r + 1, inHigh);
+        return root;
+    }
 }
