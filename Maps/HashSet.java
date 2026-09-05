@@ -1,7 +1,0 @@
-package Maps;
-
-public class HashSet {
-    public static void main(String[] args) {
-        
-    }
-}
