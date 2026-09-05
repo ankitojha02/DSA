@@ -38,6 +38,16 @@ public class HashSets {
         // System.out.println(treeSet); // [3, 4, 10, 22] - sorted order
         // System.out.println(treeSet.size()); // 4
 
+        
+        // Find distinct elements in an array using HashSet
+        // Time Complexity: O(n), where n is the number of elements in the array. This is because we iterate through the array once and perform O(1) operations (add) for each element in the HashSet.
+        int[] arr = {1, 2, 3, 4, 5, 1, 2, 3};
+        Set<Integer> distinctElements = new HashSet<>();
+        for (int num : arr) {
+            distinctElements.add(num);
+        }
+        System.out.println(distinctElements); // [1, 2, 3, 4, 5] - unique elements
+        System.out.println(distinctElements.size()); // [1, 2, 3, 4, 5] - unique elements
 
         
     }
