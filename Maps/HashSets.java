@@ -29,15 +29,16 @@ public class HashSets {
 
 
         // Time Complexity of TreeSet is O(log n) for add, remove, and contains operations, while HashSet has O(1) average time complexity for these operations. However, TreeSet maintains sorted order of elements, while HashSet does not guarantee any order.
-        TreeSet<Integer> treeSet = new TreeSet<>();
-        treeSet.add(10);
-        treeSet.add(22);
-        treeSet.add(3);
-        treeSet.add(4);
+        // TreeSet<Integer> treeSet = new TreeSet<>();
+        // treeSet.add(10);
+        // treeSet.add(22);
+        // treeSet.add(3);
+        // treeSet.add(4);
 
-        System.out.println(treeSet); // [3, 4, 10, 22] - sorted order
-        System.out.println(treeSet.size()); // 4
+        // System.out.println(treeSet); // [3, 4, 10, 22] - sorted order
+        // System.out.println(treeSet.size()); // 4
 
 
+        
     }
 }
