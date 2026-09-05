@@ -41,14 +41,30 @@ public class HashSets {
         
         // Find distinct elements in an array using HashSet
         // Time Complexity: O(n), where n is the number of elements in the array. This is because we iterate through the array once and perform O(1) operations (add) for each element in the HashSet.
-        int[] arr = {1, 2, 3, 4, 5, 1, 2, 3};
-        Set<Integer> distinctElements = new HashSet<>();
-        for (int num : arr) {
-            distinctElements.add(num);
-        }
-        System.out.println(distinctElements); // [1, 2, 3, 4, 5] - unique elements
-        System.out.println(distinctElements.size()); // [1, 2, 3, 4, 5] - unique elements
+        // int[] arr = {1, 2, 3, 4, 5, 1, 2, 3};
+        // Set<Integer> distinctElements = new HashSet<>();
+        // for (int num : arr) {
+        //     distinctElements.add(num);
+        // }
+        // System.out.println(distinctElements); // [1, 2, 3, 4, 5] - unique elements
+        // System.out.println(distinctElements.size()); // [1, 2, 3, 4, 5] - unique elements
 
-        
+
     }
+
+    // Two Sum - Pair with given sum - GFG Problem
+    // Time Complexity: O(n), where n is the number of elements in the array.
+    // Space Complexity: O(n), where n is the number of elements in the array.
+    public static boolean hasPairWithSum(int[] arr, int target) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : arr) {
+            int complement = target - num;
+            if (set.contains(complement)) {
+                return true; // Pair found
+            }
+            set.add(num);
+        }
+        return false; // No pair found
+    }
+
 }
