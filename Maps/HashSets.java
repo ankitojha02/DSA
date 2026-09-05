@@ -11,5 +11,10 @@ public class HashSets {
         set.add(3);
         set.add(4);
         System.out.println(set.size());
+        System.out.println(set.contains(1)); // true
+        System.out.println(set.contains(5)); // false
+
+        set.remove(4);
+        System.out.println(set.size());
     }
 }
