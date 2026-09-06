@@ -19,6 +19,11 @@ public class HashSets {
         for (Integer num : set) {
             System.out.println(num);
         }
+        
+        // Printing double doesnot change elements in the set, it just prints double of each element
+        for (Integer num : set) {
+            System.out.println( 2*num);
+        }
         // System.out.println(set.size()); // 4
         // System.out.println(set.contains(10)); // true
         // System.out.println(set.contains(5)); // false
