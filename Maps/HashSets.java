@@ -58,7 +58,7 @@ public class HashSets {
     public static boolean hasPairWithSum(int[] arr, int target) {
         Set<Integer> set = new HashSet<>();
         for (int num : arr) {
-            int complement = target - num;
+            int complement = target - num; // Remaining value needed to reach the target sum
             if (set.contains(complement)) {
                 return true; // Pair found
             }
@@ -67,4 +67,8 @@ public class HashSets {
         return false; // No pair found
     }
 
+    // Missing Element in Range - GFG Problem
+    // Time Complexity: O(n), where n is the number of elements in the array.
+    // Space Complexity: O(n), where n is the number of elements in the array.
+    
 }
