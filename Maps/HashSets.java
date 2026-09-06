@@ -3,6 +3,7 @@ package Maps;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.ArrayList;
 
 public class HashSets {
     public static void main(String[] args) {
@@ -70,5 +71,18 @@ public class HashSets {
     // Missing Element in Range - GFG Problem
     // Time Complexity: O(n), where n is the number of elements in the array.
     // Space Complexity: O(n), where n is the number of elements in the array.
-    
+
+    public ArrayList<Integer> missingRange(int[] arr, int low, int high) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : arr) {
+            set.add(num);
+        }
+        ArrayList<Integer> missing = new ArrayList<>();
+        for (int i = low; i <= high; i++) {
+            if (!set.contains(i)) {
+                missing.add(i);
+            }
+        }
+        return missing;
+    }
 }
