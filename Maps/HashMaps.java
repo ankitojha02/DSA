@@ -17,6 +17,9 @@ public class HashMaps {
         System.out.println(map.remove(1)); // always add key not value to remove the key-value pair from the HashMap
         System.out.println(map.size()); // Output: 2
 
-        
+        // Traverse through hashmap key wise
+        for (Integer key : map.keySet()) {
+            System.out.println("Key: " + key + ", Value: " + map.get(key));
+        }
     }
 }
