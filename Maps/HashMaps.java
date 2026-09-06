@@ -14,7 +14,9 @@ public class HashMaps {
         System.out.println(map.containsKey(3)); // Output: true
         System.out.println(map.containsValue("Four")); // Output: false
         System.out.println(map); // Output: {1=One, 2=Two, 3=Three}
-        map.remove(1);
+        System.out.println(map.remove(1)); // always add key not value to remove the key-value pair from the HashMap
         System.out.println(map.size()); // Output: 2
+
+        
     }
 }

@@ -9,11 +9,16 @@ public class HashSets {
     public static void main(String[] args) {
 
         // Time Complexity of HashSet is O(1) for add, remove, and contains operations on average, while TreeSet has O(log n) time complexity for these operations. However, TreeSet maintains sorted order of elements, while HashSet does not guarantee any order.
-        // HashSet<Integer> set = new HashSet<>();
-        // set.add(10);
-        // set.add(22);
-        // set.add(3);
-        // set.add(4);
+        HashSet<Integer> set = new HashSet<>();
+        set.add(10);
+        set.add(22);
+        set.add(3);
+        set.add(4);
+
+        // Iterate through the HashSet using for-each loop
+        for (Integer num : set) {
+            System.out.println(num);
+        }
         // System.out.println(set.size()); // 4
         // System.out.println(set.contains(10)); // true
         // System.out.println(set.contains(5)); // false
@@ -86,5 +91,5 @@ public class HashSets {
         return missing;
     }
 
-    
+
 }
