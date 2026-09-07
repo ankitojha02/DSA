@@ -21,5 +21,23 @@ public class HashMaps {
         for (Integer key : map.keySet()) {
             System.out.println("Key: " + key + ", Value: " + map.get(key));
         }
+
+    }
+
+    // Most Frequent Character - GFG Problem
+    public static char getMaxOccuringChar(String str) {
+        HashMap<Character, Integer> map = new HashMap<>();
+        for (char c : str.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+        int maxFreq = 0;
+        char maxChar = ' ';
+        for (char c : map.keySet()) {
+            if (map.get(c) > maxFreq) {
+                maxFreq = map.get(c);
+                maxChar = c;
+            }
+        }
+        return maxChar;
     }
 }
