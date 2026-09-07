@@ -27,17 +27,35 @@ public class HashMaps {
     // Most Frequent Character - GFG Problem
     public static char getMaxOccuringChar(String str) {
         HashMap<Character, Integer> map = new HashMap<>();
-        for (char c : str.toCharArray()) {
-            map.put(c, map.getOrDefault(c, 0) + 1);
-        }
-        int maxFreq = 0;
-        char maxChar = ' ';
-        for (char c : map.keySet()) {
-            if (map.get(c) > maxFreq) {
-                maxFreq = map.get(c);
-                maxChar = c;
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (map.containsKey(c)) {
+                map.put(c, map.get(c) + 1);
+            } else {
+                map.put(c, 1);
             }
         }
-        return maxChar;
+
+        int maxFreq = 0;
+        
+        for (char c : map.keySet()) {
+           int freq = map.get(c);
+            if (freq > maxFreq) {
+                maxFreq = freq;
+            }
+        }
+
+        char ans = 'z'; // Initialize ans with a character that is greater than any lowercase letter
+        for (char c : map.keySet()) {
+            int freq = map.get(c);
+            if (freq == maxFreq && c < ans) {
+                ans = c;
+                
+            }
+        }
+        return ans;
+        
     }
+
+
 }
