@@ -57,5 +57,7 @@ public class HashMaps {
         
     }
 
+    // Time Complexity: O(n), where n is the length of the input string. We iterate through the string once to build the frequency map and then iterate through the map to find the maximum frequency character.
 
+   
 }
