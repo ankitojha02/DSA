@@ -59,5 +59,20 @@ public class HashMaps {
 
     // Time Complexity: O(n), where n is the length of the input string. We iterate through the string once to build the frequency map and then iterate through the map to find the maximum frequency character.
 
-   
+    // Array Subset - GFG Problem
+    public static boolean isSubset(int[] arr1, int[] arr2) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int num : arr1) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        for (int num : arr2) {
+            if (!map.containsKey(num) || map.get(num) == 0) {
+                return false;
+            }
+            map.put(num, map.get(num) - 1);
+        }
+
+        return true;
+    }
 }
