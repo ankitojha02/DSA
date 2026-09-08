@@ -4,9 +4,10 @@ import java.util.HashMap;
 
 public class HashMaps {
     public static void main(String[] args) {
-     HashMap<Integer, String> map = new HashMap<>();
-     // put() method is used to add key-value pairs to the HashMap. If the key already exists, the old value will be replaced with the new value.
-        map.put(1, "One"); 
+        HashMap<Integer, String> map = new HashMap<>();
+        // put() method is used to add key-value pairs to the HashMap. If the key
+        // already exists, the old value will be replaced with the new value.
+        map.put(1, "One");
         map.put(2, "Two");
         map.put(3, "Three");
 
@@ -37,9 +38,9 @@ public class HashMaps {
         }
 
         int maxFreq = 0;
-        
+
         for (char c : map.keySet()) {
-           int freq = map.get(c);
+            int freq = map.get(c);
             if (freq > maxFreq) {
                 maxFreq = freq;
             }
@@ -50,14 +51,16 @@ public class HashMaps {
             int freq = map.get(c);
             if (freq == maxFreq && c < ans) {
                 ans = c;
-                
+
             }
         }
         return ans;
-        
+
     }
 
-    // Time Complexity: O(n), where n is the length of the input string. We iterate through the string once to build the frequency map and then iterate through the map to find the maximum frequency character.
+    // Time Complexity: O(n), where n is the length of the input string. We iterate
+    // through the string once to build the frequency map and then iterate through
+    // the map to find the maximum frequency character.
 
     // Array Subset - GFG Problem
     public static boolean isSubset(int[] arr1, int[] arr2) {
@@ -85,7 +88,8 @@ public class HashMaps {
 
         int count = 0;
         for (int num : arr) {
-           map.put(num, map.get(num) - 1); // Decrement the count of the current number to avoid counting pairs with itself
+            map.put(num, map.get(num) - 1); // Decrement the count of the current number to avoid counting pairs with
+                                            // itself
             if (map.containsKey(num + k)) {
                 count += map.get(num + k);
             }
@@ -95,5 +99,48 @@ public class HashMaps {
         }
 
         return count;
+    }
+
+    // Valid Anagram - LeetCode 242
+    public static boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+
+        // HashMap to store character frequencies
+        HashMap<Character, Integer> map = new HashMap<>();
+
+        // Count the frequency of each character in string s
+        for (int i = 0; i < s.length(); i++) {
+
+            char c = s.charAt(i);
+
+            map.put(c, map.getOrDefault(c, 0) + 1);
+        }
+
+        // Decrease the frequency using characters from string t
+        for (int i = 0; i < t.length(); i++) {
+
+            char c = t.charAt(i);
+
+            // If character does not exist in the map,
+            // t contains an extra character
+            if (!map.containsKey(c)) {
+                return false;
+            }
+
+            // Decrease the frequency of the current character
+            map.put(c, map.get(c) - 1);
+
+            // If frequency becomes negative,
+            // t contains this character more times than s
+            if (map.get(c) < 0) {
+                return false;
+            }
+        }
+
+        // All character frequencies matched
+        return true;
+
     }
 }
