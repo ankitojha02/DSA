@@ -75,4 +75,25 @@ public class HashMaps {
 
         return true;
     }
+
+    // All pairs with Diff k - GFG Problem
+    public static int countPairs(int[] arr, int k) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int num : arr) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        int count = 0;
+        for (int num : arr) {
+           map.put(num, map.get(num) - 1); // Decrement the count of the current number to avoid counting pairs with itself
+            if (map.containsKey(num + k)) {
+                count += map.get(num + k);
+            }
+            if (map.containsKey(num - k)) {
+                count += map.get(num - k);
+            }
+        }
+
+        return count;
+    }
 }
