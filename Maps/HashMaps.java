@@ -143,4 +143,7 @@ public class HashMaps {
         return true;
 
     }
+
+    // Time Complexity: O(n), where n is the length of the strings. We iterate through both strings once to build and check the frequency map.
+
 }
