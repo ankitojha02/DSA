@@ -1,6 +1,7 @@
 package Maps;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class HashMaps {
     public static void main(String[] args) {
@@ -166,5 +167,33 @@ public class HashMaps {
     }
 
     // LeetCode 3 - Longest Substring Without Repeating Characters
-    
+    // Very Very Important Problem - Sliding Window Technique
+    // Time Complexity: O(n), where n is the length of the string. We iterate
+    // through the string once.
+
+    public static int lengthOfLongestSubstring(String s) {
+        HashSet<Character> set = new HashSet<>();
+
+        int left = 0;
+        int maxLength = 0;
+
+        for (int right = 0; right < s.length(); right++) {
+
+            char currentChar = s.charAt(right);
+
+            // Jab tak duplicate hai, left se characters remove karo
+            while (set.contains(currentChar)) {
+                set.remove(s.charAt(left));
+                left++;
+            }
+
+            // Current character add karo
+            set.add(currentChar);
+
+            // Maximum length update karo
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+
+        return maxLength;
+    }
 }
