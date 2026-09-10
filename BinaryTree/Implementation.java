@@ -4,6 +4,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.Collections;
 
 class Node {
     int val;
@@ -715,5 +718,58 @@ public class Implementation {
         root.left = buildTreeFromInorderAndPostorder(inorder, inLow, r - 1, postorder, postLow, postLow + leftSubtreeSize - 1);
         root.right = buildTreeFromInorderAndPostorder(inorder, r + 1, inHigh, postorder, postLow + leftSubtreeSize, postHigh - 1);
         return root;
+    }
+
+    // LeetCode 987 - Vertical Order Traversal of a Binary Tree
+    // Time Complexity: O(n log n), where n is the number of nodes in the
+    // binary tree. We traverse all nodes and then sort the results based on the
+    // required order.
+
+    public static List<List<Integer>> verticalTraversal(Node root) {
+      List<List<Integer>> result = new ArrayList<>();
+
+        Map<Integer, List<int[]>> map = new TreeMap<>();
+
+        verticalTraversalHelper(root, 0, 0, map);
+
+        for (List<int[]> nodes : map.values()) {
+
+            Collections.sort(nodes, (a, b) -> {
+
+                // First sort by row
+                if (a[0] != b[0]) {
+                    return Integer.compare(a[0], b[0]);
+                }
+
+                // If same row, sort by value
+                return Integer.compare(a[1], b[1]);
+            });
+
+            List<Integer> vertical = new ArrayList<>();
+
+            for (int[] node : nodes) {
+                vertical.add(node[1]);
+            }
+
+            result.add(vertical);
+        }
+
+        return result;
+    }
+
+    public static void verticalTraversalHelper(Node root, int column, int row, Map<Integer, List<int[]>> map) {
+        if (root == null) {
+            return;
+        }
+        map.putIfAbsent(column, new ArrayList<>());
+        map.get(column).add(new int[]{row, root.val});
+        verticalTraversalHelper(root.left, column - 1, row + 1, map);
+        verticalTraversalHelper(root.right, column + 1, row + 1, map);
+    }
+
+
+    // Top view of Binary Tree - GFG Practice
+    public ArrayList<Integer> topView(Node root) {
+        
     }
 }
