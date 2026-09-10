@@ -601,9 +601,8 @@ public class Implementation {
       // space complexity is O(h) where h is the height of the binary tree due to the
       // recursive call stack.
 
-
-
-      // This is a common pattern in backtracking problems where we explore all possible paths and then backtrack to explore other paths.
+    // This is a common pattern in backtracking problems where we explore all
+    // possible paths and then backtrack to explore other paths.
 
     // Tree Boundary Traversal - GFG Practice
     public static List<Integer> boundaryTraversal(Node root) {
@@ -701,7 +700,8 @@ public class Implementation {
         return buildTreeFromInorderAndPostorder(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
     }
 
-    public static Node buildTreeFromInorderAndPostorder(int[] inorder, int inLow, int inHigh, int[] postorder, int postLow, int postHigh) {
+    public static Node buildTreeFromInorderAndPostorder(int[] inorder, int inLow, int inHigh, int[] postorder,
+            int postLow, int postHigh) {
         if (inLow > inHigh || postLow > postHigh) {
             return null;
         }
@@ -715,8 +715,10 @@ public class Implementation {
             }
         }
         int leftSubtreeSize = r - inLow;
-        root.left = buildTreeFromInorderAndPostorder(inorder, inLow, r - 1, postorder, postLow, postLow + leftSubtreeSize - 1);
-        root.right = buildTreeFromInorderAndPostorder(inorder, r + 1, inHigh, postorder, postLow + leftSubtreeSize, postHigh - 1);
+        root.left = buildTreeFromInorderAndPostorder(inorder, inLow, r - 1, postorder, postLow,
+                postLow + leftSubtreeSize - 1);
+        root.right = buildTreeFromInorderAndPostorder(inorder, r + 1, inHigh, postorder, postLow + leftSubtreeSize,
+                postHigh - 1);
         return root;
     }
 
@@ -726,7 +728,7 @@ public class Implementation {
     // required order.
 
     public static List<List<Integer>> verticalTraversal(Node root) {
-      List<List<Integer>> result = new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
 
         Map<Integer, List<int[]>> map = new TreeMap<>();
 
@@ -762,14 +764,48 @@ public class Implementation {
             return;
         }
         map.putIfAbsent(column, new ArrayList<>());
-        map.get(column).add(new int[]{row, root.val});
+        map.get(column).add(new int[] { row, root.val });
         verticalTraversalHelper(root.left, column - 1, row + 1, map);
         verticalTraversalHelper(root.right, column + 1, row + 1, map);
     }
 
-
     // Top view of Binary Tree - GFG Practice
     public ArrayList<Integer> topView(Node root) {
-        
+        ArrayList<Integer> result = new ArrayList<>();
+        if (root == null) {
+            return result;
+        }
+
+        Map<Integer, Integer> map = new TreeMap<>();
+        // Here Pair contains the node and its corresponding column index. The column
+        // index is used to determine the horizontal distance of the node from the root.
+        // The root is considered to be at column 0, left child at column -1, right
+        // child at column +1, and so on.
+
+        Queue<Pair> queue = new LinkedList<>();
+        queue.add(new Pair(root, 0));
+
+        while (!queue.isEmpty()) {
+            Pair p = queue.remove();
+            Node node = p.node;
+            int column = p.level;
+
+            if (!map.containsKey(column)) {
+                map.put(column, node.val);
+            }
+
+            if (node.left != null) {
+                queue.add(new Pair(node.left, column - 1));
+            }
+            if (node.right != null) {
+                queue.add(new Pair(node.right, column + 1));
+            }
+        }
+
+        for (int value : map.values()) {
+            result.add(value);
+        }
+
+        return result;
     }
 }
