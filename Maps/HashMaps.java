@@ -196,4 +196,11 @@ public class HashMaps {
 
         return maxLength;
     }
+
+    // LeetCode 987 - Vertical Order Traversal of a Binary Tree
+    // Time Complexity: O(n log n), where n is the number of nodes in the
+    // binary tree. We traverse all nodes and then sort the results based on the
+    // required order.
+
+    
 }
