@@ -810,6 +810,11 @@ public class Implementation {
         return result;
     }
 
-    // Homework - Bottom view of Binary Tree - GFG Practice
+    // Homework - Bottom view of Binary Tree - GFG Practice - For solution visit GFG
+    // Practice
+    // Time Complexity: O(n log n), where n is the number of nodes in the binary
+    // tree. We traverse all nodes and then sort the results based on the required
+    // order.
+
     
 }
