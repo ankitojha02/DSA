@@ -785,6 +785,7 @@ public class Implementation {
         Queue<Pair> queue = new LinkedList<>();
         queue.add(new Pair(root, 0));
 
+        // BFS traversal of binary tree
         while (!queue.isEmpty()) {
             Pair p = queue.remove();
             Node node = p.node;
@@ -808,4 +809,7 @@ public class Implementation {
 
         return result;
     }
+
+    // Homework - Bottom view of Binary Tree - GFG Practice
+    
 }
