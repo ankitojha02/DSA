@@ -817,5 +817,6 @@ public class Implementation {
     // order.
 
     // LeetCode 2385 - Amount of Time for Binary Tree to Be Infected
+    // Time Complexity: O(n), where n is the number of nodes in the binary tree. We traverse all nodes to calculate the time taken for the infection to spread.
     
 }
