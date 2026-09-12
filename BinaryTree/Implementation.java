@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.Collections;
+import java.util.Set;
+import java.util.HashSet;
 
 class Node {
     int val;
@@ -818,5 +820,65 @@ public class Implementation {
 
     // LeetCode 2385 - Amount of Time for Binary Tree to Be Infected
     // Time Complexity: O(n), where n is the number of nodes in the binary tree. We traverse all nodes to calculate the time taken for the infection to spread.
-    
+
+    public static int amountOfTime(Node root, int start) {
+        if (root == null) {
+            return 0;
+        }
+        Map<Node, Node> parentMap = new TreeMap<>();
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        Node startNode = null;
+
+        while (!queue.isEmpty()) {
+            Node current = queue.remove();
+            if (current.val == start) {
+                startNode = current;
+            }
+            if (current.left != null) {
+                parentMap.put(current.left, current);
+                queue.add(current.left);
+            }
+            if (current.right != null) {
+                parentMap.put(current.right, current);
+                queue.add(current.right);
+            }
+        }
+
+        Set<Node> visited = new HashSet<>();
+        queue.add(startNode);
+        visited.add(startNode);
+        int time = 0;
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            boolean infected = false;
+
+            for (int i = 0; i < size; i++) {
+                Node current = queue.remove();
+
+                if (current.left != null && !visited.contains(current.left)) {
+                    visited.add(current.left);
+                    queue.add(current.left);
+                    infected = true;
+                }
+                if (current.right != null && !visited.contains(current.right)) {
+                    visited.add(current.right);
+                    queue.add(current.right);
+                    infected = true;
+                }
+                if (parentMap.containsKey(current) && !visited.contains(parentMap.get(current))) {
+                    visited.add(parentMap.get(current));
+                    queue.add(parentMap.get(current));
+                    infected = true;
+                }
+            }
+
+            if (infected) {
+                time++;
+            }
+        }
+
+        return time;
+    }
 }
