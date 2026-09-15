@@ -202,6 +202,34 @@ public class HashMaps {
     // binary tree. We traverse all nodes and then sort the results based on the
     // required order.
 
-    // LeetCode 2183 - Count Array Pairs Divisible by k
+    // LeetCode 1497 - Check If Array Pairs Are Divisible by k
+    // Time Complexity: O(n), where n is the length of the input array. We
     
+    public static boolean canArrange(int[] arr, int k) {
+        // HashMap to store the frequency of remainders - Format - HashMap<remainder, frequency>
+        HashMap<Integer, Integer> remainderCount = new HashMap<>();
+
+        // Count the frequency of remainders when divided by k
+        for (int num : arr) {
+            int remainder = ((num % k) + k) % k; // Handle negative numbers
+            remainderCount.put(remainder, remainderCount.getOrDefault(remainder, 0) + 1);
+        }
+
+        // Check if pairs can be formed
+        for (int remainder : remainderCount.keySet()) {
+            if (remainder == 0) {
+                // For remainder 0, count must be even
+                if (remainderCount.get(remainder) % 2 != 0) {
+                    return false;
+                }
+            } else {
+                int complement = k - remainder;
+                if (remainderCount.get(remainder) != remainderCount.getOrDefault(complement, 0)) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
 }
