@@ -214,7 +214,7 @@ This repository contains my daily coding practice, implementations, and problem-
 | Queues | ✅ Completed |
 | Binary Tree | ✅ Completed |
 | Binary Search Tree | ✅ Completed |
-
+| Hash Map | ✅ Completed |
 ---
 
 # 🗺️ Upcoming Topics
