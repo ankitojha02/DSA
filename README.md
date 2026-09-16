@@ -191,6 +191,27 @@ This repository contains my daily coding practice, implementations, and problem-
 
 ---
 
+## ✅ Binary Tree
+
+- Basic Principle
+- LeetCode Problems
+- Types of Binary Tree - LeetCode and GFG problems
+
+---
+
+## ✅ Binary Search Tree
+
+- Fundamentals
+- LeetCode Problems
+- Morris Traversal
+
+---
+
+## ✅ HashMap & HashSet
+
+- Fundamentals
+- LeetCode Problems
+- GFG Practice
 
 
 
@@ -214,16 +235,14 @@ This repository contains my daily coding practice, implementations, and problem-
 | Queues | ✅ Completed |
 | Binary Tree | ✅ Completed |
 | Binary Search Tree | ✅ Completed |
-| Hash Map | ✅ Completed |
+| HashMap | ✅ Completed |
+| HashSet | ✅ Completed |
+
+
 ---
 
 # 🗺️ Upcoming Topics
 
-
-- [ ] HashMap
-- [ ] HashSet
-- [ ] Trees
-- [ ] Binary Search Tree
 - [ ] Heap
 - [ ] Trie
 - [ ] Graph
