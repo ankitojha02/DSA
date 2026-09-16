@@ -233,9 +233,9 @@ public class HashMaps {
         return true;
     }
 
-    // LeetCode 2183 - Count Array Pairs Divisible by k
+    // HomeWork - LeetCode 2183 - Count Array Pairs Divisible by k
     // Time Complexity: O(n), where n is the length of the input array. We
     // iterate through the array once to count the frequency of remainders and
     // then iterate through the unique remainders to count valid pairs.
-    
+ 
 }

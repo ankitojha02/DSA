@@ -213,6 +213,7 @@ This repository contains my daily coding practice, implementations, and problem-
 | Stacks | ✅ Completed |
 | Queues | ✅ Completed |
 | Binary Tree | ✅ Completed |
+| Binary Search Tree | ✅ Completed |
 
 ---
 
