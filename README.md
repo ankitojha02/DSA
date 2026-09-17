@@ -233,6 +233,7 @@ This repository contains my daily coding practice, implementations, and problem-
 | Linked List | ✅ Completed |
 | Stacks | ✅ Completed |
 | Queues | ✅ Completed |
+| Tree | ✅ Completed |
 | Binary Tree | ✅ Completed |
 | Binary Search Tree | ✅ Completed |
 | HashMap | ✅ Completed |
