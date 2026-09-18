@@ -7,6 +7,13 @@ public class Implementation {
         System.out.println("Bitwise OR: " + (51 | 42));
         System.out.println("Bitwise XOR: " + (51 ^ 42));
 
+        // 1s Complement - 2s Complement
+        
+        int num = 5;
+        int onesComplement = ~num; // 1s complement
+        int twosComplement = ~num + 1; // 2s complement
+        System.out.println("1s Complement of " + num + ": " + onesComplement);
+        System.out.println("2s Complement of " + num + ": " + twosComplement);
 
     }
 
@@ -29,4 +36,6 @@ public class Implementation {
         a = a ^ b; // Step 3: a becomes original b
         System.out.println("After swapping: a = " + a + ", b = " + b);
     }
+
+
 }
