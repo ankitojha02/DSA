@@ -11,11 +11,22 @@ public class Implementation {
     }
 
     // LeetCode 136 - Single Number
+    // 0 ^ x = x 
+    // x ^ x = 0
+    
     public int singleNumber(int[] nums) {
         int result = 0;
-        for (int num : nums) {
+        for (int num : nums) { // 0 ^ x = x
             result ^= num;
         }
         return result;
+    }
+
+    // Swap two numbers without using a temporary variable
+    public void swap(int a, int b) {
+        a = a ^ b; // Step 1: a now becomes a XOR b
+        b = a ^ b; // Step 2: b becomes original a
+        a = a ^ b; // Step 3: a becomes original b
+        System.out.println("After swapping: a = " + a + ", b = " + b);
     }
 }
