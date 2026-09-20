@@ -62,6 +62,18 @@ public class Implementation {
     }
 
     // K-th bit is set or not - GFG
-    
+    public boolean isKthBitSet(int n, int k) {
+        return ((n>>k) % 2 == 1);
+    }
+
+    // Set the k-th bit of a number - GFG
+    public int setKthBit(int n, int k) {
+        return (n | (1 << k));
+    }
+
+    // Turn off the k-th bit of a number - GFG
+    public int turnOffKthBit(int n, int k) {
+        return (n & ~(1 << k));
+    }
 
 }
