@@ -55,4 +55,10 @@ public class Implementation {
         }
         return (n & (n - 1)) == 0; // A power of two has only one bit set
     }
+
+    // 2's power - Given n - return 2's power of n
+    public int powerOfTwo(int n) {
+        return 1 << n; // Left shift 1 by n positions
+    }
+
 }
