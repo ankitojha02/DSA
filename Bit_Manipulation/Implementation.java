@@ -8,7 +8,7 @@ public class Implementation {
         System.out.println("Bitwise XOR: " + (51 ^ 42));
 
         // 1s Complement - 2s Complement
-        
+
         int num = 5;
         int onesComplement = ~num; // 1s complement
         int twosComplement = ~num + 1; // 2s complement
@@ -37,5 +37,6 @@ public class Implementation {
         System.out.println("After swapping: a = " + a + ", b = " + b);
     }
 
-
+    // Byte range: (-128 to 127) or (-2^7 to 2^7 - 1)
+   
 }
