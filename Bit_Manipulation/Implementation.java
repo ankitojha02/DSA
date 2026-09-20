@@ -18,7 +18,7 @@ public class Implementation {
         // byte
         byte b = 127; // Maximum value for byte
         System.out.println("Byte value: " + b);
-        b+= 1; // Overflow, wraps around to -128
+        b += 1; // Overflow, wraps around to -128
         System.out.println("Byte value after overflow: " + b); // Output: -128
     }
 
@@ -48,5 +48,11 @@ public class Implementation {
     // float range: (-3.4028235E38 to 3.4028235E38) - 4 bytes
     // double range: (-1.7976931348623157E308 to 1.7976931348623157E308) - 8 bytes
    
-
+   // LeetCode 231 - Power of Two
+   public boolean isPowerOfTwo(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        return (n & (n - 1)) == 0; // A power of two has only one bit set
+    }
 }
