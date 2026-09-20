@@ -76,4 +76,9 @@ public class Implementation {
         return (n & ~(1 << k));
     }
 
+    // Toggle the k-th bit of a number - GFG
+    public int toggleKthBit(int n, int k) {
+        return (n ^ (1 << k));
+    }
+
 }
