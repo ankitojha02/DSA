@@ -61,4 +61,7 @@ public class Implementation {
         return 1 << n; // Left shift 1 by n positions
     }
 
+    // K-th bit is set or not - GFG
+    
+
 }
