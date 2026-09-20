@@ -38,5 +38,9 @@ public class Implementation {
     }
 
     // Byte range: (-128 to 127) or (-2^7 to 2^7 - 1)
+    // int range: (-2^31 to 2^31 - 1) - 4 bytes
+    // long range: (-2^63 to 2^63 - 1) - 8 bytes
+    // float range: (-3.4028235E38 to 3.4028235E38) - 4 bytes
+    // double range: (-1.7976931348623157E308 to 1.7976931348623157E308) - 8 bytes
    
 }
