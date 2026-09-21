@@ -87,4 +87,5 @@ public class Implementation {
         return (n | n + 1);
     }
 
+    // Number of 1 Bits
 }
