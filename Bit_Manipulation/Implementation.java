@@ -81,4 +81,9 @@ public class Implementation {
         return (n ^ (1 << k));
     }
 
+    // Rightmost set bit of a number - GFG
+    public int rightmostSetBit(int n) {
+        return (n & -n);
+    }
+
 }
