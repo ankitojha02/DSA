@@ -87,5 +87,13 @@ public class Implementation {
         return (n | n + 1);
     }
 
-    // Number of 1 Bits
+    // LeetCode 191 - Number of 1 Bits
+    public int hammingWeight(int n) {
+        int count = 0;
+        while (n != 0) {
+            count += (n & 1); // Increment count if the least significant bit is 1
+            n >>>= 1; // Unsigned right shift to process the next bit
+        }
+        return count;
+    }
 }
