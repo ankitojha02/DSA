@@ -82,8 +82,9 @@ public class Implementation {
     }
 
     // Rightmost set bit of a number - GFG
+    // 1010110 becomes 1010111 - Rightmost set bit
     public int rightmostSetBit(int n) {
-        return (n & -n);
+        return (n | n + 1);
     }
 
 }
