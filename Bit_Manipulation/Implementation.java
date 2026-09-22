@@ -98,5 +98,13 @@ public class Implementation {
     }
 
     // LeetCode 2220 - Minimum Bit Flips to Convert Number
-    
+    public int minFlips(int start, int goal) {
+        int xor = start ^ goal; // XOR to find differing bits
+        int count = 0;
+        while (xor != 0) {
+            count += (xor & 1); // Increment count for each differing bit
+            xor >>>= 1; // Unsigned right shift to process the next bit
+        }
+        return count;
+    }
 }
