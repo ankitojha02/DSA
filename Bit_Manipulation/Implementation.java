@@ -138,4 +138,10 @@ public class Implementation {
     }
 
     // LeetCode 342 - Power of Four
+    public boolean isPowerOfFour(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        return (n & (n - 1)) == 0 && (n - 1) % 3 == 0;
+    }
 }
