@@ -156,5 +156,39 @@ public class Implementation {
     }
 
     // LeetCode 861 - Score After Flipping Matrix
-    
+    public int matrixScore(int[][] grid) {
+        int m = grid.length;
+        int n = grid[0].length;
+        // Step 1: Ensure the first column has all 1s
+        for (int i = 0; i < m; i++) {
+            if (grid[i][0] == 0) {
+                for (int j = 0; j < n; j++) {
+                    grid[i][j] ^= 1; // Flip the entire row
+                }
+            }
+        }
+        // Step 2: For each remaining column, maximize the number of 1s
+        for (int j = 1; j < n; j++) {
+            int count = 0;
+            for (int i = 0; i < m; i++) {
+                count += grid[i][j];
+            }
+            if (count < m - count) {
+                for (int i = 0; i < m; i++) {
+                    grid[i][j] ^= 1; // Flip the column
+                }
+            }
+        }
+        // Step 3: Calculate the final score
+        int score = 0;
+        for (int i = 0; i < m; i++) {
+            int rowScore = 0;
+            for (int j = 0; j < n; j++) {
+                rowScore |= (grid[i][j] << (n - 1 - j));
+            }
+            score += rowScore;
+        }
+        return score;
+    }
+
 }
