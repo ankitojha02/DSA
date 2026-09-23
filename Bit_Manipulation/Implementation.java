@@ -155,14 +155,6 @@ public class Implementation {
         return result;
     }
 
-    // Another approach for LeetCode 1486 - XOR Operation in an Array
-    // Time Complexity: O(1)
-    public int xorOperationOptimized(int n, int start) {
-        int xorStart = start ^ (start + 2 * (n - 1));
-        if (n % 2 == 0) {
-            return xorStart;
-        } else {
-            return xorStart ^ (start + 2 * (n / 2));
-        }
-    }
+    // LeetCode 861 - Score After Flipping Matrix
+    
 }
