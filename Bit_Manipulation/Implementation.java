@@ -1,4 +1,6 @@
 package Bit_Manipulation;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Implementation {
     public static void main(String[] arge) {
@@ -109,4 +111,20 @@ public class Implementation {
     }
 
     // LeetCode 78 - Subsets
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        int n = nums.length;
+        for (int i = 0; i < (1 << n); i++) { // (1 << n) = 2^n, total number of subsets
+            List<Integer> subset = new ArrayList<>();
+            for (int j = 0; j < n; j++) {
+                if ((i & (1 << j)) != 0) { // Check if the j-th bit is set
+                    subset.add(nums[j]);        
+                }
+            }
+            result.add(subset);
+        }
+        return result;
+    }
+
+    // LeetCode 190 - Reverse Bits
 }
