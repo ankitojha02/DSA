@@ -144,4 +144,25 @@ public class Implementation {
         }
         return (n & (n - 1)) == 0 && (n - 1) % 3 == 0;
     }
+
+    // LeetCode 1486 - XOR Operation in an Array
+    // Time Complexity: O(n)
+    public int xorOperation(int n, int start) {
+        int result = 0;
+        for (int i = 0; i < n; i++) {
+            result ^= (start + 2 * i); // XOR each element in the array
+        }
+        return result;
+    }
+
+    // Another approach for LeetCode 1486 - XOR Operation in an Array
+    // Time Complexity: O(1)
+    public int xorOperationOptimized(int n, int start) {
+        int xorStart = start ^ (start + 2 * (n - 1));
+        if (n % 2 == 0) {
+            return xorStart;
+        } else {
+            return xorStart ^ (start + 2 * (n / 2));
+        }
+    }
 }
