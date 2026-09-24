@@ -157,8 +157,8 @@ public class Implementation {
 
     // LeetCode 861 - Score After Flipping Matrix
     public int matrixScore(int[][] grid) {
-        int m = grid.length;
-        int n = grid[0].length;
+        int m = grid.length; // Number of rows
+        int n = grid[0].length; // Number of columns
         // Step 1: Ensure the first column has all 1s
         for (int i = 0; i < m; i++) {
             if (grid[i][0] == 0) {
@@ -190,5 +190,7 @@ public class Implementation {
         }
         return score;
     }
+
+    // LeetCode 260 - Single Number III
 
 }
