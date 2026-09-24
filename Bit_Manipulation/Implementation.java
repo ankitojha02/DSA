@@ -192,5 +192,25 @@ public class Implementation {
     }
 
     // LeetCode 260 - Single Number III
+    public int[] singleNumberIII(int[] nums) {
+        int xor = 0;
+        for (int num : nums) {
+            xor ^= num; // XOR all numbers to get the XOR of the two unique numbers
+        }
 
+        // Find the rightmost set bit in xor
+        int rightmostSetBit = xor & (-xor);
+
+        // Divide the numbers into two groups based on the rightmost set bit
+        int num1 = 0, num2 = 0;
+        for (int num : nums) {
+            if ((num & rightmostSetBit) == 0) {
+                num1 ^= num; // XOR all numbers in the first group
+            } else {
+                num2 ^= num; // XOR all numbers in the second group
+            }
+        }
+
+        return new int[]{num1, num2};
+    }
 }
