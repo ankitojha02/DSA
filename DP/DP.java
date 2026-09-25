@@ -16,7 +16,7 @@ public class DP {
         return fibonacciHelper(n);
     }
 
-    // Memoization helper function
+    // Memoization helper function - Top Down DP - Recursive DP
     private static int fibonacciHelper(int n) {
         if (n <= 1) {
             return n;
@@ -27,4 +27,7 @@ public class DP {
         dp[n] = fibonacciHelper(n - 1) + fibonacciHelper(n - 2);
         return dp[n];
     }
+
+    // Leetcode 198 -  House Robber Problem
+    
 }
