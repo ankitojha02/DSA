@@ -202,7 +202,7 @@ public class Implementation {
         int rightmostSetBit = xor & (-xor);
 
         // Divide the numbers into two groups based on the rightmost set bit
-        int num1 = 0, num2 = 0;
+        int num1 = 0, num2 = 0; // Initialize the two unique numbers
         for (int num : nums) {
             if ((num & rightmostSetBit) == 0) {
                 num1 ^= num; // XOR all numbers in the first group
