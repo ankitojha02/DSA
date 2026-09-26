@@ -54,4 +54,26 @@ public class DP {
     }
 
     // LeetCode 746 - Min Cost Climbing Stairs
+    public static int minCostClimbingStairs(int[] cost) {
+        int n = cost.length;
+        dp = new int[n];
+        Arrays.fill(dp, -1); // Initialize dp array with -1
+        return Math.min(minCostHelper(n - 1, cost), minCostHelper(n - 2, cost));
+    }
+    
+    // Memoization helper function for Min Cost Climbing Stairs
+    private static int minCostHelper(int i, int[] cost) {
+        if (i < 0) {
+            return 0;
+        }
+        if (dp[i] != -1) {
+            return dp[i];
+        }
+        // Choose to climb the current step or skip it
+        int climb = cost[i] + minCostHelper(i - 1, cost);
+        int skip =cost[i] + minCostHelper(i - 2, cost);
+        int ans = Math.min(climb, skip);
+        dp[i] = ans;
+        return ans;
+    }
 }
