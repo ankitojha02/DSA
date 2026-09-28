@@ -3,6 +3,7 @@ import java.util.Arrays;
 
 public class DP {
     static int[] dp;
+    static int[][] dp2D;
     public static void main(String[] args) {
         int n = 5; // Example input
         System.out.println("Fibonacci of " + n + " is: " + fibonacci(n));
@@ -75,5 +76,27 @@ public class DP {
         int ans = Math.min(climb, skip);
         dp[i] = ans;
         return ans;
+    }
+
+    // LeetCode 62 - Unique Paths
+    public static int uniquePaths(int m, int n) {
+        dp2D = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                dp2D[i][j] = 0;
+            }
+        }
+        return uniquePathsHelper(m - 1, n - 1);
+    }
+
+    private static int uniquePathsHelper(int m, int n) {
+        if (m == 0 || n == 0) {
+            return 1;
+        }
+        if (dp2D[m][n] != 0) {
+            return dp2D[m][n];
+        }
+        dp2D[m][n] = uniquePathsHelper(m - 1, n) + uniquePathsHelper(m, n - 1);
+        return dp2D[m][n];
     }
 }
