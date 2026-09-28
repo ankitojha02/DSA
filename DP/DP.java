@@ -99,4 +99,32 @@ public class DP {
         dp2D[m][n] = uniquePathsHelper(m - 1, n) + uniquePathsHelper(m, n - 1);
         return dp2D[m][n];
     }
+
+    // LeetCode 64 - Minimum Path Sum
+    public static int minPathSum(int[][] grid) {
+        int m = grid.length;
+        int n = grid[0].length;
+        dp2D = new int[m][n];
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                dp2D[i][j] = -1; // Initialize dp array with -1 
+            }
+        }
+        return minPathSumHelper(m - 1, n - 1, grid);
+    }
+
+    private static int minPathSumHelper(int m, int n, int[][] grid) {
+        if (m < 0 || n < 0) {
+            return Integer.MAX_VALUE;
+        }
+        if (m == 0 && n == 0) {
+            return grid[0][0];
+        }
+        if (dp2D[m][n] != -1) {
+            return dp2D[m][n];
+        }
+        dp2D[m][n] = grid[m][n] + Math.min(minPathSumHelper(m - 1, n, grid), minPathSumHelper(m, n - 1, grid));
+        return dp2D[m][n];
+    }
+
 }
