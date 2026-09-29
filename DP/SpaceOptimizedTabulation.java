@@ -20,6 +20,7 @@ public class SpaceOptimizedTabulation {
     }
 
     // Leetcode 198 - House Robber Problem
+    // Time Complexity: O(n), Space Complexity: O(1)
     public static int rob(int[] nums) {
         int n = nums.length;
         if (n == 0) return 0;
