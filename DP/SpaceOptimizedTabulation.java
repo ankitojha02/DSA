@@ -56,7 +56,7 @@ public class SpaceOptimizedTabulation {
         return Math.min(prev1, prev2);
     }
 
-    // LeetCode 62 - Unique Paths
+    // LeetCode 62 - Unique Paths - space optimized tabulation
     public static int uniquePaths(int m, int n) {
         int[] dp = new int[n];
         for (int j = 0; j < n; j++) {
