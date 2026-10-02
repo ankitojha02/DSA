@@ -127,4 +127,22 @@ public class DP {
         return dp2D[m][n];
     }
 
+    // Count Dearrangements - Recursion and DP
+    public static int countDerangements(int n) {
+        dp = new int[n + 1];
+        Arrays.fill(dp, -1); // Initialize dp array with -1
+        return countDerangementsHelper(n);
+    }
+
+    private static int countDerangementsHelper(int n) {
+        if (n == 0) return 1;
+        if (n == 1) return 0;
+        if (n == 2) return 1;
+        if (dp[n] != -1) {
+            return dp[n];
+        }
+        dp[n] = (n - 1) * (countDerangementsHelper(n - 1) + countDerangementsHelper(n - 2));
+        return dp[n];
+    }
+
 }
