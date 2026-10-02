@@ -71,7 +71,7 @@ public class SpaceOptimizedTabulation {
         return dp[n - 1];
     }
 
-    // Friends Pairing Problem - GFG Practice
+    // Friends Pairing Problem - GFG Practice - Time Complexity: O(n), Space Complexity: O(1)
     public static int countFriendsPairings(int n) {
         if (n <= 2) return n;
         
