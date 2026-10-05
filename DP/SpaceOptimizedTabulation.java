@@ -23,36 +23,40 @@ public class SpaceOptimizedTabulation {
     // Time Complexity: O(n), Space Complexity: O(1)
     public static int rob(int[] nums) {
         int n = nums.length;
-        if (n == 0) return 0;
-        if (n == 1) return nums[0];
-        
+        if (n == 0)
+            return 0;
+        if (n == 1)
+            return nums[0];
+
         int prev1 = nums[0];
         int prev2 = Math.max(nums[0], nums[1]);
-        
+
         for (int i = 2; i < n; i++) {
             int current = Math.max(prev2, nums[i] + prev1);
             prev1 = prev2;
             prev2 = current;
         }
-        
+
         return prev2;
     }
 
     // LeetCode 746 - Min Cost Climbing Stairs
     public static int minCostClimbingStairs(int[] cost) {
         int n = cost.length;
-        if (n == 0) return 0;
-        if (n == 1) return cost[0];
-        
+        if (n == 0)
+            return 0;
+        if (n == 1)
+            return cost[0];
+
         int prev1 = cost[0];
         int prev2 = cost[1];
-        
+
         for (int i = 2; i < n; i++) {
             int current = cost[i] + Math.min(prev1, prev2);
             prev1 = prev2;
             prev2 = current;
         }
-        
+
         return Math.min(prev1, prev2);
     }
 
@@ -62,7 +66,7 @@ public class SpaceOptimizedTabulation {
         for (int j = 0; j < n; j++) {
             dp[j] = 1; // Only one way to reach any cell in the first row
         }
-        
+
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
                 dp[j] += dp[j - 1]; // Update the current cell
@@ -71,67 +75,64 @@ public class SpaceOptimizedTabulation {
         return dp[n - 1];
     }
 
-    // Friends Pairing Problem - GFG Practice - Time Complexity: O(n), Space Complexity: O(1)
+    // Friends Pairing Problem - GFG Practice - Time Complexity: O(n), Space
+    // Complexity: O(1)
     public static int countFriendsPairings(int n) {
-        if (n <= 2) return n;
-        
+        if (n <= 2)
+            return n;
+
         int prev1 = 1; // f(1)
         int prev2 = 2; // f(2)
-        
+
         for (int i = 3; i <= n; i++) {
             int current = prev2 + (i - 1) * prev1;
             prev1 = prev2;
             prev2 = current;
         }
-        
+
         return prev2;
     }
 
-    // Count Dearrangements - GFG Practice - Time Complexity: O(n), Space Complexity: O(1)
+    // Count Dearrangements - GFG Practice - Time Complexity: O(n), Space
+    // Complexity: O(1)
     public static int countDerangements(int n) {
-        if (n == 0) return 1;
-        if (n == 1) return 0;
-        if (n == 2) return 1;
-        
+        if (n == 0)
+            return 1;
+        if (n == 1)
+            return 0;
+        if (n == 2)
+            return 1;
+
         int prev1 = 1; // D(0)
         int prev2 = 0; // D(1)
         int prev3 = 1; // D(2)
-        
+
         for (int i = 3; i <= n; i++) {
             int current = (i - 1) * (prev2 + prev3);
             prev1 = prev2;
             prev2 = prev3;
             prev3 = current;
         }
-        
+
         return prev3;
     }
 
-    // LeetCode 1277 - Count Square Submatrices with All Ones - Time Complexity: O(m*n), Space Complexity: O(n)
+    // LeetCode 1277 - Count Square Submatrices with All Ones - Time Complexity:
+    // O(m*n), Space Complexity: O(n)
     public static int countSquares(int[][] matrix) {
-        int m = matrix.length;
-        int n = matrix[0].length;
-        int[] dp = new int[n];
-        int totalCount = 0;
+        int count = 0;
 
-        for (int i = 0; i < m; i++) {
-            int prev = 0; // This will hold the value of dp[j-1] from the previous row
-            for (int j = 0; j < n; j++) {
-                int temp = dp[j]; // Store the current dp[j] before updating it
-                if (matrix[i][j] == 1) {
-                    if (i == 0 || j == 0) {
-                        dp[j] = 1; // First row or first column
-                    } else {
-                        dp[j] = Math.min(Math.min(dp[j], dp[j - 1]), prev) + 1;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (i != 0 && j != 0) {
+                    if (matrix[i][j] == 1) {
+                        matrix[i][j] = Math.min(Math.min(matrix[i - 1][j], matrix[i][j - 1]), matrix[i - 1][j - 1]) + 1;
                     }
-                    totalCount += dp[j];
-                } else {
-                    dp[j] = 0; // Reset to 0 if the cell is not 1
                 }
-                prev = temp; // Update prev to the old value of dp[j]
+                count += matrix[i][j];
             }
         }
 
-        return totalCount;
+        return count;
     }
 }
