@@ -108,6 +108,25 @@ public class SpaceOptimizedTabulation {
     }
 
     // LeetCode 1277 - Count Square Submatrices with All Ones - Time Complexity: O(m*n), Space Complexity: O(n)
-    
+    public static int countSquares(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[] dp = new int[n];
+        int totalSquares = 0;
 
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i == 0 || j == 0) {
+                    dp[j] = matrix[i][j];
+                } else if (matrix[i][j] == 1) {
+                    dp[j] = Math.min(Math.min(dp[j - 1], dp[j]), matrix[i - 1][j - 1]) + 1;
+                } else {
+                    dp[j] = 0;
+                }
+                totalSquares += dp[j];
+            }
+        }
+
+        return totalSquares;
+    }
 }
