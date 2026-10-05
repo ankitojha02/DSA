@@ -112,21 +112,26 @@ public class SpaceOptimizedTabulation {
         int m = matrix.length;
         int n = matrix[0].length;
         int[] dp = new int[n];
-        int totalSquares = 0;
+        int totalCount = 0;
 
         for (int i = 0; i < m; i++) {
+            int prev = 0; // This will hold the value of dp[j-1] from the previous row
             for (int j = 0; j < n; j++) {
-                if (i == 0 || j == 0) {
-                    dp[j] = matrix[i][j];
-                } else if (matrix[i][j] == 1) {
-                    dp[j] = Math.min(Math.min(dp[j - 1], dp[j]), matrix[i - 1][j - 1]) + 1;
+                int temp = dp[j]; // Store the current dp[j] before updating it
+                if (matrix[i][j] == 1) {
+                    if (i == 0 || j == 0) {
+                        dp[j] = 1; // First row or first column
+                    } else {
+                        dp[j] = Math.min(Math.min(dp[j], dp[j - 1]), prev) + 1;
+                    }
+                    totalCount += dp[j];
                 } else {
-                    dp[j] = 0;
+                    dp[j] = 0; // Reset to 0 if the cell is not 1
                 }
-                totalSquares += dp[j];
+                prev = temp; // Update prev to the old value of dp[j]
             }
         }
 
-        return totalSquares;
+        return totalCount;
     }
 }
