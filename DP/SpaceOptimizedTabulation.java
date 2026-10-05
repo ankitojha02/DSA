@@ -107,4 +107,7 @@ public class SpaceOptimizedTabulation {
         return prev3;
     }
 
+    // LeetCode 1277 - Count Square Submatrices with All Ones - Time Complexity: O(m*n), Space Complexity: O(n)
+    
+
 }
