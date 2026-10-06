@@ -145,8 +145,35 @@ public class DP {
         return dp[n];
     }
 
-    // 0-1 Knapsack Problem - GFG Practice - Time Complexity: O(n*W), Space Complexity: O(W) - Through Recursion and DP
-    
+    // 0-1 Knapsack - Through Recursion and DP - Memoization
+    public static int knapsack(int W, int val[], int wt[]) {
+        dp2D = new int[val.length + 1][W + 1];
+        for (int i = 0; i <= val.length; i++) {
+            for (int j = 0; j <= W; j++) {
+                dp2D[i][j] = -1; // Initialize dp array with -1
+            }
+        }
+        return knapsackHelper(W, wt, val, val.length);
+    }
+
+    private static int knapsackHelper(int W, int wt[], int val[], int n) {
+        if (n == 0 || W == 0) {
+            return 0;
+        }
+        if (dp2D[n][W] != -1) {
+            return dp2D[n][W];
+        }
+        if (wt[n - 1] <= W) {
+            dp2D[n][W] = Math.max(val[n - 1] + knapsackHelper(W - wt[n - 1], wt, val, n - 1),
+                    knapsackHelper(W, wt, val, n - 1));
+        } else {
+            dp2D[n][W] = knapsackHelper(W, wt, val, n - 1);
+        }
+        return dp2D[n][W];
+    }
+
+   
+   
 
 
 }
