@@ -163,11 +163,11 @@ public class DP {
         if (dp2D[n][W] != -1) {
             return dp2D[n][W];
         }
-        if (wt[n - 1] <= W) {
+        if (wt[n - 1] <= W) { // If weight of the nth item is less than or equal to W, we have two choices: include it or exclude it
             dp2D[n][W] = Math.max(val[n - 1] + knapsackHelper(W - wt[n - 1], wt, val, n - 1),
                     knapsackHelper(W, wt, val, n - 1));
         } else {
-            dp2D[n][W] = knapsackHelper(W, wt, val, n - 1);
+            dp2D[n][W] = knapsackHelper(W, wt, val, n - 1); // If weight of the nth item is more than W, we cannot include it
         }
         return dp2D[n][W];
     }
