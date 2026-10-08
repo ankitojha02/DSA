@@ -205,9 +205,12 @@ public class DP {
         dp = new int[amount + 1];
         Arrays.fill(dp, -1); // Initialize dp array with -1
         dp[0] = 0; // Base case: 0 coins are needed to make amount 0
-        return coinChangeHelper(coins, amount);
+        int result = coinChangeHelper(coins, amount);
+        return result == Integer.MAX_VALUE ? -1 : result; // If result is Integer.MAX
+        
     }
 
+    // Time Complexity: O(n*m), Space Complexity: O(n) where n is the amount and m is the number of coins
     private static int coinChangeHelper(int[] coins, int amount) {
         if (amount < 0) {
             return Integer.MAX_VALUE; // Not possible to make change for negative amount
