@@ -201,5 +201,29 @@ public class DP {
     }
 
     // LeetCode 322 - Coin Change Problem
+    public static int coinChange(int[] coins, int amount) {
+        dp = new int[amount + 1];
+        Arrays.fill(dp, -1); // Initialize dp array with -1
+        dp[0] = 0; // Base case: 0 coins are needed to make amount 0
+        return coinChangeHelper(coins, amount);
+    }
+
+    private static int coinChangeHelper(int[] coins, int amount) {
+        if (amount < 0) {
+            return Integer.MAX_VALUE; // Not possible to make change for negative amount
+        }
+        if (dp[amount] != -1) {
+            return dp[amount];
+        }
+        int minCoins = Integer.MAX_VALUE;
+        for (int coin : coins) {
+            int res = coinChangeHelper(coins, amount - coin); // res - the minimum coins needed for the remaining amount after using the current coin
+            if (res != Integer.MAX_VALUE) {
+                minCoins = Math.min(minCoins, res + 1); // why res + 1? because we are using one coin, so we add 1 to the result of the recursive call
+            }
+        }
+        dp[amount] = minCoins;
+        return dp[amount];
+    }
 
 }
