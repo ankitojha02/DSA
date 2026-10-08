@@ -173,7 +173,32 @@ public class DP {
     }
 
    
-   
+   // Unbounded Knapsack - Through Recursion and DP - Memoization
+    public static int unboundedKnapsack(int W, int val[], int wt[]) {
+        dp2D = new int[val.length + 1][W + 1];
+        for (int i = 0; i <= val.length; i++) {
+            for (int j = 0; j <= W; j++) {
+                dp2D[i][j] = -1; // Initialize dp array with -1
+            }
+        }
+        return unboundedKnapsackHelper(W, wt, val, val.length);
+    }
+
+    private static int unboundedKnapsackHelper(int W, int wt[], int val[], int n) {
+        if (n == 0 || W == 0) {
+            return 0;
+        }
+        if (dp2D[n][W] != -1) {
+            return dp2D[n][W];
+        }
+        if (wt[n - 1] <= W) { // If weight of the nth item is less than or equal to W, we have two choices: include it or exclude it
+            dp2D[n][W] = Math.max(val[n - 1] + unboundedKnapsackHelper(W - wt[n - 1], wt, val, n),
+                    unboundedKnapsackHelper(W, wt, val, n - 1));
+        } else {
+            dp2D[n][W] = unboundedKnapsackHelper(W, wt, val, n - 1); // If weight of the nth item is more than W, we cannot include it
+        }
+        return dp2D[n][W];
+    }
 
 
 }
