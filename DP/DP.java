@@ -4,6 +4,7 @@ import java.util.Arrays;
 public class DP {
     static int[] dp;
     static int[][] dp2D;
+    int offset;
     public static void main(String[] args) {
         int n = 5; // Example input
         System.out.println("Fibonacci of " + n + " is: " + fibonacci(n));
@@ -244,6 +245,33 @@ public class DP {
         return add + subtract; // Total ways is the sum of both choices
     }
 
-    
+    // Memoization solution for Leetcode 494 - Target Sum Problem
+    public static int findTargetSumWaysMemo(int[] nums, int target) {
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+}
+        if (target < -sum || target > sum) {
+            return 0;
+        }
+        int offset = sum;
+        Integer[][] dp = new Integer[nums.length + 1][2 * sum + 1];
+        for (Integer[] row : dp) {
+            Arrays.fill(row, null);
+        }
+        return findTargetSumWaysMemoHelper(nums, target, 0, dp, offset);
+    }
 
+    private static int findTargetSumWaysMemoHelper(int[] nums, int target, int index, Integer[][] dp, int offset) {
+        if (index == nums.length) {
+            return target == 0 ? 1 : 0;
+        }
+        if (dp[index][target + offset] != null) {
+            return dp[index][target + offset];
+        }
+        int add = findTargetSumWaysMemoHelper(nums, target - nums[index], index + 1, dp, offset);
+        int subtract = findTargetSumWaysMemoHelper(nums, target + nums[index], index + 1, dp, offset);
+        dp[index][target + offset] = add + subtract;
+        return dp[index][target + offset];
+    }
 }
