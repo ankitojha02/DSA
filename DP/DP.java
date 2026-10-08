@@ -229,6 +229,21 @@ public class DP {
         return dp[amount];
     }
 
-    // Leetcode 494 - Target Sum Problem
+    // Leetcode 494 - Target Sum Problem - Only Recursive solution not DP
+   public static int findTargetSumWays(int[] nums, int target) {
+        return findTargetSumWaysHelper(nums, target, 0);
+    }
+
+    private static int findTargetSumWaysHelper(int[] nums, int target, int index) {
+        if (index == nums.length) {
+            return target == 0 ? 1 : 0; // If we have reached the end of the array and the target is 0, we found a valid way
+        }
+        // Choose to add or subtract the current number
+        int add = findTargetSumWaysHelper(nums, target - nums[index], index + 1);
+        int subtract = findTargetSumWaysHelper(nums, target + nums[index], index + 1);
+        return add + subtract; // Total ways is the sum of both choices
+    }
+
+    
 
 }
