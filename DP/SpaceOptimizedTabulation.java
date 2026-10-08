@@ -149,4 +149,18 @@ public class SpaceOptimizedTabulation {
 
         return dp[capacity];
     }
+
+    // Unbounded Knapsack Problem
+    public static int unboundedKnapsack(int[] weights, int[] values, int capacity) {
+        int n = weights.length;
+        int[] dp = new int[capacity + 1];
+
+        for (int i = 0; i < n; i++) {
+            for (int w = weights[i]; w <= capacity; w++) {
+                dp[w] = Math.max(dp[w], dp[w - weights[i]] + values[i]);
+            }
+        }
+
+        return dp[capacity];
+    }
 }
