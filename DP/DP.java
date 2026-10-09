@@ -277,4 +277,32 @@ public class DP {
 
 
     // LeetCode 1143 - Longest Common Subsequence
+    public static int longestCommonSubsequence(String text1, String text2) {
+        int m = text1.length();
+        int n = text2.length();
+        dp2D = new int[m + 1][n + 1];
+        // Initialize the dp array with -1
+        // i represents the index of text1 and j represents the index of text2
+        for (int i = 0; i <= m; i++) { //i represents the index of text1 and j represents the index of text2
+            for (int j = 0; j <= n; j++) {
+                dp2D[i][j] = -1; // Initialize dp array with -1
+            }
+        }
+        return longestCommonSubsequenceHelper(text1, text2, 0, 0);
+    }
+
+    private static int longestCommonSubsequenceHelper(String text1, String text2, int i, int j) { // i represents the index of text1 and j represents the index of text2
+        if (i >= text1.length() || j >= text2.length()) {
+            return 0;
+        }
+        if (dp2D[i][j] != -1) {
+            return dp2D[i][j];
+        }
+        if (text1.charAt(i) == text2.charAt(j)) {
+            dp2D[i][j] = 1 + longestCommonSubsequenceHelper(text1, text2, i + 1, j + 1);
+        } else {
+            dp2D[i][j] = Math.max(longestCommonSubsequenceHelper(text1, text2, i + 1, j), longestCommonSubsequenceHelper(text1, text2, i, j + 1));
+        }
+        return dp2D[i][j];
+    }
 }
