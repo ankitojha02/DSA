@@ -277,6 +277,7 @@ public class DP {
 
 
     // LeetCode 1143 - Longest Common Subsequence
+    // Time Complexity: O(m*n), Space Complexity: O(m*n) where m is the length of text1 and n is the length of text2
     public static int longestCommonSubsequence(String text1, String text2) {
         int m = text1.length();
         int n = text2.length();
