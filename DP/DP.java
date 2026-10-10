@@ -309,4 +309,11 @@ public class DP {
 
 
     // LeetCode 516 - Longest Palindromic Subsequence
+    // Hint - LPS = LCS of string and its reverse
+    public static int longestPalindromeSubseq(String s) {
+        StringBuilder sb = new StringBuilder(s);
+        String rev = sb.reverse().toString();
+        return longestCommonSubsequence(s, rev);
+    }
+  
 }
