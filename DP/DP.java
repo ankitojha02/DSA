@@ -317,4 +317,9 @@ public class DP {
     }
   
     // LeetCode 1312 - Minimum Insertion Steps to Make a String Palindrome
+    // Hint - Minimum Insertion Steps = Length of string - Length of Longest Palindromic Subsequence
+    public static int minInsertions(String s) {
+        int lps = longestPalindromeSubseq(s);
+        return s.length() - lps;
+    }
 }
