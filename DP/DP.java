@@ -324,5 +324,37 @@ public class DP {
     }
 
     // Leetcode 72 - Edit Distance
-    
+    public static int minDistance(String word1, String word2) {
+        int m = word1.length();
+        int n = word2.length();
+        dp2D = new int[m + 1][n + 1];
+        for (int i = 0; i <= m; i++) {
+            for (int j = 0; j <= n; j++) {
+                dp2D[i][j] = -1; // Initialize dp array with -1
+            }
+        }
+        return minDistanceHelper(word1, word2, 0, 0);
+    }
+
+    private static int minDistanceHelper(String word1, String word2, int i, int j) {
+        if (i >= word1.length()) {
+            return word2.length() - j;
+        }
+        if (j >= word2.length()) {
+            return word1.length() - i;
+        }
+        if (dp2D[i][j] != -1) {
+            return dp2D[i][j];
+        }
+       
+        if (word1.charAt(i) == word2.charAt(j)) {
+            dp2D[i][j] = minDistanceHelper(word1, word2, i + 1, j + 1);
+        } else {
+            int insert = 1 + minDistanceHelper(word1, word2, i, j + 1);
+            int delete = 1 + minDistanceHelper(word1, word2, i + 1, j);
+            int replace = 1 + minDistanceHelper(word1, word2, i + 1, j + 1);
+            dp2D[i][j] = Math.min(insert, Math.min(delete, replace));
+        }
+        return dp2D[i][j];
+    }
 }
